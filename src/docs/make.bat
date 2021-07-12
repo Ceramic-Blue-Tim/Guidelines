@@ -10,7 +10,12 @@ if "%SPHINXBUILD%" == "" (
 set SOURCEDIR=source
 set BUILDDIR=build
 
+:: Points to output branch gh-pages
+set DOCS=../../../gh-pages
+
 if "%1" == "" goto help
+:: New query for github pages deploy
+if "%1" == "github" goto github
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -30,6 +35,15 @@ goto end
 
 :help
 %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+goto end
+
+:: Clean build, re-build, copy to gh-pages, add .nojekyll file
+:github
+rmdir /S /Q "%BUILDDIR%"
+%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+copy /Y "%BUILDDIR%/html" "%DOCS%"
+echo. 2>"%DOCS%/.nojekyll"
+goto end
 
 :end
 popd
