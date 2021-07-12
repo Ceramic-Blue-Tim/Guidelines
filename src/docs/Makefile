@@ -7,7 +7,7 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
-DOCS          = ../../../gh-pages
+DOCS          = ../../docs
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -19,7 +19,7 @@ github:
 	make html
 	rm -rf "$(DOCS)"
 	mv "$(BUILDDIR)/html" "$(DOCS)"
-	echo $null >> filename "$(DOCS)/.nojekyll"
+	echo $null >> "$(DOCS)/.nojekyll"
 
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
