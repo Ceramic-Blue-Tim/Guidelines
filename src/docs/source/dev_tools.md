@@ -2,7 +2,13 @@
 
 ## Documentation
 
-WIP
+### Links
+
+[Sphinx](https://www.sphinx-doc.org/en/master/)
+
+[Sphinx Read the docs theme](https://pypi.org/project/sphinx-rtd-theme/)
+
+[Sphinx autodoc Matlab](https://pypi.org/project/sphinxcontrib-matlabdomain/)
 
 ## Matlab
 
