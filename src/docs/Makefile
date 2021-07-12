@@ -14,12 +14,19 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 .PHONY: help Makefile
+
+# Add new make file directive : make github
 github:
+    # Clean build folder
 	rm -rf "$(BUILDDIR)"
+    # Generate Sphinx documentation
 	make html
+    # Remove previous html static content to allow copy
 	rm -rf "$(DOCS)"
+    # Copy build in github pages source folder being /docs
 	mv "$(BUILDDIR)/html" "$(DOCS)"
-	echo $ null >> "$(DOCS)/.nojekyll"
+    # Create .nojekyll file to setup github pages correctly
+	echo $ >> "$(DOCS)/.nojekyll"
 
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

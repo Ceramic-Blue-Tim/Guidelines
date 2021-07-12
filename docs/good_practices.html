@@ -182,26 +182,37 @@
 Sphinx outputs html under /build/html it is convenient to script documentation generation to
 obtain a structure publishable by github pages.</p>
 <p>One of the many solution is to organize the repository as below :</p>
-<p>Git repo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Git repo
+├───docs
+│   └───*.html
+└───src
+    └───docs
+        ├───build
+        ├───source
+        ├───Makefile
+        └───make.bat
+</pre></div>
+</div>
+<p>Then the Makefile is modified to generate Sphinx documentation and copy its output in docs folder.</p>
 <ul class="simple">
-<li><p>docs</p>
-<ul>
-<li><p>*.html</p></li>
+<li><p><strong>src/docs</strong> is your local Sphinx folder with sources and build</p></li>
+<li><p><strong>docs</strong> is html static content for github pages</p></li>
 </ul>
-</li>
-<li><p>src</p>
-<ul>
-<li><p>docs</p>
-<ul>
-<li><p>build</p></li>
-<li><p>source</p></li>
-<li><p>make.bat</p></li>
-<li><p>Makefile</p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Add new make file directive : make github</span>
+<span class="nf">github</span><span class="o">:</span>
+<span class="c">    # Clean build folder</span>
+	rm -rf <span class="s2">&quot;</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c">    # Generate Sphinx documentation</span>
+	make html
+<span class="c">    # Remove previous html static content to allow copy</span>
+	rm -rf <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c">    # Copy build in github pages source folder being /docs</span>
+	mv <span class="s2">&quot;</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">/html&quot;</span> <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c">    # Create .nojekyll file to setup github pages correctly</span>
+	<span class="nb">echo</span> $ &gt;&gt; <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">/.nojekyll&quot;</span>
+</pre></div>
+</div>
+<p>Better solutions use a different branch with static html content only that is set with Github Actions or Git Hooks. For the time being this solution is more easier to set up and works well for our needs.</p>
 </div>
 </div>
 <div class="section" id="matlab">
