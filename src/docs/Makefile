@@ -19,7 +19,7 @@ github:
 	make html
 	rm -rf "$(DOCS)"
 	mv "$(BUILDDIR)/html" "$(DOCS)"
-	echo $null >> "$(DOCS)/.nojekyll"
+	echo $ null >> "$(DOCS)/.nojekyll"
 
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

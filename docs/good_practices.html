@@ -95,7 +95,10 @@
 <li class="toctree-l1"><a class="reference internal" href="repo_handling.html">Repository handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev_tools.html">Development tools</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Good practices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-publish-github-pages-from-documentation-repository">Simple publish Github Pages from documentation repository</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a></li>
@@ -173,7 +176,33 @@
 <h1>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
-<p>WIP</p>
+<div class="section" id="simple-publish-github-pages-from-documentation-repository">
+<h3>Simple publish Github Pages from documentation repository<a class="headerlink" href="#simple-publish-github-pages-from-documentation-repository" title="Permalink to this headline">¶</a></h3>
+<p>Since Github only allow to serve static html from either /root or /docs of a given branch and
+Sphinx outputs html under /build/html it is convenient to script documentation generation to
+obtain a structure publishable by github pages.</p>
+<p>One of the many solution is to organize the repository as below :</p>
+<p>Git repo</p>
+<ul class="simple">
+<li><p>docs</p>
+<ul>
+<li><p>*.html</p></li>
+</ul>
+</li>
+<li><p>src</p>
+<ul>
+<li><p>docs</p>
+<ul>
+<li><p>build</p></li>
+<li><p>source</p></li>
+<li><p>make.bat</p></li>
+<li><p>Makefile</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="matlab">
 <h2>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
