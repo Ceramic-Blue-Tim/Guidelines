@@ -4,9 +4,9 @@
 
 ### Simple publish Github Pages from documentation repository
 
-Since Github only allow to serve static html from either /root or /docs of a given branch and
+Since Github only allows to serve static html from either /root or /docs of a given branch and
 Sphinx outputs html under /build/html it is convenient to script documentation generation to
-obtain a structure publishable by github pages.
+obtain a structure easily publishable using github pages.
 
 One of the many solution is to organize the repository as below :
 
@@ -21,11 +21,12 @@ Git repo
         ├───Makefile
         └───make.bat
 ```
-Then the Makefile is modified to generate Sphinx documentation and copy its output in docs folder.
 
 * **src/docs** is your local Sphinx folder with sources and build
 
 * **docs** is html static content for github pages
+
+Then the Makefile is modified to generate Sphinx documentation and copy its output in docs folder.
 
 ```Makefile
 # Add new make file directive : make github
@@ -42,7 +43,7 @@ github:
 	echo $ >> "$(DOCS)/.nojekyll"
 ```
 
-Better solutions use a different branch with static html content only that is set with Github Actions or Git Hooks. For the time being this solution is more easier to set up and works well for our needs.
+Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.
 
 ## Matlab
 
