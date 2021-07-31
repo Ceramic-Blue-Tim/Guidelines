@@ -29,6 +29,9 @@ Git repo
 Then the Makefile is modified to generate Sphinx documentation and copy its output in docs folder.
 
 ```Makefile
+# Folder for html output
+DOCS          = ../../docs
+
 # Add new make file directive : make github
 github:
     # Clean build folder
@@ -43,7 +46,9 @@ github:
 	echo $ >> "$(DOCS)/.nojekyll"
 ```
 
-Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.
+Therefore, you can stick to `make html` to locally check changes in src/ then you may use `make github` and stage/push your changes.
+
+__Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.__
 
 ## Matlab
 

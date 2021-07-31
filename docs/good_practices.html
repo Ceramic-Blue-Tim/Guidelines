@@ -198,7 +198,10 @@ obtain a structure easily publishable using github pages.</p>
 <li><p><strong>docs</strong> is html static content for github pages</p></li>
 </ul>
 <p>Then the Makefile is modified to generate Sphinx documentation and copy its output in docs folder.</p>
-<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Add new make file directive : make github</span>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Folder for html output</span>
+<span class="nv">DOCS</span>          <span class="o">=</span> ../../docs
+
+<span class="c"># Add new make file directive : make github</span>
 <span class="nf">github</span><span class="o">:</span>
 <span class="c">    # Clean build folder</span>
 	rm -rf <span class="s2">&quot;</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">&quot;</span>
@@ -212,7 +215,8 @@ obtain a structure easily publishable using github pages.</p>
 	<span class="nb">echo</span> $ &gt;&gt; <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">/.nojekyll&quot;</span>
 </pre></div>
 </div>
-<p>Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.</p>
+<p>Therefore, you can stick to <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> to locally check changes in src/ then you may use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> and stage/push your changes.</p>
+<p><strong>Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.</strong></p>
 </div>
 </div>
 <div class="section" id="matlab">
