@@ -21,7 +21,10 @@ Bio : Intern at Gotham University
 
 Depending on your skills and experience you could use a full command approach with bash or rely on a graphic interface such as GitHub Desktop or Sourcetree. Sourcetree being the one currently used for its user-friendly approach and its incorporated bash.
 
-## Organise folder
+## Organize folder
+
+Here is an example of organization for a git repository that is quite convenient to easily deal with FPGA targeting project that usually implies several languages. As long as it has been thought through and well-organised any organization is fine.
+
 ```Bash
 Repository
 ├───c
@@ -34,16 +37,23 @@ Repository
 │   ├───waves
 │   └───xdc
 ├───matlab
+│   └───functions
 └───py
 ```
 
 ## Create branches
 
-WIP
+Even if you are mostly working alone on repository, the use of branches is still recommanded. A simple branch structure is a master branch where you stage all working changes so as it is stable and functionnal and a development branch where your stage your current work. You can either create a branch for each change you make or feature you make, then merge and delete when it's good to go. In that case you might name your branch with a recurring pattern like wip001-add-parameter-sweep. Another option is to keep a single development branch all along the project and merge at points where it is functionnal and stable.
 
 ## Push daily
 
-WIP
+Staging your changes online once a day at the end of the day is a good practice to have. It will first prevent data losses that may occur (whims of windows, earthquake, theft, ... _it might seems quite paranoid until you didn't experience it yourself but I can assure you that it does happen_). Your collaborators from different time zones as well as supervisors will be able to follow up your progress regularly facilitating meetings and advicing. Moreover, you have access to your up to date sources almost everywhere.
+
+## Few more rules
+
+* /!\ : Don't stage large files, GitHub repositories have a 100 Mo limit (unless you use git lfs)
+* /!\ : Always pull before pushing anything
+* /!\ : Use only relative path or environment variables
 
 ## Links
 

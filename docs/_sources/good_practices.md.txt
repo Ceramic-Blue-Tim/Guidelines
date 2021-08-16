@@ -48,7 +48,7 @@ github:
 
 Therefore, you can stick to `make html` to locally check changes in src/ then you may use `make github` and stage/push your changes.
 
-__Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.__
+_Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs._
 
 ## Matlab
 

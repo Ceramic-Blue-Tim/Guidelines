@@ -48,7 +48,7 @@ While it is a very complete IDE with many built-in features, its editor remains 
   
 ### Other alternatives
 
-* **Notepad** : as a very light and simple editor, it also an alternative to Vivado editor. It also allows add-ons and plugins and is included on most computers installation scripts.
+* **Notepad** : as a very light and simple editor, is also an alternative to Vivado editor. It allows add-ons and plugins and is included on most computers installation scripts.
 * **Atom** + **TerosHDL** : it is a solution very close to the first one. Atom slightly differs with VSCode on plugin management but I find VSCode more user friendly.
 * **Neovim** : if you spent a decent amount of time using vim that might a good alternative if paired with appropriates plugins.
 * **Your favorite editor** : any editor your familiar with is a good choice as long as it has hdl support available.

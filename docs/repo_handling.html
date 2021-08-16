@@ -96,9 +96,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-git">Introduction to Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#repository-hosting">Repository hosting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#environment">Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#organise-folder">Organise folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organize-folder">Organize folder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-branches">Create branches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#push-daily">Push daily</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#few-more-rules">Few more rules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#links">Links</a></li>
 </ul>
 </li>
@@ -194,8 +195,9 @@ Bio : Intern at Gotham University
 <h2>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h2>
 <p>Depending on your skills and experience you could use a full command approach with bash or rely on a graphic interface such as GitHub Desktop or Sourcetree. Sourcetree being the one currently used for its user-friendly approach and its incorporated bash.</p>
 </div>
-<div class="section" id="organise-folder">
-<h2>Organise folder<a class="headerlink" href="#organise-folder" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="organize-folder">
+<h2>Organize folder<a class="headerlink" href="#organize-folder" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example of organization for a git repository that is quite convenient to easily deal with FPGA targeting project that usually implies several languages. As long as it has been thought through and well-organised any organization is fine.</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Repository
 ├───c
 ├───data
@@ -207,17 +209,26 @@ Bio : Intern at Gotham University
 │   ├───waves
 │   └───xdc
 ├───matlab
+│   └───functions
 └───py
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-branches">
 <h2>Create branches<a class="headerlink" href="#create-branches" title="Permalink to this headline">¶</a></h2>
-<p>WIP</p>
+<p>Even if you are mostly working alone on repository, the use of branches is still recommanded. A simple branch structure is a master branch where you stage all working changes so as it is stable and functionnal and a development branch where your stage your current work. You can either create a branch for each change you make or feature you make, then merge and delete when it’s good to go. In that case you might name your branch with a recurring pattern like wip001-add-parameter-sweep. Another option is to keep a single development branch all along the project and merge at points where it is functionnal and stable.</p>
 </div>
 <div class="section" id="push-daily">
 <h2>Push daily<a class="headerlink" href="#push-daily" title="Permalink to this headline">¶</a></h2>
-<p>WIP</p>
+<p>Staging your changes online once a day at the end of the day is a good practice to have. It will first prevent data losses that may occur (whims of windows, earthquake, theft, … <em>it might seems quite paranoid until you didn’t experience it yourself but I can assure you that it does happen</em>). Your collaborators from different time zones as well as supervisors will be able to follow up your progress regularly facilitating meetings and advicing. Moreover, you have access to your up to date sources almost everywhere.</p>
+</div>
+<div class="section" id="few-more-rules">
+<h2>Few more rules<a class="headerlink" href="#few-more-rules" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>/!\ : Don’t stage large files, GitHub repositories have a 100 Mo limit (unless you use git lfs)</p></li>
+<li><p>/!\ : Always pull before pushing anything</p></li>
+<li><p>/!\ : Use only relative path or environment variables</p></li>
+</ul>
 </div>
 <div class="section" id="links">
 <h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
