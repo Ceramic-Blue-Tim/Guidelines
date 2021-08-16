@@ -48,6 +48,13 @@ github:
 
 Therefore, you can stick to `make html` to locally check changes in src/ then you may use `make github` and stage/push your changes.
 
+You may also add the local build to the .gitignore.
+
+```py
+# Ignore local build for sphinx doc
+docs/build/
+```
+
 _Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs._
 
 ## Matlab

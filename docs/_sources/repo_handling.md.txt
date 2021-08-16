@@ -43,7 +43,7 @@ Repository
 
 ## Create branches
 
-Even if you are mostly working alone on repository, the use of branches is still recommanded. A simple branch structure is a master branch where you stage all working changes so as it is stable and functionnal and a development branch where your stage your current work. You can either create a branch for each change you make or feature you make, then merge and delete when it's good to go. In that case you might name your branch with a recurring pattern like wip001-add-parameter-sweep. Another option is to keep a single development branch all along the project and merge at points where it is functionnal and stable.
+Even if you are mostly working alone on repository, the use of branches is still recommended. A simple branch structure is a master branch where you stage all working changes so as it is stable and functionnal and a development branch where your stage your current work. You can either create a branch for each change you make or feature you make, then merge and delete when it's good to go. In that case you might name your branch with a recurring pattern like wip001-add-parameter-sweep. Another option is to keep a single development branch all along the project and merge at points where it is functionnal and stable.
 
 ## Push daily
 
