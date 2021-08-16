@@ -1,6 +1,6 @@
 # Support
 
-Recommended scheme in case of issue :
+Recommended procedure to solve a problem :
 
 * Read the documentation  
 * Search for similar issues over the internet

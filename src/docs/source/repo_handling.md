@@ -2,7 +2,7 @@
 
 ## Introduction to Git
 
-The first step is to get through the basic theory of git. While a good mastery of git requires hours several of study and practices, basic use of elementary notions **commit**, **push**, **pull** and **branches** can be mastered in a reasonable amount of time. Plenty of tutorials are availables on that matter.
+[Git](https://git-scm.com) is a free and open source distributed version control system designed to handle projects sources with speed and efficiency. The first step is to get through the basic theory of git. While a good mastery of git requires several hours of study and practices, basic use of the elementary notions **commit**, **push**, **pull** and **branches** can be mastered in a reasonable amount of time. Plenty of tutorials are availables on that matter.
 
 ## Repository hosting
 
@@ -19,7 +19,7 @@ Bio : Intern at Gotham University
 
 ## Environment
 
-Depending on your skills and experience you could easier use a full command approach using bash or rely on a graphic interface such AS GitHub Desktop or Sourcetree. Sourcetree being the one currently used for its user-friendly approach and its incorporated bash.
+Depending on your skills and experience you could use a full command approach with bash or rely on a graphic interface such as GitHub Desktop or Sourcetree. Sourcetree being the one currently used for its user-friendly approach and its incorporated bash.
 
 ## Organise folder
 ```Bash
@@ -47,4 +47,6 @@ WIP
 
 ## Links
 
-WIP
+[**GitHub**](https://github.com/)
+
+[**Sourcetrre**](https://www.sourcetreeapp.com/)

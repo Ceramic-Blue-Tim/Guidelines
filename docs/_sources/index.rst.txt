@@ -8,6 +8,7 @@ Guidelines, good practices and tips
    repo_handling
    dev_tools
    good_practices
+   resources
    support
 
 Indices and tables
