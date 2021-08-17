@@ -59,7 +59,70 @@ _Better solutions use a different branch staging only static html content that i
 
 ## Matlab
 
-WIP
+### Header
+
+Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
+A header usually includes the name of the authors, the creation and update date and versioning as well as comments.
+```Matlab
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Authors     : Romain BEAUBOIS
+%   Create Date : 06 Aug 2021
+%   Update Date : 09 Aug 2021
+%
+%   Description : A simple header to illustrate
+%
+%   Revision :
+%       > Revision 0.01 - File created
+%
+%   Additional Comments :
+%       > Not much more to sayn it's juste an example
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+```
+
+### Comments
+
+Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.
+
+#### Functions
+
+Insert comments below functions is a standard, the | and ** are syntax used by Sphinx for documentation layout.
+
+```Matlab
+function u = ohmLaw(r, i)
+% | **Compute ohm's law**
+% |
+% | **u** : Voltage (V)
+% | **r** : Resistance (ohm)
+% | **i** : Current (A)
+%
+% | Compute simple ohm's law from fixed parameters in SI unit
+```
+
+#### Sections
+
+Sections (comments blocks that start with %%) are usually followed by a consistent name.
+They can be divided in blocks separated by simple line comment with a simple tab.
+
+```Matlab
+%% Define Parameters ##########################################################################
+    % Time
+        ...
+
+    % Geometry
+        ...
+```
+
+### Inline comments
+
+Inline comments are mostly used for variables declaration or assignation so as they describe what si the variable for, what operation is performed or what is the unit.
+```Matlab
+    dt              = 2^-5;     % ms - Time step
+    sim_time        = 30e3;     % ms - Simulation time
+
+    neur_diam       = 15;       % µm - Average diameter of a neuron
+    dist_orgs       = 120;      % µm - Distance between centers of organoids
+```
 
 ## Python
 

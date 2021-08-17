@@ -99,7 +99,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#simple-publish-github-pages-from-documentation-repository">Simple publish Github Pages from documentation repository</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#header">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sections">Sections</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#inline-comments">Inline comments</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a></li>
 </ul>
@@ -227,7 +236,69 @@ obtain a structure easily publishable using github pages.</p>
 </div>
 <div class="section" id="matlab">
 <h2>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
-<p>WIP</p>
+<div class="section" id="header">
+<h3>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h3>
+<p>Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
+A header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><span class="w"></span>
+<span class="c">%   Authors     : Romain BEAUBOIS</span><span class="w"></span>
+<span class="c">%   Create Date : 06 Aug 2021</span><span class="w"></span>
+<span class="c">%   Update Date : 09 Aug 2021</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%   Description : A simple header to illustrate</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%   Revision :</span><span class="w"></span>
+<span class="c">%       &gt; Revision 0.01 - File created</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">%   Additional Comments :</span><span class="w"></span>
+<span class="c">%       &gt; Not much more to sayn it&#39;s juste an example</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.</p>
+<div class="section" id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<p>Insert comments below functions is a standard, the | and ** are syntax used by Sphinx for documentation layout.</p>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>u<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">ohmLaw</span><span class="p">(</span>r, i<span class="p">)</span><span class="w"></span>
+<span class="c">% | **Compute ohm&#39;s law**</span><span class="w"></span>
+<span class="c">% |</span><span class="w"></span>
+<span class="c">% | **u** : Voltage (V)</span><span class="w"></span>
+<span class="c">% | **r** : Resistance (ohm)</span><span class="w"></span>
+<span class="c">% | **i** : Current (A)</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">% | Compute simple ohm&#39;s law from fixed parameters in SI unit</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sections">
+<h4>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h4>
+<p>Sections (comments blocks that start with %%) are usually followed by a consistent name.
+They can be divided in blocks separated by simple line comment with a simple tab.</p>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Define Parameters ##########################################################################</span><span class="w"></span>
+<span class="w">    </span><span class="c">% Time</span><span class="w"></span>
+<span class="w">        </span><span class="k">...</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">% Geometry</span><span class="w"></span>
+<span class="w">        </span><span class="k">...</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inline-comments">
+<h3>Inline comments<a class="headerlink" href="#inline-comments" title="Permalink to this headline">¶</a></h3>
+<p>Inline comments are mostly used for variables declaration or assignation so as they describe what si the variable for, what operation is performed or what is the unit.</p>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">dt</span><span class="w">              </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>^<span class="o">-</span><span class="mi">5</span><span class="p">;</span><span class="w">     </span><span class="c">% ms - Time step</span><span class="w"></span>
+<span class="w">    </span><span class="n">sim_time</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="mf">30e3</span><span class="p">;</span><span class="w">     </span><span class="c">% ms - Simulation time</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">neur_diam</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w">       </span><span class="c">% µm - Average diameter of a neuron</span><span class="w"></span>
+<span class="w">    </span><span class="n">dist_orgs</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="mi">120</span><span class="p">;</span><span class="w">      </span><span class="c">% µm - Distance between centers of organoids</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
