@@ -9,6 +9,7 @@ Guidelines, good practices and tips
    dev_tools
    good_practices
    resources
+   glossary
    support
 
 Indices and tables

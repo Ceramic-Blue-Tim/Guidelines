@@ -16,7 +16,47 @@ WIP
 
 ## Python
 
-WIP
+### VSCode + plugins + pip
+
+This environment is based on the use of pip for the management of Python package and VSCode paired with some plugin to act as an IDE. This version is lighter than using Anaconda (Anaconda is about 9 Go) since you only install what you need without any extra package and faster at startup. The package manager pip can be installed from the Python installer.
+
+#### Useful commands
+
+- `Ctrl` + `Shift` + `P` > Execute current Python script in Terminal : Launch your Python script
+- `Ctrl` + `Shift` + `P` > Select Python interpreter : Select what version of Python to use
+- `Ctrl` + `Shift` + `P` > Python : List all the actions related to Python
+
+#### How to use pip
+
+If you installed from Python installer and if your environment variables are correctly set, you may call pip installer from windows shell using the following command.
+
+`Win` + `R` > cmd : to open windows shell
+
+```Bash
+pip install Sphinx --user
+```
+
+Otherwise you might need to call it as below.
+
+```Bash
+python -m pip install Sphinx --user
+```
+
+### Anaconda
+
+The alternative is the use of anaconda that a very complete platform that will allow to handle easily python virtual environments and comes with a numerous softwares. However, you are more likely to spend most of your time using the IDE named Spider so as you are a very small percentage of the Anaconda's features. This is why unless you are in need of a particular setup, you may want to opt for the VSCode+plugins+pip solution.
+
+### Links
+
+[Python](https://www.python.org/)
+
+[Python Linter for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+
+[Python Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+
+[Pip documentation](https://pip.pypa.io/en/stable/cli/pip_install/)
+
+[Anaconda](https://www.anaconda.com/)
 
 ## VHDL
 
@@ -27,7 +67,7 @@ While it is a very complete IDE with many built-in features, its editor remains 
 
 **VSCode** paired with **TerosHDL** is a very convenient setup that allows several time saving macros and syntax completions.
 
-> **VSCode Useful default shortcuts (Windows)**
+#### VSCode Useful default shortcuts (Windows)
 >  * `Ctrl` + `Shift` + `Alt` + `Up/Down` : multi column selection
 >  * `Ctrl` + `Shift` + `Left/Right` : word to word selection
 >  * `Alt` + `Shift` : duplicate current selection or line

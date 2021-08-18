@@ -99,18 +99,31 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vscode-plugins-pip">VSCode + plugins + pip</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#useful-commands">Useful commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-use-pip">How to use pip</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#anaconda">Anaconda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Links</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#vscode-teroshdl-alternative-to-vivado-editor">VSCode + TerosHDL : alternative to Vivado editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vscode-teroshdl-alternative-to-vivado-editor">VSCode + TerosHDL : alternative to Vivado editor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vscode-useful-default-shortcuts-windows">VSCode Useful default shortcuts (Windows)</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#other-alternatives">Other alternatives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improve-the-environment">Improve the environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Links</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="good_practices.html">Good practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
@@ -196,7 +209,42 @@
 </div>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
-<p>WIP</p>
+<div class="section" id="vscode-plugins-pip">
+<h3>VSCode + plugins + pip<a class="headerlink" href="#vscode-plugins-pip" title="Permalink to this headline">¶</a></h3>
+<p>This environment is based on the use of pip for the management of Python package and VSCode paired with some plugin to act as an IDE. This version is lighter than using Anaconda (Anaconda is about 9 Go) since you only install what you need without any extra package and faster at startup. The package manager pip can be installed from the Python installer.</p>
+<div class="section" id="useful-commands">
+<h4>Useful commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">P</span></code> &gt; Execute current Python script in Terminal : Launch your Python script</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">P</span></code> &gt; Select Python interpreter : Select what version of Python to use</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">P</span></code> &gt; Python : List all the actions related to Python</p></li>
+</ul>
+</div>
+<div class="section" id="how-to-use-pip">
+<h4>How to use pip<a class="headerlink" href="#how-to-use-pip" title="Permalink to this headline">¶</a></h4>
+<p>If you installed from Python installer and if your environment variables are correctly set, you may call pip installer from windows shell using the following command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Win</span></code> + <code class="docutils literal notranslate"><span class="pre">R</span></code> &gt; cmd : to open windows shell</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>pip install Sphinx --user
+</pre></div>
+</div>
+<p>Otherwise you might need to call it as below.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>python -m pip install Sphinx --user
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="anaconda">
+<h3>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h3>
+<p>The alternative is the use of anaconda that a very complete platform that will allow to handle easily python virtual environments and comes with a numerous softwares. However, you are more likely to spend most of your time using the IDE named Spider so as you are a very small percentage of the Anaconda’s features. This is why unless you are in need of a particular setup, you may want to opt for the VSCode+plugins+pip solution.</p>
+</div>
+<div class="section" id="id1">
+<h3>Links<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.python.org/">Python</a></p>
+<p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python Linter for VSCode</a></p>
+<p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">Python Extension for VSCode</a></p>
+<p><a class="reference external" href="https://pip.pypa.io/en/stable/cli/pip_install/">Pip documentation</a></p>
+<p><a class="reference external" href="https://www.anaconda.com/">Anaconda</a></p>
+</div>
 </div>
 <div class="section" id="vhdl">
 <h2>VHDL<a class="headerlink" href="#vhdl" title="Permalink to this headline">¶</a></h2>
@@ -205,9 +253,10 @@
 <p>Most of the target we use are from Xilinx, therefore enforcing the use of Vivado design suite.
 While it is a very complete IDE with many built-in features, its editor remains quite limited. A common workaround is to edit sources with an external editor letting Vivado updates its version once sources are saved in external editor.</p>
 <p><strong>VSCode</strong> paired with <strong>TerosHDL</strong> is a very convenient setup that allows several time saving macros and syntax completions.</p>
+<div class="section" id="vscode-useful-default-shortcuts-windows">
+<h4>VSCode Useful default shortcuts (Windows)<a class="headerlink" href="#vscode-useful-default-shortcuts-windows" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div><p><strong>VSCode Useful default shortcuts (Windows)</strong></p>
-<ul class="simple">
+<div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">Alt</span></code> + <code class="docutils literal notranslate"><span class="pre">Up/Down</span></code> : multi column selection</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">Left/Right</span></code> : word to word selection</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Alt</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> : duplicate current selection or line</p></li>
@@ -231,6 +280,7 @@ While it is a very complete IDE with many built-in features, its editor remains 
 </ul>
 </div></blockquote>
 </div>
+</div>
 <div class="section" id="other-alternatives">
 <h3>Other alternatives<a class="headerlink" href="#other-alternatives" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -247,8 +297,8 @@ While it is a very complete IDE with many built-in features, its editor remains 
 <li><p>Another useful tool is the incremental selection that turns out to be very convenient for instanciation and pipeline signals numbering.</p></li>
 </ul>
 </div>
-<div class="section" id="id1">
-<h3>Links<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://code.visualstudio.com/"><strong>VSCode</strong></a></p>
 <p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl"><strong>TerosHDL</strong></a></p>
 <p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection"><strong>Incremental selection</strong></a></p>
