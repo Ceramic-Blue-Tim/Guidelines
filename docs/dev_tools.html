@@ -95,18 +95,28 @@
 <li class="toctree-l1"><a class="reference internal" href="repo_handling.html">Repository handling</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Development tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-extensions">Sphinx + extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#doxygen">Doxygen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#doxygen-breathe-sphinx">Doxygen + Breathe + Sphinx</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vscode-plugins-alternative-to-matlab-editor">VSCode + plugins : alternative to Matlab Editor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#useful-commands">Useful commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Links</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#vscode-plugins-pip">VSCode + plugins + pip</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#useful-commands">Useful commands</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Useful commands</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-use-pip">How to use pip</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#anaconda">Anaconda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Links</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a><ul>
@@ -116,7 +126,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#other-alternatives">Other alternatives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improve-the-environment">Improve the environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Links</a></li>
 </ul>
 </li>
 </ul>
@@ -196,24 +206,50 @@
 <h1>Development tools<a class="headerlink" href="#development-tools" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sphinx-extensions">
+<h3>Sphinx + extensions<a class="headerlink" href="#sphinx-extensions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="doxygen">
+<h3>Doxygen<a class="headerlink" href="#doxygen" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="doxygen-breathe-sphinx">
+<h3>Doxygen + Breathe + Sphinx<a class="headerlink" href="#doxygen-breathe-sphinx" title="Permalink to this headline">¶</a></h3>
+</div>
 <div class="section" id="links">
 <h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://www.sphinx-doc.org/en/master/"><strong>Sphinx</strong></a></p>
 <p><a class="reference external" href="https://pypi.org/project/sphinx-rtd-theme/"><strong>Sphinx Read the docs theme</strong></a></p>
 <p><a class="reference external" href="https://pypi.org/project/sphinxcontrib-matlabdomain/"><strong>Sphinx autodoc Matlab</strong></a></p>
+<p><a class="reference external" href="https://www.doxygen.nl/index.html"><strong>Doxygen</strong></a></p>
+<p><a class="reference external" href="https://pypi.org/project/breathe/"><strong>Breathe</strong></a></p>
+<p><a class="reference external" href="https://breathe.readthedocs.io/en/latest/index.html"><strong>Breathe documentation</strong></a></p>
 </div>
 </div>
 <div class="section" id="matlab">
 <h2>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
-<p>WIP</p>
+<div class="section" id="vscode-plugins-alternative-to-matlab-editor">
+<h3>VSCode + plugins : alternative to Matlab Editor<a class="headerlink" href="#vscode-plugins-alternative-to-matlab-editor" title="Permalink to this headline">¶</a></h3>
+<p>The built-in editor of Matlab although it is customable in terms of syntax coloring and shortcuts lacks a decent autocompletion. An alternative is to edit the scirpts in VSCode paired with a Matlab plugin that will allow efficient auto-completion and link to functions.</p>
+<div class="section" id="useful-commands">
+<h4>Useful commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">MouseClickLeft</span></code> : on a function it will open the script that defines the function</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Links<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://code.visualstudio.com/"><strong>VSCode</strong></a></p>
+<p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab"><strong>Matlab plugin</strong></a></p>
+</div>
 </div>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="vscode-plugins-pip">
 <h3>VSCode + plugins + pip<a class="headerlink" href="#vscode-plugins-pip" title="Permalink to this headline">¶</a></h3>
 <p>This environment is based on the use of pip for the management of Python package and VSCode paired with some plugin to act as an IDE. This version is lighter than using Anaconda (Anaconda is about 9 Go) since you only install what you need without any extra package and faster at startup. The package manager pip can be installed from the Python installer.</p>
-<div class="section" id="useful-commands">
-<h4>Useful commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4>Useful commands<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">P</span></code> &gt; Execute current Python script in Terminal : Launch your Python script</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">P</span></code> &gt; Select Python interpreter : Select what version of Python to use</p></li>
@@ -237,8 +273,9 @@
 <h3>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h3>
 <p>The alternative is the use of anaconda that a very complete platform that will allow to handle easily python virtual environments and comes with a numerous softwares. However, you are more likely to spend most of your time using the IDE named Spider so as you are a very small percentage of the Anaconda’s features. This is why unless you are in need of a particular setup, you may want to opt for the VSCode+plugins+pip solution.</p>
 </div>
-<div class="section" id="id1">
-<h3>Links<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Links<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://code.visualstudio.com/"><strong>VSCode</strong></a></p>
 <p><a class="reference external" href="https://www.python.org/">Python</a></p>
 <p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python Linter for VSCode</a></p>
 <p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance">Python Extension for VSCode</a></p>
@@ -297,8 +334,8 @@ While it is a very complete IDE with many built-in features, its editor remains 
 <li><p>Another useful tool is the incremental selection that turns out to be very convenient for instanciation and pipeline signals numbering.</p></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h3>Links<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://code.visualstudio.com/"><strong>VSCode</strong></a></p>
 <p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl"><strong>TerosHDL</strong></a></p>
 <p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection"><strong>Incremental selection</strong></a></p>

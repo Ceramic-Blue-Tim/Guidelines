@@ -2,6 +2,12 @@
 
 ## Documentation
 
+### Sphinx + extensions
+
+### Doxygen
+
+### Doxygen + Breathe + Sphinx
+
 ### Links
 
 [**Sphinx**](https://www.sphinx-doc.org/en/master/)
@@ -10,9 +16,27 @@
 
 [**Sphinx autodoc Matlab**](https://pypi.org/project/sphinxcontrib-matlabdomain/)
 
+[**Doxygen**](https://www.doxygen.nl/index.html)
+
+[**Breathe**](https://pypi.org/project/breathe/)
+
+[**Breathe documentation**](https://breathe.readthedocs.io/en/latest/index.html)
+
 ## Matlab
 
-WIP
+### VSCode + plugins : alternative to Matlab Editor
+
+The built-in editor of Matlab although it is customable in terms of syntax coloring and shortcuts lacks a decent autocompletion. An alternative is to edit the scirpts in VSCode paired with a Matlab plugin that will allow efficient auto-completion and link to functions.
+
+#### Useful commands
+
+- `Ctrl` + `MouseClickLeft` : on a function it will open the script that defines the function
+
+### Links
+
+[**VSCode**](https://code.visualstudio.com/)
+
+[**Matlab plugin**](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab)
 
 ## Python
 
@@ -47,6 +71,8 @@ python -m pip install Sphinx --user
 The alternative is the use of anaconda that a very complete platform that will allow to handle easily python virtual environments and comes with a numerous softwares. However, you are more likely to spend most of your time using the IDE named Spider so as you are a very small percentage of the Anaconda's features. This is why unless you are in need of a particular setup, you may want to opt for the VSCode+plugins+pip solution.
 
 ### Links
+
+[**VSCode**](https://code.visualstudio.com/)
 
 [Python](https://www.python.org/)
 
