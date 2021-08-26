@@ -30,7 +30,7 @@ The built-in editor of Matlab although it is customable in terms of syntax color
 
 #### Useful commands
 
-- `Ctrl` + `MouseClickLeft` : on a function it will open the script that defines the function
+* `Ctrl` + `MouseClickLeft` : on a function it will open the script that defines the function
 
 ### Links
 
@@ -46,9 +46,9 @@ This environment is based on the use of pip for the management of Python package
 
 #### Useful commands
 
-- `Ctrl` + `Shift` + `P` > Execute current Python script in Terminal : Launch your Python script
-- `Ctrl` + `Shift` + `P` > Select Python interpreter : Select what version of Python to use
-- `Ctrl` + `Shift` + `P` > Python : List all the actions related to Python
+* `Ctrl` + `Shift` + `P` > Execute current Python script in Terminal : Launch your Python script
+* `Ctrl` + `Shift` + `P` > Select Python interpreter : Select what version of Python to use
+* `Ctrl` + `Shift` + `P` > Python : List all the actions related to Python
 
 #### How to use pip
 
@@ -74,15 +74,15 @@ The alternative is the use of anaconda that a very complete platform that will a
 
 [**VSCode**](https://code.visualstudio.com/)
 
-[Python](https://www.python.org/)
+[**Python**](https://www.python.org/)
 
-[Python Linter for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+[**Python Linter for VSCode**](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
-[Python Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+[**Python Extension for VSCode**](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 
-[Pip documentation](https://pip.pypa.io/en/stable/cli/pip_install/)
+[**Pip documentation**](https://pip.pypa.io/en/stable/cli/pip_install/)
 
-[Anaconda](https://www.anaconda.com/)
+[**Anaconda**](https://www.anaconda.com/)
 
 ## VHDL
 

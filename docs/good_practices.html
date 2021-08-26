@@ -110,7 +110,22 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#indent">Indent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signal-declaration">Signal declaration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#think-generic">Think generic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constants">Constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-packages">Make packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smart-signals-assignation">Smart signals assignation</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
@@ -252,7 +267,7 @@ A header usually includes the name of the authors, the creation and update date 
 <span class="c">%       &gt; Revision 0.01 - File created</span><span class="w"></span>
 <span class="c">%</span><span class="w"></span>
 <span class="c">%   Additional Comments :</span><span class="w"></span>
-<span class="c">%       &gt; Not much more to sayn it&#39;s juste an example</span><span class="w"></span>
+<span class="c">%       &gt; Not much more to say, it&#39;s juste an example</span><span class="w"></span>
 <span class="c">%</span><span class="w"></span>
 <span class="c">% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><span class="w"></span>
 </pre></div>
@@ -307,7 +322,95 @@ They can be divided in blocks separated by simple line comment with a simple tab
 </div>
 <div class="section" id="vhdl">
 <h2>VHDL<a class="headerlink" href="#vhdl" title="Permalink to this headline">¶</a></h2>
-<p>WIP</p>
+<div class="section" id="indent">
+<h3>Indent<a class="headerlink" href="#indent" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id1">
+<h3>Comments<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is hihgly recommanded both for you own mental health and for code sharing.</p>
+<div class="section" id="id2">
+<h4>Header<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>As for the other language, the file header states intellectual property and gives useful details on the file versioning. Here is a quick example</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- ===============================================================================</span>
+<span class="c1">--  Authors     : Romain BEAUBOIS</span>
+<span class="c1">--  Create Date : 01 Jan 2021</span>
+<span class="c1">--  Update Date : 23 Aug 2021</span>
+<span class="c1">--</span>
+<span class="c1">--  Description : Top module of SNN-SHH-MMN</span>
+<span class="c1">--</span>
+<span class="c1">--  Revision:</span>
+<span class="c1">--      &gt; Revision 0.01 - File created</span>
+<span class="c1">--      &gt; Revision 0.02 - Add fixed point representation</span>
+<span class="c1">--</span>
+<span class="c1">--  Additional Comments :</span>
+<span class="c1">--      &gt; For loops of matrix larger than N=10 induces negative WNS (WIP)</span>
+<span class="c1">-- ===============================================================================</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ports">
+<h4>Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h4>
+<p>It is sometime useful to organise properly your the input and outputs of a module.
+However, it may sometimes hamper column selection and incremental selections as your
+lines are getting sparsed. Here is a quick example</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">port</span><span class="p">(</span>
+    <span class="c1">-- Clock/reset --</span>
+    <span class="n">clk</span>     <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+    <span class="n">reset</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+
+    <span class="c1">-- SPI --</span>
+    <span class="n">DAC_sclk</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+    <span class="n">DAC_cs</span>      <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+    <span class="n">DAC_mosi</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>
+
+    <span class="c1">-- PSU -&gt; FPGA via AXI LITE</span>
+        <span class="c1">-- RAM control</span>
+        <span class="n">PSU_en_write</span>    <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic</span><span class="p">;</span>
+        <span class="n">PSU_addrw</span>       <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">ADDRSIZE</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+
+        <span class="c1">-- Conductance</span>
+        <span class="n">PSU_GK</span>      <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">INT</span><span class="o">+</span><span class="n">DEC</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="signal-declaration">
+<h4>Signal declaration<a class="headerlink" href="#signal-declaration" title="Permalink to this headline">¶</a></h4>
+<p>About the same principles apply to signal declaration. Try to organise your signals by grouping according to their role. Here is another example</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>    <span class="c1">-- Clock --</span>
+    <span class="k">signal</span> <span class="n">clk</span>              <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span> <span class="c1">-- Main clock</span>
+
+    <span class="c1">-- DSP pipelines</span>
+    <span class="k">signal</span> <span class="n">A</span>    <span class="o">:</span> <span class="kt">signed</span><span class="p">(</span><span class="mi">7</span><span class="o">+</span><span class="n">DEC</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>    <span class="o">:=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span> <span class="c1">-- DSP multiplier inputs</span>
+    <span class="k">signal</span> <span class="n">B</span>    <span class="o">:</span> <span class="kt">signed</span><span class="p">(</span><span class="mi">7</span><span class="o">+</span><span class="n">DEC</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>    <span class="o">:=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span> <span class="c1">-- DSP multiplier inputs</span>
+
+    <span class="c1">-- Time --</span>
+    <span class="k">signal</span> <span class="n">tick</span>             <span class="o">:</span> <span class="kt">std_logic</span> <span class="o">:=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>                 <span class="c1">-- Computation enable</span>
+    <span class="k">signal</span> <span class="n">tick_counter</span>     <span class="o">:</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">11</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">-- Counts clock cycle to generate ticks</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="think-generic">
+<h3>Think generic<a class="headerlink" href="#think-generic" title="Permalink to this headline">¶</a></h3>
+<p>Another important parameter is the genericity of your design. VHDL is interprated by the software roughly as a huge list of components and connections. Therefore, using generic parameters instead of fixed parameters will facilitate the scalibity of your design and simplify development.</p>
+<div class="section" id="constants">
+<h4>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h4>
+<p>The use of constants in VHDL is really imporant, it helps generic generation and really clarify your code. Moreover, they do not relate to any material generation (simply GND or VCC connection on pins). Let’s take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following definitions.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>    <span class="k">constant</span> <span class="n">NB_ADC</span>     <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">4</span>      <span class="o">:=</span> <span class="mi">4</span><span class="p">;</span>       <span class="c1">-- Number of ADC to read</span>
+    <span class="k">constant</span> <span class="n">NB_BIT_ADC</span> <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">12</span>     <span class="o">:=</span> <span class="mi">12</span><span class="p">;</span>      <span class="c1">-- Number of bits for ADC signal encoding</span>
+    <span class="k">type</span> <span class="n">data_ADC_s</span> <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="n">NB_ADC</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">NB_BIT_ADC</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">-- Signal type for an array of ADC signals</span>
+    <span class="k">signal</span> <span class="n">data_ADC</span>     <span class="o">:</span> <span class="n">data_ADC_s</span>                <span class="o">:=</span> <span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="sc">&#39;0&#39;</span><span class="p">));</span> <span class="c1">-- Signal for all ADC data</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-packages">
+<h4>Make packages<a class="headerlink" href="#make-packages" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="smart-signals-assignation">
+<h4>Smart signals assignation<a class="headerlink" href="#smart-signals-assignation" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
 </div>
 </div>
 

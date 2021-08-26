@@ -75,7 +75,7 @@ A header usually includes the name of the authors, the creation and update date 
 %       > Revision 0.01 - File created
 %
 %   Additional Comments :
-%       > Not much more to sayn it's juste an example
+%       > Not much more to say, it's juste an example
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ```
@@ -130,4 +130,92 @@ WIP
 
 ## VHDL
 
-WIP
+### Indent
+
+### Comments
+
+VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is hihgly recommanded both for you own mental health and for code sharing.
+
+#### Header
+
+As for the other language, the file header states intellectual property and gives useful details on the file versioning. Here is a quick example
+
+```vhdl
+-- ===============================================================================
+--  Authors     : Romain BEAUBOIS
+--  Create Date : 01 Jan 2021
+--  Update Date : 23 Aug 2021
+--
+--  Description : Top module of SNN-SHH-MMN
+--
+--  Revision:
+--      > Revision 0.01 - File created
+--      > Revision 0.02 - Add fixed point representation
+--
+--  Additional Comments :
+--      > For loops of matrix larger than N=10 induces negative WNS (WIP)
+-- ===============================================================================
+```
+
+#### Ports
+
+It is sometime useful to organise properly your the input and outputs of a module.
+However, it may sometimes hamper column selection and incremental selections as your
+lines are getting sparsed. Here is a quick example
+
+```vhdl
+port(
+    -- Clock/reset --
+    clk     : in  std_logic;
+    reset   : in  std_logic;
+
+    -- SPI --
+    DAC_sclk    : out std_logic;
+    DAC_cs      : out std_logic;
+    DAC_mosi    : out std_logic;
+
+    -- PSU -> FPGA via AXI LITE
+        -- RAM control
+        PSU_en_write    : in std_logic;
+        PSU_addrw       : in std_logic_vector(ADDRSIZE-1 downto 0);
+
+        -- Conductance
+        PSU_GK      : in std_logic_vector(INT+DEC downto 0)
+);
+```
+
+#### Signal declaration
+
+About the same principles apply to signal declaration. Try to organise your signals by grouping according to their role. Here is another example
+
+```vhdl
+    -- Clock --
+    signal clk              : std_logic; -- Main clock
+
+    -- DSP pipelines
+    signal A    : signed(7+DEC downto 0)    := (others => '0'); -- DSP multiplier inputs
+    signal B    : signed(7+DEC downto 0)    := (others => '0'); -- DSP multiplier inputs
+
+    -- Time --
+    signal tick             : std_logic := '0';                 -- Computation enable
+    signal tick_counter     : std_logic_vector(11 downto 0);    -- Counts clock cycle to generate ticks
+```
+
+### Think generic
+
+Another important parameter is the genericity of your design. VHDL is interprated by the software roughly as a huge list of components and connections. Therefore, using generic parameters instead of fixed parameters will facilitate the scalibity of your design and simplify development.
+
+#### Constants
+
+The use of constants in VHDL is really imporant, it helps generic generation and really clarify your code. Moreover, they do not relate to any material generation (simply GND or VCC connection on pins). Let's take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following definitions.
+
+```vhdl
+    constant NB_ADC     : integer range 0 to 4      := 4;       -- Number of ADC to read
+    constant NB_BIT_ADC : integer range 0 to 12     := 12;      -- Number of bits for ADC signal encoding
+    type data_ADC_s is array (0 to NB_ADC-1) of std_logic_vector(NB_BIT_ADC-1 downto 0);    -- Signal type for an array of ADC signals
+    signal data_ADC     : data_ADC_s                := (others=>(others=>'0')); -- Signal for all ADC data
+```
+
+#### Make packages
+
+#### Smart signals assignation
