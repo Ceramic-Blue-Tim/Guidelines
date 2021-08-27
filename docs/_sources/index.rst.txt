@@ -9,6 +9,8 @@ Guidelines, good practices and tips
    dev_tools
    good_practices
    resources
+   misc
+   bugs_report
    glossary
    support
 

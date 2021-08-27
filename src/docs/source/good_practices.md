@@ -55,14 +55,19 @@ You may also add the local build to the .gitignore.
 docs/build/
 ```
 
-_Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs._
+_Better solutions use a different branch staging only static html content updated with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs._
 
 ## Matlab
 
-### Header
+### Comments
+
+Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.
+
+#### Header
 
 Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
 A header usually includes the name of the authors, the creation and update date and versioning as well as comments.
+
 ```Matlab
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Authors     : Romain BEAUBOIS
@@ -79,10 +84,6 @@ A header usually includes the name of the authors, the creation and update date 
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ```
-
-### Comments
-
-Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.
 
 #### Functions
 
@@ -134,11 +135,11 @@ WIP
 
 ### Comments
 
-VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is hihgly recommanded both for you own mental health and for code sharing.
+VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is highly recommanded both for your own mental health and for code sharing.
 
 #### Header
 
-As for the other language, the file header states intellectual property and gives useful details on the file versioning. Here is a quick example
+As for the other languages, the file header states intellectual property and gives useful details on the file versioning. Here is a quick example.
 
 ```vhdl
 -- ===============================================================================
@@ -159,9 +160,9 @@ As for the other language, the file header states intellectual property and give
 
 #### Ports
 
-It is sometime useful to organise properly your the input and outputs of a module.
-However, it may sometimes hamper column selection and incremental selections as your
-lines are getting sparsed. Here is a quick example
+It is sometimes useful to organise properly the inputs and outputs of a module.
+However, it may sometimes hamper column selection and incremental selection as your
+lines are getting sparsed. Here is a quick example.
 
 ```vhdl
 port(
@@ -186,7 +187,7 @@ port(
 
 #### Signal declaration
 
-About the same principles apply to signal declaration. Try to organise your signals by grouping according to their role. Here is another example
+About the same principles apply to signal declaration. Try to regroup your signals according to their role or connecting module. Here is another example.
 
 ```vhdl
     -- Clock --
@@ -214,6 +215,8 @@ The use of constants in VHDL is really imporant, it helps generic generation and
     constant NB_BIT_ADC : integer range 0 to 12     := 12;      -- Number of bits for ADC signal encoding
     type data_ADC_s is array (0 to NB_ADC-1) of std_logic_vector(NB_BIT_ADC-1 downto 0);    -- Signal type for an array of ADC signals
     signal data_ADC     : data_ADC_s                := (others=>(others=>'0')); -- Signal for all ADC data
+
+    -- data_ADC(0) is a 12 bits vector corresponding to the data of your first ADC
 ```
 
 #### Make packages

@@ -100,8 +100,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#header">Header</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#header">Header</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sections">Sections</a></li>
 </ul>
@@ -129,6 +129,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs_report.html">Bugs report</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
@@ -247,13 +249,16 @@ obtain a structure easily publishable using github pages.</p>
 <span class="n">docs</span><span class="o">/</span><span class="n">build</span><span class="o">/</span>
 </pre></div>
 </div>
-<p><em>Better solutions use a different branch staging only static html content that is set with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.</em></p>
+<p><em>Better solutions use a different branch staging only static html content updated with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.</em></p>
 </div>
 </div>
 <div class="section" id="matlab">
 <h2>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.</p>
 <div class="section" id="header">
-<h3>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h3>
+<h4>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h4>
 <p>Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
 A header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
 <div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span><span class="w"></span>
@@ -273,9 +278,6 @@ A header usually includes the name of the authors, the creation and update date 
 </pre></div>
 </div>
 </div>
-<div class="section" id="comments">
-<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
-<p>Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.</p>
 <div class="section" id="functions">
 <h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
 <p>Insert comments below functions is a standard, the | and ** are syntax used by Sphinx for documentation layout.</p>
@@ -327,10 +329,10 @@ They can be divided in blocks separated by simple line comment with a simple tab
 </div>
 <div class="section" id="id1">
 <h3>Comments<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is hihgly recommanded both for you own mental health and for code sharing.</p>
+<p>VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is highly recommanded both for your own mental health and for code sharing.</p>
 <div class="section" id="id2">
 <h4>Header<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<p>As for the other language, the file header states intellectual property and gives useful details on the file versioning. Here is a quick example</p>
+<p>As for the other languages, the file header states intellectual property and gives useful details on the file versioning. Here is a quick example.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- ===============================================================================</span>
 <span class="c1">--  Authors     : Romain BEAUBOIS</span>
 <span class="c1">--  Create Date : 01 Jan 2021</span>
@@ -350,9 +352,9 @@ They can be divided in blocks separated by simple line comment with a simple tab
 </div>
 <div class="section" id="ports">
 <h4>Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h4>
-<p>It is sometime useful to organise properly your the input and outputs of a module.
-However, it may sometimes hamper column selection and incremental selections as your
-lines are getting sparsed. Here is a quick example</p>
+<p>It is sometimes useful to organise properly the inputs and outputs of a module.
+However, it may sometimes hamper column selection and incremental selection as your
+lines are getting sparsed. Here is a quick example.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">port</span><span class="p">(</span>
     <span class="c1">-- Clock/reset --</span>
     <span class="n">clk</span>     <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
@@ -376,7 +378,7 @@ lines are getting sparsed. Here is a quick example</p>
 </div>
 <div class="section" id="signal-declaration">
 <h4>Signal declaration<a class="headerlink" href="#signal-declaration" title="Permalink to this headline">¶</a></h4>
-<p>About the same principles apply to signal declaration. Try to organise your signals by grouping according to their role. Here is another example</p>
+<p>About the same principles apply to signal declaration. Try to regroup your signals according to their role or connecting module. Here is another example.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>    <span class="c1">-- Clock --</span>
     <span class="k">signal</span> <span class="n">clk</span>              <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span> <span class="c1">-- Main clock</span>
 
@@ -401,6 +403,8 @@ lines are getting sparsed. Here is a quick example</p>
     <span class="k">constant</span> <span class="n">NB_BIT_ADC</span> <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">12</span>     <span class="o">:=</span> <span class="mi">12</span><span class="p">;</span>      <span class="c1">-- Number of bits for ADC signal encoding</span>
     <span class="k">type</span> <span class="n">data_ADC_s</span> <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="n">NB_ADC</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">NB_BIT_ADC</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">-- Signal type for an array of ADC signals</span>
     <span class="k">signal</span> <span class="n">data_ADC</span>     <span class="o">:</span> <span class="n">data_ADC_s</span>                <span class="o">:=</span> <span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="sc">&#39;0&#39;</span><span class="p">));</span> <span class="c1">-- Signal for all ADC data</span>
+
+    <span class="c1">-- data_ADC(0) is a 12 bits vector corresponding to the data of your first ADC</span>
 </pre></div>
 </div>
 </div>

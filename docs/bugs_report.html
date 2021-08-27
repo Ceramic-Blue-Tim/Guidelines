@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Index &mdash; Guidelines 1.0 documentation</title>
+  <title>Bugs report &mdash; Guidelines 1.0 documentation</title>
   
 
   
@@ -39,8 +39,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Glossary" href="glossary.html" />
+    <link rel="prev" title="Miscellaneous" href="misc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,13 +91,13 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="repo_handling.html">Repository handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dev_tools.html">Development tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="good_practices.html">Good practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs_report.html">Bugs report</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bugs report</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
@@ -146,11 +148,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Bugs report</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
+          
+            <a href="_sources/bugs_report.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,11 +167,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="tex2jax_ignore mathjax_ignore section" id="bugs-report">
+<h1>Bugs report<a class="headerlink" href="#bugs-report" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>00001</strong> : Vivado won’t start on Ubuntu 20.4 due to libcommon5.so missing libraries</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install libtinfo-dev
+sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>00002</strong> : Vivado won’t start on Fedora 33 due to missing libraries</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install ncurses-compat-libs
+</pre></div>
+</div>
 </div>
 
 
@@ -175,6 +190,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="misc.html" class="btn btn-neutral float-left" title="Miscellaneous" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
