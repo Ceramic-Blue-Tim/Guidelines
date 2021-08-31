@@ -154,7 +154,7 @@ As for the other languages, the file header states intellectual property and giv
 --      > Revision 0.02 - Add fixed point representation
 --
 --  Additional Comments :
---      > For loops of matrix larger than N=10 induces negative WNS (WIP)
+--      > "for loops" of matrix larger than N=10 induces negative WNS (WIP)
 -- ===============================================================================
 ```
 
@@ -204,11 +204,11 @@ About the same principles apply to signal declaration. Try to regroup your signa
 
 ### Think generic
 
-Another important parameter is the genericity of your design. VHDL is interprated by the software roughly as a huge list of components and connections. Therefore, using generic parameters instead of fixed parameters will facilitate the scalibity of your design and simplify development.
+Another important parameter is the genericity of your design. VHDL is interpreted by the software roughly as a huge list of components and connections. Therefore, using generic parameters instead of fixed parameters will facilitate the scalibity of your design and simplify development.
 
 #### Constants
 
-The use of constants in VHDL is really imporant, it helps generic generation and really clarify your code. Moreover, they do not relate to any material generation (simply GND or VCC connection on pins). Let's take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following definitions.
+The use of constants in VHDL is really imporant, it helps generic generation and really clarify your code. Moreover, they do not relate to any material generation since they correpond to GND or VCC connections on pins (quite similar to the C preprocessor directive #define). Let's take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following definitions.
 
 ```vhdl
     constant NB_ADC     : integer range 0 to 4      := 4;       -- Number of ADC to read
@@ -221,4 +221,90 @@ The use of constants in VHDL is really imporant, it helps generic generation and
 
 #### Make packages
 
-#### Smart signals assignation
+As well defined on [nandland](https://www.nandland.com/vhdl/examples/example-package.html), a package in VHDL is a collection of functions, procedures, shared variables, constants, files, aliases, types, subtypes, attributes, and components. It can roughly be seen as a library in C. Using packages, you will able to use custom types of signal or constants in all your module as long as your include the package. A good example of package is also given on [nandland](https://www.nandland.com/vhdl/examples/example-package.html).
+
+* Package file description
+
+```vhdl
+-- Package Declaration Section
+package example_package is
+ 
+  constant c_PIXELS : integer := 65536;
+ 
+  type t_FROM_FIFO is record
+    wr_full  : std_logic;
+    rd_empty : std_logic;
+  end record t_FROM_FIFO;  
+   
+  component example_component is
+    port (
+      i_data  : in  std_logic;
+      o_rsult : out std_logic); 
+  end component example_component;
+ 
+  function Bitwise_AND (
+    i_vector : in std_logic_vector(3 downto 0))
+    return std_logic;
+   
+end package example_package;
+ 
+-- Package Body Section
+package body example_package is
+ 
+  function Bitwise_AND (
+    i_vector : in std_logic_vector(3 downto 0)
+    )
+    return std_logic is
+  begin
+    return (i_vector (0) and i_vector (1) and i_vector (2) and i_vector (3));
+  end;
+ 
+end package body example_package;
+```
+
+* Using package in modules
+
+```vhdl
+library work;
+use work.example_package.all;
+```
+
+#### Smart signals assignation using 'length
+
+Another step toward generic design comes with the use of generic signal assignation. A very useful properties of VHDL signal is the reference to their length that will help signal assignation and concatenation. Here are some applications.
+
+* Assign a value using build-in functions
+
+```vhdl
+signal counter : unsigned(31 downto 0); -- constants works well in that case too
+counter <= to_unsigned(15, counter'length);
+```
+
+* Assign from a larger signal to smaller one (truncate)
+
+```vhdl
+-- let's assume we want to get a value from the axi registers that are 32 bits wide
+signal axi_reg  : unsigned(31 downto 0);
+signal value    : unsigned(15 downto 0);
+value           <= axi_reg(value'length-1 downto 0);  
+-- obviously valid only if your value stored in axi register is intended to be coded on 16 bits 
+```
+
+* Assign from a larger signal to smaller one (truncate)
+
+```vhdl
+-- let's assume we want to write a 16 bits wide value in the 32 bits wideaxi registers 
+signal axi_reg  : unsigned(31 downto 0);
+signal value    : unsigned(15 downto 0);
+axi_reg         <= resize(value,axi_reg'length); 
+-- the same principle applies if the signals' types are different, 
+-- you just have to go through some casts to use resize and assign
+```
+
+The use of the **(others => )** syntax also is very useful so as you assign values to a whole signal without having to specify any size.
+
+```vhdl
+type t_tab_slv  is array (0 to 5) of std_logic_vector(7 downto 0);   -- Table of integers
+signal tab_slv  : t_tab_slv := (others=>(others=>'0'));              -- Init whole table to 0
+tab_slv(0)      <= (others => '1');  -- All bits of first vector in table to 1 
+```

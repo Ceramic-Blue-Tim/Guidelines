@@ -6,7 +6,17 @@
 
 **DSP** (Digital Signal Processor) : processor specialised in numeric data computing, it is optimised for pipelined or parallel calculations of large data set (multiplications, divisions, ...).  
 
+**EMIO** (Extended Multiplexed Input/Output) : signal used to exploit IOP controllers available in PS to make direct communication between PS and PL or to interact with the external IOPs via PL in case if all the MIO pins are occupied
+
 **FPGA** (Field Programmable Gate Array) : reprogrammable integrated circuit.
+
+**FSBL** (First Stage BootLoader) : boot Zynq device with optionnal FPGA configuration and loading application code.
+
+**GPIO** (General Purpose Input/Output) : i.e. led, push buttons, switchs ...
+
+**IOP** (Input Output Peripheral) :
+
+**MIO** (Multiplexed Input/Output) : pin used by PS to interact with external IOP (i.e. I2C, CAN, ...)
 
 **PL** (Programmable Logic) : programmable logic of a Zynq relates to the FPGA
 
@@ -19,3 +29,11 @@
 **VHDL** (VHSIC Hardware Description Language) : description language used to generate hardware design.
 
 **Zynq** : Xilinx SoC that integrates ARM-based processor with FPGA and hardware acceleration (CPU, DSP, ...)
+
+...
+
+_Sources_
+
+[GPIO,IOP,EMIO,MIO](https://fpgawork.com/2018/12/20/implementation-of-gpio-via-mio-and-emio-in-all-programmable-soc-ap-soc-zynq-7000/)
+
+[FSBL](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/439124055/Zynq-7000+FSBL)

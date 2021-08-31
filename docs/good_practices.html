@@ -121,7 +121,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#think-generic">Think generic</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#constants">Constants</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#make-packages">Make packages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#smart-signals-assignation">Smart signals assignation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smart-signals-assignation-using-length">Smart signals assignation using ‘length</a></li>
 </ul>
 </li>
 </ul>
@@ -345,7 +345,7 @@ They can be divided in blocks separated by simple line comment with a simple tab
 <span class="c1">--      &gt; Revision 0.02 - Add fixed point representation</span>
 <span class="c1">--</span>
 <span class="c1">--  Additional Comments :</span>
-<span class="c1">--      &gt; For loops of matrix larger than N=10 induces negative WNS (WIP)</span>
+<span class="c1">--      &gt; &quot;for loops&quot; of matrix larger than N=10 induces negative WNS (WIP)</span>
 <span class="c1">-- ===============================================================================</span>
 </pre></div>
 </div>
@@ -395,10 +395,10 @@ lines are getting sparsed. Here is a quick example.</p>
 </div>
 <div class="section" id="think-generic">
 <h3>Think generic<a class="headerlink" href="#think-generic" title="Permalink to this headline">¶</a></h3>
-<p>Another important parameter is the genericity of your design. VHDL is interprated by the software roughly as a huge list of components and connections. Therefore, using generic parameters instead of fixed parameters will facilitate the scalibity of your design and simplify development.</p>
+<p>Another important parameter is the genericity of your design. VHDL is interpreted by the software roughly as a huge list of components and connections. Therefore, using generic parameters instead of fixed parameters will facilitate the scalibity of your design and simplify development.</p>
 <div class="section" id="constants">
 <h4>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h4>
-<p>The use of constants in VHDL is really imporant, it helps generic generation and really clarify your code. Moreover, they do not relate to any material generation (simply GND or VCC connection on pins). Let’s take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following definitions.</p>
+<p>The use of constants in VHDL is really imporant, it helps generic generation and really clarify your code. Moreover, they do not relate to any material generation since they correpond to GND or VCC connections on pins (quite similar to the C preprocessor directive #define). Let’s take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following definitions.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>    <span class="k">constant</span> <span class="n">NB_ADC</span>     <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">4</span>      <span class="o">:=</span> <span class="mi">4</span><span class="p">;</span>       <span class="c1">-- Number of ADC to read</span>
     <span class="k">constant</span> <span class="n">NB_BIT_ADC</span> <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">12</span>     <span class="o">:=</span> <span class="mi">12</span><span class="p">;</span>      <span class="c1">-- Number of bits for ADC signal encoding</span>
     <span class="k">type</span> <span class="n">data_ADC_s</span> <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="n">NB_ADC</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">NB_BIT_ADC</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">-- Signal type for an array of ADC signals</span>
@@ -410,9 +410,91 @@ lines are getting sparsed. Here is a quick example.</p>
 </div>
 <div class="section" id="make-packages">
 <h4>Make packages<a class="headerlink" href="#make-packages" title="Permalink to this headline">¶</a></h4>
+<p>As well defined on <a class="reference external" href="https://www.nandland.com/vhdl/examples/example-package.html">nandland</a>, a package in VHDL is a collection of functions, procedures, shared variables, constants, files, aliases, types, subtypes, attributes, and components. It can roughly be seen as a library in C. Using packages, you will able to use custom types of signal or constants in all your module as long as your include the package. A good example of package is also given on <a class="reference external" href="https://www.nandland.com/vhdl/examples/example-package.html">nandland</a>.</p>
+<ul class="simple">
+<li><p>Package file description</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Package Declaration Section</span>
+<span class="k">package</span> <span class="n">example_package</span> <span class="k">is</span>
+ 
+  <span class="k">constant</span> <span class="n">c_PIXELS</span> <span class="o">:</span> <span class="kt">integer</span> <span class="o">:=</span> <span class="mi">65536</span><span class="p">;</span>
+ 
+  <span class="k">type</span> <span class="n">t_FROM_FIFO</span> <span class="k">is</span> <span class="k">record</span>
+    <span class="n">wr_full</span>  <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>
+    <span class="n">rd_empty</span> <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>
+  <span class="k">end</span> <span class="k">record</span> <span class="nc">t_FROM_FIFO</span><span class="p">;</span>  
+   
+  <span class="k">component</span> <span class="nc">example_component</span> <span class="k">is</span>
+    <span class="k">port</span> <span class="p">(</span>
+      <span class="n">i_data</span>  <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+      <span class="n">o_rsult</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">);</span> 
+  <span class="k">end</span> <span class="k">component</span> <span class="nc">example_component</span><span class="p">;</span>
+ 
+  <span class="k">function</span> <span class="n">Bitwise_AND</span> <span class="p">(</span>
+    <span class="n">i_vector</span> <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="kt">std_logic</span><span class="p">;</span>
+   
+<span class="k">end</span> <span class="k">package</span> <span class="nc">example_package</span><span class="p">;</span>
+ 
+<span class="c1">-- Package Body Section</span>
+<span class="k">package</span> <span class="k">body</span> <span class="n">example_package</span> <span class="k">is</span>
+ 
+  <span class="k">function</span> <span class="n">Bitwise_AND</span> <span class="p">(</span>
+    <span class="n">i_vector</span> <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="kt">std_logic</span> <span class="k">is</span>
+  <span class="k">begin</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">i_vector</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">and</span> <span class="n">i_vector</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">and</span> <span class="n">i_vector</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">and</span> <span class="n">i_vector</span> <span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+  <span class="k">end</span><span class="p">;</span>
+ 
+<span class="k">end</span> <span class="k">package</span> <span class="k">body</span> <span class="nc">example_package</span><span class="p">;</span>
+</pre></div>
 </div>
-<div class="section" id="smart-signals-assignation">
-<h4>Smart signals assignation<a class="headerlink" href="#smart-signals-assignation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Using package in modules</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">library</span> <span class="nn">work</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">work.example_package.</span><span class="k">all</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="smart-signals-assignation-using-length">
+<h4>Smart signals assignation using ‘length<a class="headerlink" href="#smart-signals-assignation-using-length" title="Permalink to this headline">¶</a></h4>
+<p>Another step toward generic design comes with the use of generic signal assignation. A very useful properties of VHDL signal is the reference to their length that will help signal assignation and concatenation. Here are some applications.</p>
+<ul class="simple">
+<li><p>Assign a value using build-in functions</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">signal</span> <span class="n">counter</span> <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">31</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- constants works well in that case too</span>
+<span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">to_unsigned</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">counter</span><span class="na">&#39;length</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Assign from a larger signal to smaller one (truncate)</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- let&#39;s assume we want to get a value from the axi registers that are 32 bits wide</span>
+<span class="k">signal</span> <span class="n">axi_reg</span>  <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">31</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="k">signal</span> <span class="n">value</span>    <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">value</span>           <span class="o">&lt;=</span> <span class="n">axi_reg</span><span class="p">(</span><span class="n">value</span><span class="na">&#39;length</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>  
+<span class="c1">-- obviously valid only if your value stored in axi register is intended to be coded on 16 bits </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Assign from a larger signal to smaller one (truncate)</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- let&#39;s assume we want to write a 16 bits wide value in the 32 bits wideaxi registers </span>
+<span class="k">signal</span> <span class="n">axi_reg</span>  <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">31</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="k">signal</span> <span class="n">value</span>    <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">axi_reg</span>         <span class="o">&lt;=</span> <span class="n">resize</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="n">axi_reg</span><span class="na">&#39;length</span><span class="p">);</span> 
+<span class="c1">-- the same principle applies if the signals&#39; types are different, </span>
+<span class="c1">-- you just have to go through some casts to use resize and assign</span>
+</pre></div>
+</div>
+<p>The use of the <strong>(others =&gt; )</strong> syntax also is very useful so as you assign values to a whole signal without having to specify any size.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">type</span> <span class="n">t_tab_slv</span>  <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="mi">5</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">7</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>   <span class="c1">-- Table of integers</span>
+<span class="k">signal</span> <span class="n">tab_slv</span>  <span class="o">:</span> <span class="n">t_tab_slv</span> <span class="o">:=</span> <span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="sc">&#39;0&#39;</span><span class="p">));</span>              <span class="c1">-- Init whole table to 0</span>
+<span class="n">tab_slv</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="o">&lt;=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">&#39;1&#39;</span><span class="p">);</span>  <span class="c1">-- All bits of first vector in table to 1 </span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

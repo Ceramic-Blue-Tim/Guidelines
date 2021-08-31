@@ -2,6 +2,12 @@
 
 ## ZCU102
 
+### Documentaion
+
+* [Architecture Libraries Guide](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2019_2/ug974-vivado-ultrascale-libraries.pdf)
+
+* [User Guide](https://www.xilinx.com/support/documentation/boards_and_kits/zcu102/ug1182-zcu102-eval-bd.pdf)
+
 ### Constraint file
 
 [ZCU102 xdc](https://www.xilinx.com/member/forms/download/design-license.html?cid=473474&filename=zcu102-xdc-rdf0405.zip)
