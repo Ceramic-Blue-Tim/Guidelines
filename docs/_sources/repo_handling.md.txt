@@ -31,9 +31,11 @@ Repository
 ├───data
 ├───doc
 ├───fpga
+│   ├───c
 │   ├───hdl
 │   ├───tb
 │   ├───vivado_project
+│   ├───vitis_project
 │   ├───waves
 │   └───xdc
 ├───matlab
@@ -47,7 +49,7 @@ Even if you are mostly working alone on repository, the use of branches is still
 
 ## Push daily
 
-Staging your changes online once a day at the end of the day is a good practice to have. It will first prevent data losses that may occur (whims of windows, earthquake, theft, ... _it might seems quite paranoid until you didn't experience it yourself but I can assure you that it does happen_). Your collaborators from different time zones as well as supervisors will be able to follow up your progress regularly facilitating meetings and advicing. Moreover, you have access to your up to date sources almost everywhere.
+Staging your changes online once a day at the end of the day is a good practice to have. It will first prevent data losses that may occur (whims of windows, earthquake, theft, bicycle accident, ... _it might seems quite paranoid but it does happen_). Your collaborators from different time zones as well as supervisors will be able to follow up your progress regularly facilitating meetings and advicing. Moreover, you have access to your up to date sources almost everywhere.
 
 ## Few more rules
 

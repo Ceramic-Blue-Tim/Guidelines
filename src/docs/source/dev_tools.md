@@ -4,6 +4,9 @@
 
 ### Sphinx + extensions
 
+Sphinx was initially developped to document Python sources but can also applied to several other sources thanks to extensions.
+Mainly based on the used of [reStructuredText](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) (or Markdown with extensions) it allows the generation of html documentation easily. Using the autodoc function, documentation is generated from the docstrings in sources. Since it is Python based, package managing for installation as well as extensions are simple and port well.
+
 ### Doxygen
 
 ### Doxygen + Breathe + Sphinx
@@ -15,6 +18,10 @@
 [**Sphinx Read the docs theme**](https://pypi.org/project/sphinx-rtd-theme/)
 
 [**Sphinx autodoc Matlab**](https://pypi.org/project/sphinxcontrib-matlabdomain/)
+
+[**Sphinx markdown sourcing](https://myst-parser.readthedocs.io/en/latest/sphinx/intro.html)
+
+[Sphinx math equations](https://pypi.org/project/mathjax/)
 
 [**Doxygen**](https://www.doxygen.nl/index.html)
 

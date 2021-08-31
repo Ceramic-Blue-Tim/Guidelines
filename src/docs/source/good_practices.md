@@ -290,13 +290,13 @@ value           <= axi_reg(value'length-1 downto 0);
 -- obviously valid only if your value stored in axi register is intended to be coded on 16 bits 
 ```
 
-* Assign from a larger signal to smaller one (truncate)
+* Assign from a smaller signal to larger one (resize)
 
 ```vhdl
--- let's assume we want to write a 16 bits wide value in the 32 bits wideaxi registers 
+-- let's assume we want to write a 16 bits wide value in the 32 bits wide axi registers 
 signal axi_reg  : unsigned(31 downto 0);
 signal value    : unsigned(15 downto 0);
-axi_reg         <= resize(value,axi_reg'length); 
+axi_reg         <= resize(value, axi_reg'length); 
 -- the same principle applies if the signals' types are different, 
 -- you just have to go through some casts to use resize and assign
 ```
