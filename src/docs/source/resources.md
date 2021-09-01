@@ -1,4 +1,4 @@
-# Resources
+# Boards resources
 
 ## ZCU102
 

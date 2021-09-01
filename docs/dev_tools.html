@@ -90,7 +90,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="repo_handling.html">Repository handling</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Development tools</a><ul>
@@ -132,10 +132,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="good_practices.html">Good practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Boards resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs_report.html">Bugs report</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs_report.html">Bugs report</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
@@ -212,6 +213,22 @@
 <h3>Sphinx + extensions<a class="headerlink" href="#sphinx-extensions" title="Permalink to this headline">¶</a></h3>
 <p>Sphinx was initially developped to document Python sources but can also applied to several other sources thanks to extensions.
 Mainly based on the used of <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a> (or Markdown with extensions) it allows the generation of html documentation easily. Using the autodoc function, documentation is generated from the docstrings in sources. Since it is Python based, package managing for installation as well as extensions are simple and port well.</p>
+<p>If you have pip installed you can get through the installation of sphinx and extensions using the following commands.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>pip install Sphinx
+pip install sphinxcontrib-matlabdomain
+pip install sphinx-rtd-theme
+pip install myst-parser
+pip install mathjax
+pip install sphinx-autodoc-variants
+</pre></div>
+</div>
+<p>On linux generated bin are located in user local in so as you may want to create a symbolic link to your /bin.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sudo ln -s /home/username/.local/bin/sphinx-autogen /bin/sphinx-autogen
+sudo ln -s /home/username/.local/bin/sphinx-quickstart /bin/sphinx-quickstart
+sudo ln -s /home/username/.local/bin/sphinx-apidoc /bin/sphinx-apidoc
+sudo ln -s /home/username/.local/bin/sphinx-build /bin/sphinx-build
+</pre></div>
+</div>
 </div>
 <div class="section" id="doxygen">
 <h3>Doxygen<a class="headerlink" href="#doxygen" title="Permalink to this headline">¶</a></h3>
@@ -224,8 +241,8 @@ Mainly based on the used of <a class="reference external" href="https://www.sphi
 <p><a class="reference external" href="https://www.sphinx-doc.org/en/master/"><strong>Sphinx</strong></a></p>
 <p><a class="reference external" href="https://pypi.org/project/sphinx-rtd-theme/"><strong>Sphinx Read the docs theme</strong></a></p>
 <p><a class="reference external" href="https://pypi.org/project/sphinxcontrib-matlabdomain/"><strong>Sphinx autodoc Matlab</strong></a></p>
-<p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/sphinx/intro.html">**Sphinx markdown sourcing</a></p>
-<p><a class="reference external" href="https://pypi.org/project/mathjax/">Sphinx math equations</a></p>
+<p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/sphinx/intro.html"><strong>Sphinx markdown sourcing</strong></a></p>
+<p><a class="reference external" href="https://pypi.org/project/mathjax/"><strong>Sphinx math equations</strong></a></p>
 <p><a class="reference external" href="https://www.doxygen.nl/index.html"><strong>Doxygen</strong></a></p>
 <p><a class="reference external" href="https://pypi.org/project/breathe/"><strong>Breathe</strong></a></p>
 <p><a class="reference external" href="https://breathe.readthedocs.io/en/latest/index.html"><strong>Breathe documentation</strong></a></p>

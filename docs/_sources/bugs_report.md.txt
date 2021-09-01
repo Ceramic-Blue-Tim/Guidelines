@@ -11,3 +11,12 @@ sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so
 ```Bash
 sudo dnf install ncurses-compat-libs
 ```
+
+* **00003** : Wrong setup RAM ZCU102
+Boards presets on ZCU102 do not necessarly match the RAM installed due end of line notification initial component. Details are found [here](https://www.xilinx.com/support/answers/71961.html).
+
+* **00004** : Can't load templates from custom platform on Vitis 2020.2
+```Bash
+# In vivado tcl console
+set_property platform.uses_pr 0 [current_project]
+```

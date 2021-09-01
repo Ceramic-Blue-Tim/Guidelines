@@ -7,6 +7,25 @@
 Sphinx was initially developped to document Python sources but can also applied to several other sources thanks to extensions.
 Mainly based on the used of [reStructuredText](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) (or Markdown with extensions) it allows the generation of html documentation easily. Using the autodoc function, documentation is generated from the docstrings in sources. Since it is Python based, package managing for installation as well as extensions are simple and port well.
 
+If you have pip installed you can get through the installation of sphinx and extensions using the following commands.
+
+```Bash
+pip install Sphinx
+pip install sphinxcontrib-matlabdomain
+pip install sphinx-rtd-theme
+pip install myst-parser
+pip install mathjax
+pip install sphinx-autodoc-variants
+```
+
+On linux generated bin are located in user local in so as you may want to create a symbolic link to your /bin.
+```Bash
+sudo ln -s /home/username/.local/bin/sphinx-autogen /bin/sphinx-autogen
+sudo ln -s /home/username/.local/bin/sphinx-quickstart /bin/sphinx-quickstart
+sudo ln -s /home/username/.local/bin/sphinx-apidoc /bin/sphinx-apidoc
+sudo ln -s /home/username/.local/bin/sphinx-build /bin/sphinx-build
+```
+
 ### Doxygen
 
 ### Doxygen + Breathe + Sphinx
@@ -19,9 +38,9 @@ Mainly based on the used of [reStructuredText](https://www.sphinx-doc.org/en/mas
 
 [**Sphinx autodoc Matlab**](https://pypi.org/project/sphinxcontrib-matlabdomain/)
 
-[**Sphinx markdown sourcing](https://myst-parser.readthedocs.io/en/latest/sphinx/intro.html)
+[**Sphinx markdown sourcing**](https://myst-parser.readthedocs.io/en/latest/sphinx/intro.html)
 
-[Sphinx math equations](https://pypi.org/project/mathjax/)
+[**Sphinx math equations**](https://pypi.org/project/mathjax/)
 
 [**Doxygen**](https://www.doxygen.nl/index.html)
 

@@ -114,7 +114,7 @@ They can be divided in blocks separated by simple line comment with a simple tab
         ...
 ```
 
-#### Inline comments
+#### Inline
 
 Inline comments are mostly used for variables declaration or assignation so as they describe what si the variable for, what operation is performed or what is the unit.
 ```Matlab

@@ -9,9 +9,10 @@ Guidelines, good practices and tips
    dev_tools
    good_practices
    resources
+   biblio
    misc
-   bugs_report
    glossary
+   bugs_report
    support
 
 Indices and tables
