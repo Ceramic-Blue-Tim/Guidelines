@@ -16,6 +16,8 @@ pip install sphinx-rtd-theme
 pip install myst-parser
 pip install mathjax
 pip install sphinx-autodoc-variants
+pip install 
+pip install sphinxcontrib-bibtex
 ```
 
 On linux generated bin are located in user local in so as you may want to create a symbolic link to your /bin.

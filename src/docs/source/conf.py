@@ -37,7 +37,12 @@ extensions = ['sphinxcontrib.matlab',
 'sphinx.ext.mathjax',
 'sphinx.ext.viewcode', 'myst_parser',
 'sphinx.ext.autosummary',
-'sphinx.ext.extlinks']
+'sphinx.ext.extlinks',
+'sphinxcontrib.bibtex']
+
+bibtex_bibfiles = ['Bibliography/electroceuticals.bib',
+'Bibliography/multicomp_modeling.bib',
+'Bibliography/farad.bib']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -66,3 +71,4 @@ source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
+# bibtex_bibfiles = ['_static/refs.bib']
