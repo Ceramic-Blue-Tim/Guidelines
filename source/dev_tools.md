@@ -16,7 +16,6 @@ pip install sphinx-rtd-theme
 pip install myst-parser
 pip install mathjax
 pip install sphinx-autodoc-variants
-pip install 
 pip install sphinxcontrib-bibtex
 ```
 
@@ -34,15 +33,7 @@ sudo ln -s /home/username/.local/bin/sphinx-build /bin/sphinx-build
 
 ### Links
 
-[**Sphinx**](https://www.sphinx-doc.org/en/master/)
-
-[**Sphinx Read the docs theme**](https://pypi.org/project/sphinx-rtd-theme/)
-
-[**Sphinx autodoc Matlab**](https://pypi.org/project/sphinxcontrib-matlabdomain/)
-
-[**Sphinx markdown sourcing**](https://myst-parser.readthedocs.io/en/latest/sphinx/intro.html)
-
-[**Sphinx math equations**](https://pypi.org/project/mathjax/)
+[**Sphinx**](https://www.sphinx-doc.org/en/master/) + [**Read the docs theme**](https://pypi.org/project/sphinx-rtd-theme/) - [**Autodoc Matlab**](https://pypi.org/project/sphinxcontrib-matlabdomain/) - [**Markdown sourcing**](https://myst-parser.readthedocs.io/en/latest/sphinx/intro.html) - [**Math equations**](https://pypi.org/project/mathjax/)
 
 [**Doxygen**](https://www.doxygen.nl/index.html)
 
