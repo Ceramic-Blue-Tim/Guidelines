@@ -5,14 +5,14 @@ Guidelines, good practices and tips
    :maxdepth: 2
    :caption: Contents:
 
-   repo_handling
-   dev_tools
-   good_practices
-   resources
    biblio
-   misc
-   glossary
+   boards_resources
    bugs_report
+   dev_tools
+   glossary
+   good_practices
+   misc
+   repo_handling
    support
 
 Indices and tables
