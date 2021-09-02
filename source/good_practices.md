@@ -158,6 +158,23 @@ As for the other languages, the file header states intellectual property and giv
 -- ===============================================================================
 ```
 
+A more documentation-friendly approach based on Doxygen docstrings and that is working with well with teros hdl is as below.
+```vhdl
+--! @title      New ionic channel state computation
+--! @file       xnew.vhd
+--! @author     Romain Beaubois
+--! @date       02 Sep 2021
+--! @version    0.1
+--! @copyright
+--! SPDX-FileCopyrightText: © <year> <copyright holder> <email>
+--! SPDX-License-Identifier: GPL-3.0-or-later
+--!
+--! @brief Compute new value of an ionic channel from pre-multiplied rates
+--! > Write enable is selected depending on the channel to fill
+```
+
+_Better copyright claiming compliant to standards as well licensing will be uploaded soon._
+
 #### Ports
 
 It is sometimes useful to organise properly the inputs and outputs of a module.
