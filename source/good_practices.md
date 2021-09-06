@@ -116,7 +116,8 @@ They can be divided in blocks separated by simple line comment with a simple tab
 
 #### Inline
 
-Inline comments are mostly used for variables declaration or assignation so as they describe what si the variable for, what operation is performed or what is the unit.
+Inline comments are mostly used for variables declaration or assignation so as they describe what the variable is representing, what operation is performed or what is the unit.
+
 ```Matlab
     dt              = 2^-5;     % ms - Time step
     sim_time        = 30e3;     % ms - Simulation time
@@ -158,7 +159,7 @@ As for the other languages, the file header states intellectual property and giv
 -- ===============================================================================
 ```
 
-A more documentation-friendly approach based on Doxygen docstrings and that is working with well with teros hdl is as below.
+A more documentation-friendly approach based on Doxygen docstrings and that works well with TerosHDL is as below.
 ```vhdl
 --! @title      New ionic channel state computation
 --! @file       xnew.vhd
@@ -173,7 +174,7 @@ A more documentation-friendly approach based on Doxygen docstrings and that is w
 --! > Write enable is selected depending on the channel to fill
 ```
 
-_Better copyright claiming compliant to standards as well licensing will be uploaded soon._
+_Better copyright and licensing claiming that complies to current standards will be uploaded soon._
 
 #### Ports
 
@@ -204,7 +205,7 @@ port(
 
 #### Signal declaration
 
-About the same principles apply to signal declaration. Try to regroup your signals according to their role or connecting module. Here is another example.
+About the same principles apply to signal declaration. Try to regroup your signals according to their role or to the modules they are connecting to. Here is another example.
 
 ```vhdl
     -- Clock --
@@ -221,11 +222,11 @@ About the same principles apply to signal declaration. Try to regroup your signa
 
 ### Think generic
 
-Another important parameter is the genericity of your design. VHDL is interpreted by the software roughly as a huge list of components and connections. Therefore, using generic parameters instead of fixed parameters will facilitate the scalibity of your design and simplify development.
+Another important parameter is the genericity of your design. Using generic parameters instead of fixed parameters will clarify your description and simplify the development.
 
 #### Constants
 
-The use of constants in VHDL is really imporant, it helps generic generation and really clarify your code. Moreover, they do not relate to any material generation since they correpond to GND or VCC connections on pins (quite similar to the C preprocessor directive #define). Let's take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following definitions.
+The use of constants in VHDL is really imporant, it helps generic generation and really clarifies your code. Moreover, they do not relate to any material generation since they correpond to GND or VCC connections on pins (quite similar to the C preprocessor directive #define). Let's take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following description.
 
 ```vhdl
     constant NB_ADC     : integer range 0 to 4      := 4;       -- Number of ADC to read
@@ -238,7 +239,7 @@ The use of constants in VHDL is really imporant, it helps generic generation and
 
 #### Make packages
 
-As well defined on [nandland](https://www.nandland.com/vhdl/examples/example-package.html), a package in VHDL is a collection of functions, procedures, shared variables, constants, files, aliases, types, subtypes, attributes, and components. It can roughly be seen as a library in C. Using packages, you will able to use custom types of signal or constants in all your module as long as your include the package. A good example of package is also given on [nandland](https://www.nandland.com/vhdl/examples/example-package.html).
+As well defined on [nandland](https://www.nandland.com/vhdl/examples/example-package.html), a package in VHDL is a collection of functions, procedures, shared variables, constants, files, aliases, types, subtypes, attributes and components. It can, in some extents, roughly be seen as a library in C. Using packages will allow global signal type and constants declaration as long as you include the package in the module. A good example of package is also given on [nandland](https://www.nandland.com/vhdl/examples/example-package.html).
 
 * Package file description
 
@@ -288,7 +289,7 @@ use work.example_package.all;
 
 #### Smart signals assignation using 'length
 
-Another step toward generic design comes with the use of generic signal assignation. A very useful properties of VHDL signal is the reference to their length that will help signal assignation and concatenation. Here are some applications.
+Another step toward generic design comes with the use of generic signal assignation. A very useful property of VHDL signals is the reference to their length that helps signal assignation and concatenation. Here are some applications.
 
 * Assign a value using build-in functions
 
@@ -321,7 +322,7 @@ axi_reg         <= resize(value, axi_reg'length);
 The use of the **(others => )** syntax also is very useful so as you assign values to a whole signal without having to specify any size.
 
 ```vhdl
-type t_tab_slv  is array (0 to 5) of std_logic_vector(7 downto 0);   -- Table of integers
+type t_tab_slv  is array (0 to 5) of std_logic_vector(7 downto 0);   -- Table of slv
 signal tab_slv  : t_tab_slv := (others=>(others=>'0'));              -- Init whole table to 0
 tab_slv(0)      <= (others => '1');  -- All bits of first vector in table to 1 
 ```

@@ -61,4 +61,4 @@ Staging your changes online once a day at the end of the day is a good practice 
 
 [**GitHub**](https://github.com/)
 
-[**Sourcetrre**](https://www.sourcetreeapp.com/)
+[**Sourcetree**](https://www.sourcetreeapp.com/)

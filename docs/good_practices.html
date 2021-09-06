@@ -308,7 +308,7 @@ They can be divided in blocks separated by simple line comment with a simple tab
 </div>
 <div class="section" id="inline">
 <h4>Inline<a class="headerlink" href="#inline" title="Permalink to this headline">¶</a></h4>
-<p>Inline comments are mostly used for variables declaration or assignation so as they describe what si the variable for, what operation is performed or what is the unit.</p>
+<p>Inline comments are mostly used for variables declaration or assignation so as they describe what the variable is representing, what operation is performed or what is the unit.</p>
 <div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">dt</span><span class="w">              </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>^<span class="o">-</span><span class="mi">5</span><span class="p">;</span><span class="w">     </span><span class="c">% ms - Time step</span><span class="w"></span>
 <span class="w">    </span><span class="n">sim_time</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="mf">30e3</span><span class="p">;</span><span class="w">     </span><span class="c">% ms - Simulation time</span><span class="w"></span>
 
@@ -350,7 +350,7 @@ They can be divided in blocks separated by simple line comment with a simple tab
 <span class="c1">-- ===============================================================================</span>
 </pre></div>
 </div>
-<p>A more documentation-friendly approach based on Doxygen docstrings and that is working with well with teros hdl is as below.</p>
+<p>A more documentation-friendly approach based on Doxygen docstrings and that works well with TerosHDL is as below.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--! @title      New ionic channel state computation</span>
 <span class="c1">--! @file       xnew.vhd</span>
 <span class="c1">--! @author     Romain Beaubois</span>
@@ -364,7 +364,7 @@ They can be divided in blocks separated by simple line comment with a simple tab
 <span class="c1">--! &gt; Write enable is selected depending on the channel to fill</span>
 </pre></div>
 </div>
-<p><em>Better copyright claiming compliant to standards as well licensing will be uploaded soon.</em></p>
+<p><em>Better copyright and licensing claiming that complies to current standards will be uploaded soon.</em></p>
 </div>
 <div class="section" id="ports">
 <h4>Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h4>
@@ -394,7 +394,7 @@ lines are getting sparsed. Here is a quick example.</p>
 </div>
 <div class="section" id="signal-declaration">
 <h4>Signal declaration<a class="headerlink" href="#signal-declaration" title="Permalink to this headline">¶</a></h4>
-<p>About the same principles apply to signal declaration. Try to regroup your signals according to their role or connecting module. Here is another example.</p>
+<p>About the same principles apply to signal declaration. Try to regroup your signals according to their role or to the modules they are connecting to. Here is another example.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>    <span class="c1">-- Clock --</span>
     <span class="k">signal</span> <span class="n">clk</span>              <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span> <span class="c1">-- Main clock</span>
 
@@ -411,10 +411,10 @@ lines are getting sparsed. Here is a quick example.</p>
 </div>
 <div class="section" id="think-generic">
 <h3>Think generic<a class="headerlink" href="#think-generic" title="Permalink to this headline">¶</a></h3>
-<p>Another important parameter is the genericity of your design. VHDL is interpreted by the software roughly as a huge list of components and connections. Therefore, using generic parameters instead of fixed parameters will facilitate the scalibity of your design and simplify development.</p>
+<p>Another important parameter is the genericity of your design. Using generic parameters instead of fixed parameters will clarify your description and simplify the development.</p>
 <div class="section" id="constants">
 <h4>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h4>
-<p>The use of constants in VHDL is really imporant, it helps generic generation and really clarify your code. Moreover, they do not relate to any material generation since they correpond to GND or VCC connections on pins (quite similar to the C preprocessor directive #define). Let’s take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following definitions.</p>
+<p>The use of constants in VHDL is really imporant, it helps generic generation and really clarifies your code. Moreover, they do not relate to any material generation since they correpond to GND or VCC connections on pins (quite similar to the C preprocessor directive #define). Let’s take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following description.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>    <span class="k">constant</span> <span class="n">NB_ADC</span>     <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">4</span>      <span class="o">:=</span> <span class="mi">4</span><span class="p">;</span>       <span class="c1">-- Number of ADC to read</span>
     <span class="k">constant</span> <span class="n">NB_BIT_ADC</span> <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">12</span>     <span class="o">:=</span> <span class="mi">12</span><span class="p">;</span>      <span class="c1">-- Number of bits for ADC signal encoding</span>
     <span class="k">type</span> <span class="n">data_ADC_s</span> <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="n">NB_ADC</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">NB_BIT_ADC</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">-- Signal type for an array of ADC signals</span>
@@ -426,7 +426,7 @@ lines are getting sparsed. Here is a quick example.</p>
 </div>
 <div class="section" id="make-packages">
 <h4>Make packages<a class="headerlink" href="#make-packages" title="Permalink to this headline">¶</a></h4>
-<p>As well defined on <a class="reference external" href="https://www.nandland.com/vhdl/examples/example-package.html">nandland</a>, a package in VHDL is a collection of functions, procedures, shared variables, constants, files, aliases, types, subtypes, attributes, and components. It can roughly be seen as a library in C. Using packages, you will able to use custom types of signal or constants in all your module as long as your include the package. A good example of package is also given on <a class="reference external" href="https://www.nandland.com/vhdl/examples/example-package.html">nandland</a>.</p>
+<p>As well defined on <a class="reference external" href="https://www.nandland.com/vhdl/examples/example-package.html">nandland</a>, a package in VHDL is a collection of functions, procedures, shared variables, constants, files, aliases, types, subtypes, attributes and components. It can, in some extents, roughly be seen as a library in C. Using packages will allow global signal type and constants declaration as long as you include the package in the module. A good example of package is also given on <a class="reference external" href="https://www.nandland.com/vhdl/examples/example-package.html">nandland</a>.</p>
 <ul class="simple">
 <li><p>Package file description</p></li>
 </ul>
@@ -476,7 +476,7 @@ lines are getting sparsed. Here is a quick example.</p>
 </div>
 <div class="section" id="smart-signals-assignation-using-length">
 <h4>Smart signals assignation using ‘length<a class="headerlink" href="#smart-signals-assignation-using-length" title="Permalink to this headline">¶</a></h4>
-<p>Another step toward generic design comes with the use of generic signal assignation. A very useful properties of VHDL signal is the reference to their length that will help signal assignation and concatenation. Here are some applications.</p>
+<p>Another step toward generic design comes with the use of generic signal assignation. A very useful property of VHDL signals is the reference to their length that helps signal assignation and concatenation. Here are some applications.</p>
 <ul class="simple">
 <li><p>Assign a value using build-in functions</p></li>
 </ul>
@@ -506,7 +506,7 @@ lines are getting sparsed. Here is a quick example.</p>
 </pre></div>
 </div>
 <p>The use of the <strong>(others =&gt; )</strong> syntax also is very useful so as you assign values to a whole signal without having to specify any size.</p>
-<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">type</span> <span class="n">t_tab_slv</span>  <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="mi">5</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">7</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>   <span class="c1">-- Table of integers</span>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">type</span> <span class="n">t_tab_slv</span>  <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="mi">5</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">7</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>   <span class="c1">-- Table of slv</span>
 <span class="k">signal</span> <span class="n">tab_slv</span>  <span class="o">:</span> <span class="n">t_tab_slv</span> <span class="o">:=</span> <span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="sc">&#39;0&#39;</span><span class="p">));</span>              <span class="c1">-- Init whole table to 0</span>
 <span class="n">tab_slv</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="o">&lt;=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">&#39;1&#39;</span><span class="p">);</span>  <span class="c1">-- All bits of first vector in table to 1 </span>
 </pre></div>

@@ -53,9 +53,7 @@ The built-in editor of Matlab although it is customable in terms of syntax color
 
 ### Links
 
-[**VSCode**](https://code.visualstudio.com/)
-
-[**Matlab plugin**](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab)
+[**VSCode**](https://code.visualstudio.com/) + [**Matlab plugin**](https://marketplace.visualstudio.com/items?itemName=Gimly81.matlab)
 
 ## Python
 
@@ -91,13 +89,7 @@ The alternative is the use of anaconda that a very complete platform that will a
 
 ### Links
 
-[**VSCode**](https://code.visualstudio.com/)
-
-[**Python**](https://www.python.org/)
-
-[**Python Linter for VSCode**](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-
-[**Python Extension for VSCode**](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+[**VSCode**](https://code.visualstudio.com/) + [**Python**](https://www.python.org/) - [**Python Linter VSCode**](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - [**Python Extension VSCode**](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 
 [**Pip documentation**](https://pip.pypa.io/en/stable/cli/pip_install/)
 
@@ -145,8 +137,4 @@ While it is a very complete IDE with many built-in features, its editor remains 
 
 ### Links
 
-[**VSCode**](https://code.visualstudio.com/)
-
-[**TerosHDL**](https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl)
-
-[**Incremental selection**](https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection)
+[**VSCode**](https://code.visualstudio.com/) + [**TerosHDL**](https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl) -[**Incremental selection**](https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection)
