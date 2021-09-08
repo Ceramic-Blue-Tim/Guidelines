@@ -136,70 +136,65 @@ WIP
 
 ### Comments
 
-VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is highly recommanded both for your own mental health and for code sharing.
+VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is highly recommanded both for your own mental health and for code sharing. The following examples describes docstring oriented commenting practices that can be interpreted either by Doxygen or TerosHDL ([TerosHDL documenter](https://terostechnology.github.io/terosHDLdoc/features/documenter.html)).
 
 #### Header
 
-As for the other languages, the file header states intellectual property and gives useful details on the file versioning. Here is a quick example.
+A documentation-friendly approach based on Doxygen docstrings and that works well with TerosHDL is as below.
 
 ```vhdl
--- ===============================================================================
---  Authors     : Romain BEAUBOIS
---  Create Date : 01 Jan 2021
---  Update Date : 23 Aug 2021
---
---  Description : Top module of SNN-SHH-MMN
---
---  Revision:
---      > Revision 0.01 - File created
---      > Revision 0.02 - Add fixed point representation
---
---  Additional Comments :
---      > "for loops" of matrix larger than N=10 induces negative WNS (WIP)
--- ===============================================================================
-```
-
-A more documentation-friendly approach based on Doxygen docstrings and that works well with TerosHDL is as below.
-```vhdl
---! @title      New ionic channel state computation
---! @file       xnew.vhd
---! @author     Romain Beaubois
---! @date       02 Sep 2021
+--! @title      Single port RAM
+--! @file       SPRAM.vhd
+--! @author     Bruce Wayne, Clark Kent
+--! @date       01 Jan 2021
 --! @version    0.1
 --! @copyright
---! SPDX-FileCopyrightText: © <year> <copyright holder> <email>
+--! SPDX-FileCopyrightText: © 2018 Bruce Wayne <bwayne@gmail.com>
+--! SPDX-FileCopyrightText: © 2021 Clark Kent <ckent@gmail.com>
 --! SPDX-License-Identifier: GPL-3.0-or-later
 --!
---! @brief Compute new value of an ionic channel from pre-multiplied rates
---! > Write enable is selected depending on the channel to fill
+--! @brief
+--! Single port RAM with generic RAM and DATA size
+--! * can be initialized from a file
+--! 
+--! @details
+--! > **01 Jan 2018** : file creation (BW)
+--! > **01 Jan 2021** : add init from file (CK)
 ```
 
-_Better copyright and licensing claiming that complies to current standards will be uploaded soon._
+_Better copyright and licensing claiming that complies to current standards will be uploaded soon but for now they are stated following the format below (source: [here](https://matija.suklje.name/how-and-why-to-properly-write-copyright-statements-in-your-code))._
+
+```Bash
+SPDX-FileCopyrightText: © {$year_of_file_creation} {$name_of_copyright_holder} <{$contact}>
+SPDX-License-Identifier: {$SPDX_license_name}
+```
+
+Header can be completed by a [waveform description](https://wavedrom.com/tutorial.html) of the module behavior if you are using TerosHDL ([TerosHDL documenter](https://terostechnology.github.io/terosHDLdoc/features/documenter.html)).
 
 #### Ports
 
 It is sometimes useful to organise properly the inputs and outputs of a module.
 However, it may sometimes hamper column selection and incremental selection as your
-lines are getting sparsed. Here is a quick example.
+lines are getting sparsed. Here is a quick example. The "!" after the comment marker is used to generate doctrings.
 
 ```vhdl
 port(
     -- Clock/reset --
-    clk     : in  std_logic;
-    reset   : in  std_logic;
+    clk     : in  std_logic;    --! Clock
+    reset   : in  std_logic;    --! Reset
 
     -- SPI --
-    DAC_sclk    : out std_logic;
-    DAC_cs      : out std_logic;
-    DAC_mosi    : out std_logic;
+    DAC_sclk    : out std_logic;    --! System clock
+    DAC_cs      : out std_logic;    --! Chip select
+    DAC_mosi    : out std_logic;    --! Master output slave input
 
     -- PSU -> FPGA via AXI LITE
         -- RAM control
-        PSU_en_write    : in std_logic;
-        PSU_addrw       : in std_logic_vector(ADDRSIZE-1 downto 0);
+        PSU_en_write    : in std_logic; --! RAM write enable from PSU via AXI
+        PSU_addrw       : in std_logic_vector(ADDRSIZE-1 downto 0); --! RAM write address from PSU via AXI
 
         -- Conductance
-        PSU_GK      : in std_logic_vector(INT+DEC downto 0)
+        PSU_GK      : in std_logic_vector(INT+DEC downto 0) --! Conductance from PSU via AXI
 );
 ```
 
@@ -209,15 +204,15 @@ About the same principles apply to signal declaration. Try to regroup your signa
 
 ```vhdl
     -- Clock --
-    signal clk              : std_logic; -- Main clock
+    signal clk              : std_logic; --! Main clock
 
     -- DSP pipelines
-    signal A    : signed(7+DEC downto 0)    := (others => '0'); -- DSP multiplier inputs
-    signal B    : signed(7+DEC downto 0)    := (others => '0'); -- DSP multiplier inputs
+    signal A    : signed(7+DEC downto 0)    := (others => '0'); --! DSP multiplier inputs
+    signal B    : signed(7+DEC downto 0)    := (others => '0'); --! DSP multiplier inputs
 
     -- Time --
-    signal tick             : std_logic := '0';                 -- Computation enable
-    signal tick_counter     : std_logic_vector(11 downto 0);    -- Counts clock cycle to generate ticks
+    signal tick             : std_logic := '0';                 --! Computation enable
+    signal tick_counter     : std_logic_vector(11 downto 0);    --! Counts clock cycle to generate ticks
 ```
 
 ### Think generic
