@@ -8,6 +8,10 @@
 
 * [User Guide](https://www.xilinx.com/support/documentation/boards_and_kits/zcu102/ug1182-zcu102-eval-bd.pdf)
 
+* [Creating and packaging IP](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_1/ug1118-vivado-creating-packaging-custom-ip.pdf)
+
+* [Embedded processor design](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2019_1/ug940-vivado-tutorial-embedded-design.pdf)
+
 ### Constraint file
 
 * [ZCU102 xdc](https://www.xilinx.com/member/forms/download/design-license.html?cid=473474&filename=zcu102-xdc-rdf0405.zip)
