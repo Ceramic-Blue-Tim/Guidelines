@@ -12,6 +12,8 @@
 
 **FSBL** (First Stage BootLoader) : boot Zynq device with optionnal FPGA configuration and loading application code.
 
+**GIC** (Generic Interrupt Controller) : used for PS side interrupts, (Xintc for PL)
+
 **GPIO** (General Purpose Input/Output) : i.e. led, push buttons, switchs ...
 
 **IOP** (Input Output Peripheral) :

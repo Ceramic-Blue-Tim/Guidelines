@@ -20,3 +20,11 @@ If you feel skeptical about the usefulness and convenience of a password manager
 [Download page](https://keepass.info/download.html)
 
 Since it is cross-platform and works on a light database file, you could think of a cloud hosted database used to refresh and update all local databases on your device. I recommend [Nextcloud](https://nextcloud.com/) as a self-hosted cloud but other alternatives sure exist.
+
+## Interfaces using Qt
+
+A convenient way to create GUI is the use of Qt Designer along with Python. Qt Designer provides a graphical interface to developp the GUI that can later be translated to Python. 
+```Bash
+pip install PyQt5
+pip install qt5-tools
+```

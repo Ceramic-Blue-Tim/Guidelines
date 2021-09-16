@@ -1,5 +1,9 @@
 # Boards resources
 
+## Inventory
+
+Team's inventory is [**here**](https://github.com/orgs/Ceramic-Blue-Tim/projects/1).
+
 ## ZCU102
 
 ### Documentaion
