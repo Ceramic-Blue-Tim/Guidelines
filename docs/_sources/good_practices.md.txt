@@ -162,7 +162,7 @@ A documentation-friendly approach based on Doxygen docstrings and that works wel
 --! > **01 Jan 2021** : add init from file (CK)
 ```
 
-_Better copyright and licensing claiming that complies to current standards will be uploaded soon but for now they are stated following the format below (source: [here](https://matija.suklje.name/how-and-why-to-properly-write-copyright-statements-in-your-code))._
+_Better copyright and licensing claiming that complies to current standards will be uploaded soon but for now they are stated following the format below ([source](https://matija.suklje.name/how-and-why-to-properly-write-copyright-statements-in-your-code))._
 
 ```Bash
 SPDX-FileCopyrightText: © {$year_of_file_creation} {$name_of_copyright_holder} <{$contact}>

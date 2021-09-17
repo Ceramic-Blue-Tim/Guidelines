@@ -15,9 +15,9 @@ Guidelines, good practices and tips
    repo_handling
    support
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Utilities
+=========
+* `Inventory <https://github.com/orgs/Ceramic-Blue-Tim/projects/1>`_
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`

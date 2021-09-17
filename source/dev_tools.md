@@ -19,7 +19,7 @@ pip install sphinx-autodoc-variants
 pip install sphinxcontrib-bibtex
 ```
 
-On linux generated bin are located in user local in so as you may want to create a symbolic link to your /bin.
+On linux generated bin are located in user local so as you may want to create a symbolic link to your /bin.
 ```Bash
 sudo ln -s /home/username/.local/bin/sphinx-autogen /bin/sphinx-autogen
 sudo ln -s /home/username/.local/bin/sphinx-quickstart /bin/sphinx-quickstart
@@ -137,4 +137,4 @@ While it is a very complete IDE with many built-in features, its editor remains 
 
 ### Links
 
-[**VSCode**](https://code.visualstudio.com/) + [**TerosHDL**](https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl) -[**Incremental selection**](https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection)
+[**VSCode**](https://code.visualstudio.com/) + [**TerosHDL**](https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl) - [**Incremental selection**](https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection)

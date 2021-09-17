@@ -8,6 +8,8 @@
 
 **EMIO** (Extended Multiplexed Input/Output) : signal used to exploit IOP controllers available in PS to make direct communication between PS and PL or to interact with the external IOPs via PL in case if all the MIO pins are occupied
 
+**FDRE** : D Flip-Flop with Clock Enable and Synchronous Reset
+
 **FPGA** (Field Programmable Gate Array) : reprogrammable integrated circuit.
 
 **FSBL** (First Stage BootLoader) : boot Zynq device with optionnal FPGA configuration and loading application code.
@@ -34,7 +36,7 @@
 
 ...
 
-_Sources_
+_Sources :_
 
 [GPIO,IOP,EMIO,MIO](https://fpgawork.com/2018/12/20/implementation-of-gpio-via-mio-and-emio-in-all-programmable-soc-ap-soc-zynq-7000/)
 
