@@ -24,14 +24,24 @@ WIP
 
 WIP
 
+## Zybo Z7
+
+### Documentation
+
+* [**User Guide**](https://www.xilinx.com/support/documentation/user_guides/ug585-Zynq-7000-TRM.pdf)
+
+### Constraint file
+
+* [Zybo Z7 xdc](https://github.com/Digilent/digilent-xdc/blob/master/Zybo-Z7-Master.xdc)
+
 ## Genesys 2
 
 ### Constraint file
 
-* [Genesys2 xdc](https://github.com/Digilent/digilent-xdc/)
+* [Genesys2 xdc](https://github.com/Digilent/digilent-xdc/blob/master/Genesys-2-Master.xdc)
 
 ## CMOD A7
 
 ### Constraint file
 
-* [CMOD A7 xdc](https://github.com/Digilent/digilent-xdc/)
+* [CMOD A7 xdc](https://github.com/Digilent/digilent-xdc/blob/master/Cmod-A7-Master.xdc)

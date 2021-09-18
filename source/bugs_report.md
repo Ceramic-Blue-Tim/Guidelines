@@ -20,3 +20,15 @@ Boards presets on ZCU102 do not necessarly match the RAM installed due end of li
 # In vivado tcl console
 set_property platform.uses_pr 0 [current_project]
 ```
+)
+* **00005** : Can't detect board in hardware manager (linux)
+Because of required root access to install drivers, cable drivers on linux aren't install by installer so as you need to install them on your own
+```Bash
+cd {vivado_install_dir}/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+sudo ./install_drivers
+```
+
+* **00006** : Can't connect serial port, permission denied (linux)
+```Bash
+sudo chown <username> <serial port>
+```

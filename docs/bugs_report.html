@@ -90,7 +90,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="boards_resources.html">Boards resources</a></li>
@@ -191,6 +191,21 @@ Boards presets on ZCU102 do not necessarly match the RAM installed due end of li
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In vivado tcl console</span>
 set_property platform.uses_pr <span class="m">0</span> <span class="o">[</span>current_project<span class="o">]</span>
+</pre></div>
+</div>
+<p>)</p>
+<ul class="simple">
+<li><p><strong>00005</strong> : Can’t detect board in hardware manager (linux)
+Because of required root access to install drivers, cable drivers on linux aren’t install by installer so as you need to install them on your own</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="o">{</span>vivado_install_dir<span class="o">}</span>/data/xicom/cable_drivers/lin64/install_script/install_drivers/
+sudo ./install_drivers
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>00006</strong> : Can’t connect serial port, permission denied (linux)</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sudo chown &lt;username&gt; &lt;serial port&gt;
 </pre></div>
 </div>
 </div>
