@@ -1,0 +1,705 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Good practices &mdash; Guidelines 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Miscellaneous" href="misc.html" />
+    <link rel="prev" title="Glossary" href="glossary.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Guidelines
+          
+
+          
+            
+            <img src="_static/CBT.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boards_resources.html">Boards resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs_report.html">Bugs report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev_tools.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Good practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#c">C++</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#header">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-publish-github-pages-from-documentation-repository">Simple publish Github Pages from documentation repository</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sections">Sections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inline">Inline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class">Class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signal-declaration">Signal declaration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#think-generic">Think generic</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constants">Constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#make-packages">Make packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#smart-signals-assignation-using-length">Smart signals assignation using ‘length</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repo_handling.html">Repository handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Guidelines</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Good practices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/good_practices.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="good-practices">
+<h1>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="c">
+<h2>C++<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="header">
+<h4>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h4>
+<p>Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
+A header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">*! @title      Example code</span>
+<span class="cm">*! @file       example.cpp</span>
+<span class="cm">*! @author     Bruce Wayne, Clark Kent</span>
+<span class="cm">*! @date       01 Jan 2021</span>
+<span class="cm">*! @version    0.1</span>
+<span class="cm">*! @copyright</span>
+<span class="cm">*! SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span>
+<span class="cm">*! SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span>
+<span class="cm">*! SPDX-License-Identifier: MIT</span>
+<span class="cm">*! @brief</span>
+<span class="cm">*! Example code</span>
+<span class="cm">*! * nothing much to say</span>
+<span class="cm">*! </span>
+<span class="cm">*! @details</span>
+<span class="cm">*! &gt; **01 Jan 2018** : file creation (BW)</span>
+<span class="cm">*! &gt; **01 Jan 2021** : fix module import (CK)</span>
+<span class="cm">*\</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<p>Here is an example for function comments.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************</span>
+<span class="cm"> * Compute Ohm&#39;s law</span>
+<span class="cm"> *</span>
+<span class="cm"> * u = r * i</span>
+<span class="cm"> * </span>
+<span class="cm"> * @param r Resistance - ohm</span>
+<span class="cm"> * @param i Current - A</span>
+<span class="cm"> * @return Voltage - V</span>
+<span class="cm">****************************************************************************/</span>
+<span class="kt">int</span> <span class="nf">calcVoltage</span><span class="p">(</span><span class="kt">float</span> <span class="n">r</span><span class="p">,</span> <span class="kt">float</span> <span class="n">i</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="simple-publish-github-pages-from-documentation-repository">
+<h3>Simple publish Github Pages from documentation repository<a class="headerlink" href="#simple-publish-github-pages-from-documentation-repository" title="Permalink to this headline">¶</a></h3>
+<p>Since Github only allows to serve static html from either /root or /docs of a given branch and
+Sphinx outputs html under /build/html it is convenient to script documentation generation to
+obtain a structure easily publishable using github pages.</p>
+<p>One of the many solution is to organize the repository as below :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Git repo
+├───docs
+│   └───*.html
+└───src
+    └───docs
+        ├───build
+        ├───source
+        ├───Makefile
+        └───make.bat
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>src/docs</strong> is your local Sphinx folder with sources and build</p></li>
+<li><p><strong>docs</strong> is html static content for github pages</p></li>
+</ul>
+<p>Then the Makefile is modified to generate Sphinx documentation and copy its output in docs folder.</p>
+<div class="highlight-Makefile notranslate"><div class="highlight"><pre><span></span><span class="c"># Folder for html output</span>
+<span class="nv">DOCS</span>          <span class="o">=</span> ../../docs
+
+<span class="c"># Add new make file directive : make github</span>
+<span class="nf">github</span><span class="o">:</span>
+<span class="c">    # Clean build folder</span>
+	rm -rf <span class="s2">&quot;</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c">    # Generate Sphinx documentation</span>
+	make html
+<span class="c">    # Copy build in github pages source folder being /docs</span>
+	cp -r <span class="s2">&quot;</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">/html&quot;</span> <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">&quot;</span>
+<span class="c">    # Create .nojekyll file to setup github pages correctly</span>
+	<span class="nb">echo</span> $ &gt;&gt; <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">/.nojekyll&quot;</span>
+</pre></div>
+</div>
+<p>Therefore, you can stick to <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> to locally check changes in src/ then you may use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">github</span></code> and stage/push your changes.</p>
+<p>You may also add the local build to the .gitignore.</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ignore local build for sphinx doc</span>
+<span class="n">docs</span><span class="o">/</span><span class="n">build</span><span class="o">/</span>
+</pre></div>
+</div>
+<p><em>Better solutions use a different branch staging only static html content updated with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.</em></p>
+</div>
+</div>
+<div class="section" id="matlab">
+<h2>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Comments<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.</p>
+<div class="section" id="id2">
+<h4>Header<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
+A header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% @title      Example script</span><span class="w"></span>
+<span class="c">% @file       example.m</span><span class="w"></span>
+<span class="c">% @author     Bruce Wayne, Clark Kent</span><span class="w"></span>
+<span class="c">% @date       01 Jan 2021</span><span class="w"></span>
+<span class="c">% @version    0.1</span><span class="w"></span>
+<span class="c">% @copyright</span><span class="w"></span>
+<span class="c">% SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span><span class="w"></span>
+<span class="c">% SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span><span class="w"></span>
+<span class="c">% SPDX-License-Identifier: MIT</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">% @brief</span><span class="w"></span>
+<span class="c">% Example script</span><span class="w"></span>
+<span class="c">% * nothing much to say</span><span class="w"></span>
+<span class="c">% </span><span class="w"></span>
+<span class="c">% @details</span><span class="w"></span>
+<span class="c">% &gt; **01 Jan 2018** : file creation (BW)</span><span class="w"></span>
+<span class="c">% &gt; **01 Jan 2021** : add init from file (CK)</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>Functions<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Insert comments below functions is a standard, the | and ** are syntax used by Sphinx for documentation layout.</p>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>u<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">ohmLaw</span><span class="p">(</span>r, i<span class="p">)</span><span class="w"></span>
+<span class="c">% | **Compute ohm&#39;s law**</span><span class="w"></span>
+<span class="c">% |</span><span class="w"></span>
+<span class="c">% | **u** : Voltage (V)</span><span class="w"></span>
+<span class="c">% | **r** : Resistance (ohm)</span><span class="w"></span>
+<span class="c">% | **i** : Current (A)</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">% | Compute simple ohm&#39;s law from fixed parameters in SI unit</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sections">
+<h4>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h4>
+<p>Sections (comments blocks that start with %%) are usually followed by a consistent name.
+They can be divided in blocks separated by simple line comment with a simple tab.</p>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Define Parameters ##########################################################################</span><span class="w"></span>
+<span class="w">    </span><span class="c">% Time</span><span class="w"></span>
+<span class="w">        </span><span class="k">...</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">% Geometry</span><span class="w"></span>
+<span class="w">        </span><span class="k">...</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inline">
+<h4>Inline<a class="headerlink" href="#inline" title="Permalink to this headline">¶</a></h4>
+<p>Inline comments are mostly used for variables declaration or assignation so as they describe what the variable is representing, what operation is performed or what is the unit.</p>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">dt</span><span class="w">              </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>^<span class="o">-</span><span class="mi">5</span><span class="p">;</span><span class="w">     </span><span class="c">% ms - Time step</span><span class="w"></span>
+<span class="w">    </span><span class="n">sim_time</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="mf">30e3</span><span class="p">;</span><span class="w">     </span><span class="c">% ms - Simulation time</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">neur_diam</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w">       </span><span class="c">% µm - Average diameter of a neuron</span><span class="w"></span>
+<span class="w">    </span><span class="n">dist_orgs</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="mi">120</span><span class="p">;</span><span class="w">      </span><span class="c">% µm - Distance between centers of organoids</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Comments<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>Header<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>As for matlab, adding a header will help you keeping track on your sources and defusing potential cases of plagiarism.
+As explained before, header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># @title      Example script</span>
+<span class="c1"># @file       example.py</span>
+<span class="c1"># @author     Bruce Wayne, Clark Kent</span>
+<span class="c1"># @date       01 Jan 2021</span>
+<span class="c1"># @version    0.1</span>
+<span class="c1"># @copyright</span>
+<span class="c1"># SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span>
+<span class="c1"># SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span>
+<span class="c1"># SPDX-License-Identifier: MIT</span>
+<span class="c1">#</span>
+<span class="c1"># @brief</span>
+<span class="c1"># Example script</span>
+<span class="c1"># * nothing much to say</span>
+<span class="c1"># </span>
+<span class="c1"># @details</span>
+<span class="c1"># &gt; **01 Jan 2018** : file creation (BW)</span>
+<span class="c1"># &gt; **01 Jan 2021** : fix module import (CK)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variables">
+<h4>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h4>
+<p>Variables can be commented as below</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1">#: UART communication speed</span>
+<span class="n">BAUD_RATE</span> <span class="o">=</span> <span class="mi">115200</span>
+
+<span class="n">CLOCK_SPEED</span> <span class="o">=</span> <span class="mi">115200</span> <span class="c1">#: Main system clock speed - MHz</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>Functions<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>Functions can be commented as below.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sum a and b</span>
+
+<span class="sd">    :param int a: Number to sum</span>
+<span class="sd">    :param int b: Number to sum</span>
+
+<span class="sd">    :returns: the sum of a and b</span>
+<span class="sd">    :rtype: int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="class">
+<h4>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h4>
+<p>Here is an example for a class.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Bird</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;Describes a simple Bird</span>
+
+<span class="sd">    :param str name: Bird&#39;s name.</span>
+<span class="sd">    :param str color: Bird&#39;s color.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span>   <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; </span>
+
+<span class="sd">        .. WARNING::</span>
+
+<span class="sd">            Be careful don&#39;t fly to high or your wings might melt</span>
+
+<span class="sd">        :param double z: Flying altitude - meters</span>
+<span class="sd">        :param int duration: Flying duration - seconds</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="vhdl">
+<h2>VHDL<a class="headerlink" href="#vhdl" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Comments<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is highly recommanded both for your own mental health and for code sharing. The following examples describes docstring oriented commenting practices that can be interpreted either by Doxygen or TerosHDL (<a class="reference external" href="https://terostechnology.github.io/terosHDLdoc/features/documenter.html">TerosHDL documenter</a>).</p>
+<div class="section" id="id8">
+<h4>Header<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>A documentation-friendly approach based on Doxygen docstrings and that works well with TerosHDL is as below.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--! @title      Single port RAM</span>
+<span class="c1">--! @file       SPRAM.vhd</span>
+<span class="c1">--! @author     Bruce Wayne, Clark Kent</span>
+<span class="c1">--! @date       01 Jan 2021</span>
+<span class="c1">--! @version    0.1</span>
+<span class="c1">--! @copyright</span>
+<span class="c1">--! SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span>
+<span class="c1">--! SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span>
+<span class="c1">--! SPDX-License-Identifier: GPL-3.0-or-later</span>
+<span class="c1">--!</span>
+<span class="c1">--! @brief</span>
+<span class="c1">--! Single port RAM with generic RAM and DATA size</span>
+<span class="c1">--! * can be initialized from a file</span>
+<span class="c1">--! </span>
+<span class="c1">--! @details</span>
+<span class="c1">--! &gt; **01 Jan 2018** : file creation (BW)</span>
+<span class="c1">--! &gt; **01 Jan 2021** : add init from file (CK)</span>
+</pre></div>
+</div>
+<p><em>Better copyright and licensing claiming that complies to current standards will be uploaded soon but for now they are stated following the format below (<a class="reference external" href="https://matija.suklje.name/how-and-why-to-properly-write-copyright-statements-in-your-code">source</a>).</em></p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>SPDX-FileCopyrightText: © <span class="o">{</span><span class="nv">$year_of_file_creation</span><span class="o">}</span> <span class="o">{</span><span class="nv">$name_of_copyright_holder</span><span class="o">}</span> &lt;<span class="o">{</span><span class="nv">$contact</span><span class="o">}</span>&gt;
+SPDX-License-Identifier: <span class="o">{</span><span class="nv">$SPDX_license_name</span><span class="o">}</span>
+</pre></div>
+</div>
+<p>Header can be completed by a <a class="reference external" href="https://wavedrom.com/tutorial.html">waveform description</a> of the module behavior if you are using TerosHDL (<a class="reference external" href="https://terostechnology.github.io/terosHDLdoc/features/documenter.html">TerosHDL documenter</a>).</p>
+</div>
+<div class="section" id="ports">
+<h4>Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h4>
+<p>It is sometimes useful to organise properly the inputs and outputs of a module.
+However, it may sometimes hamper column selection and incremental selection as your
+lines are getting sparsed. Here is a quick example. The “!” after the comment marker is used to generate doctrings.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">port</span><span class="p">(</span>
+    <span class="c1">-- Clock/reset --</span>
+    <span class="n">clk</span>     <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>    <span class="c1">--! Clock</span>
+    <span class="n">reset</span>   <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>    <span class="c1">--! Reset</span>
+
+    <span class="c1">-- SPI --</span>
+    <span class="n">DAC_sclk</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>    <span class="c1">--! System clock</span>
+    <span class="n">DAC_cs</span>      <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>    <span class="c1">--! Chip select</span>
+    <span class="n">DAC_mosi</span>    <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">;</span>    <span class="c1">--! Master output slave input</span>
+
+    <span class="c1">-- PSU -&gt; FPGA via AXI LITE</span>
+        <span class="c1">-- RAM control</span>
+        <span class="n">PSU_en_write</span>    <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic</span><span class="p">;</span> <span class="c1">--! RAM write enable from PSU via AXI</span>
+        <span class="n">PSU_addrw</span>       <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">ADDRSIZE</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">--! RAM write address from PSU via AXI</span>
+
+        <span class="c1">-- Conductance</span>
+        <span class="n">PSU_GK</span>      <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">INT</span><span class="o">+</span><span class="n">DEC</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">--! Conductance from PSU via AXI</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="signal-declaration">
+<h4>Signal declaration<a class="headerlink" href="#signal-declaration" title="Permalink to this headline">¶</a></h4>
+<p>About the same principles apply to signal declaration. Try to regroup your signals according to their role or to the modules they are connecting to. Here is another example.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>    <span class="c1">-- Clock --</span>
+    <span class="k">signal</span> <span class="n">clk</span>              <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span> <span class="c1">--! Main clock</span>
+
+    <span class="c1">-- DSP pipelines</span>
+    <span class="k">signal</span> <span class="n">A</span>    <span class="o">:</span> <span class="kt">signed</span><span class="p">(</span><span class="mi">7</span><span class="o">+</span><span class="n">DEC</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>    <span class="o">:=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span> <span class="c1">--! DSP multiplier inputs</span>
+    <span class="k">signal</span> <span class="n">B</span>    <span class="o">:</span> <span class="kt">signed</span><span class="p">(</span><span class="mi">7</span><span class="o">+</span><span class="n">DEC</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>    <span class="o">:=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">&#39;0&#39;</span><span class="p">);</span> <span class="c1">--! DSP multiplier inputs</span>
+
+    <span class="c1">-- Time --</span>
+    <span class="k">signal</span> <span class="n">tick</span>             <span class="o">:</span> <span class="kt">std_logic</span> <span class="o">:=</span> <span class="sc">&#39;0&#39;</span><span class="p">;</span>                 <span class="c1">--! Computation enable</span>
+    <span class="k">signal</span> <span class="n">tick_counter</span>     <span class="o">:</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">11</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">--! Counts clock cycle to generate ticks</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="think-generic">
+<h3>Think generic<a class="headerlink" href="#think-generic" title="Permalink to this headline">¶</a></h3>
+<p>Another important parameter is the genericity of your design. Using generic parameters instead of fixed parameters will clarify your description and simplify the development.</p>
+<div class="section" id="constants">
+<h4>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h4>
+<p>The use of constants in VHDL is really imporant, it helps generic generation and really clarifies your code. Moreover, they do not relate to any material generation since they correpond to GND or VCC connections on pins (quite similar to the C preprocessor directive #define). Let’s take the example of a FPGA implementation to get the signal from 4 parallel ADC coded on 12 bits, a wise description could start with the following description.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span>    <span class="k">constant</span> <span class="n">NB_ADC</span>     <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">4</span>      <span class="o">:=</span> <span class="mi">4</span><span class="p">;</span>       <span class="c1">-- Number of ADC to read</span>
+    <span class="k">constant</span> <span class="n">NB_BIT_ADC</span> <span class="o">:</span> <span class="kt">integer</span> <span class="k">range</span> <span class="mi">0</span> <span class="k">to</span> <span class="mi">12</span>     <span class="o">:=</span> <span class="mi">12</span><span class="p">;</span>      <span class="c1">-- Number of bits for ADC signal encoding</span>
+    <span class="k">type</span> <span class="n">data_ADC_s</span> <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="n">NB_ADC</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="n">NB_BIT_ADC</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>    <span class="c1">-- Signal type for an array of ADC signals</span>
+    <span class="k">signal</span> <span class="n">data_ADC</span>     <span class="o">:</span> <span class="n">data_ADC_s</span>                <span class="o">:=</span> <span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="sc">&#39;0&#39;</span><span class="p">));</span> <span class="c1">-- Signal for all ADC data</span>
+
+    <span class="c1">-- data_ADC(0) is a 12 bits vector corresponding to the data of your first ADC</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-packages">
+<h4>Make packages<a class="headerlink" href="#make-packages" title="Permalink to this headline">¶</a></h4>
+<p>As well defined on <a class="reference external" href="https://www.nandland.com/vhdl/examples/example-package.html">nandland</a>, a package in VHDL is a collection of functions, procedures, shared variables, constants, files, aliases, types, subtypes, attributes and components. It can, in some extents, roughly be seen as a library in C. Using packages will allow global signal type and constants declaration as long as you include the package in the module. A good example of package is also given on <a class="reference external" href="https://www.nandland.com/vhdl/examples/example-package.html">nandland</a>.</p>
+<ul class="simple">
+<li><p>Package file description</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Package Declaration Section</span>
+<span class="k">package</span> <span class="n">example_package</span> <span class="k">is</span>
+ 
+  <span class="k">constant</span> <span class="n">c_PIXELS</span> <span class="o">:</span> <span class="kt">integer</span> <span class="o">:=</span> <span class="mi">65536</span><span class="p">;</span>
+ 
+  <span class="k">type</span> <span class="n">t_FROM_FIFO</span> <span class="k">is</span> <span class="k">record</span>
+    <span class="n">wr_full</span>  <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>
+    <span class="n">rd_empty</span> <span class="o">:</span> <span class="kt">std_logic</span><span class="p">;</span>
+  <span class="k">end</span> <span class="k">record</span> <span class="nc">t_FROM_FIFO</span><span class="p">;</span>  
+   
+  <span class="k">component</span> <span class="nc">example_component</span> <span class="k">is</span>
+    <span class="k">port</span> <span class="p">(</span>
+      <span class="n">i_data</span>  <span class="o">:</span> <span class="k">in</span>  <span class="kt">std_logic</span><span class="p">;</span>
+      <span class="n">o_rsult</span> <span class="o">:</span> <span class="k">out</span> <span class="kt">std_logic</span><span class="p">);</span> 
+  <span class="k">end</span> <span class="k">component</span> <span class="nc">example_component</span><span class="p">;</span>
+ 
+  <span class="k">function</span> <span class="n">Bitwise_AND</span> <span class="p">(</span>
+    <span class="n">i_vector</span> <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="kt">std_logic</span><span class="p">;</span>
+   
+<span class="k">end</span> <span class="k">package</span> <span class="nc">example_package</span><span class="p">;</span>
+ 
+<span class="c1">-- Package Body Section</span>
+<span class="k">package</span> <span class="k">body</span> <span class="n">example_package</span> <span class="k">is</span>
+ 
+  <span class="k">function</span> <span class="n">Bitwise_AND</span> <span class="p">(</span>
+    <span class="n">i_vector</span> <span class="o">:</span> <span class="k">in</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">3</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="kt">std_logic</span> <span class="k">is</span>
+  <span class="k">begin</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">i_vector</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">and</span> <span class="n">i_vector</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">and</span> <span class="n">i_vector</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">and</span> <span class="n">i_vector</span> <span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+  <span class="k">end</span><span class="p">;</span>
+ 
+<span class="k">end</span> <span class="k">package</span> <span class="k">body</span> <span class="nc">example_package</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Using package in modules</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">library</span> <span class="nn">work</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">work.example_package.</span><span class="k">all</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="smart-signals-assignation-using-length">
+<h4>Smart signals assignation using ‘length<a class="headerlink" href="#smart-signals-assignation-using-length" title="Permalink to this headline">¶</a></h4>
+<p>Another step toward generic design comes with the use of generic signal assignation. A very useful property of VHDL signals is the reference to their length that helps signal assignation and concatenation. Here are some applications.</p>
+<ul class="simple">
+<li><p>Assign a value using build-in functions</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">signal</span> <span class="n">counter</span> <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">31</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">-- constants works well in that case too</span>
+<span class="n">counter</span> <span class="o">&lt;=</span> <span class="n">to_unsigned</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">counter</span><span class="na">&#39;length</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Assign from a larger signal to smaller one (truncate)</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- let&#39;s assume we want to get a value from the axi registers that are 32 bits wide</span>
+<span class="k">signal</span> <span class="n">axi_reg</span>  <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">31</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="k">signal</span> <span class="n">value</span>    <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">value</span>           <span class="o">&lt;=</span> <span class="n">axi_reg</span><span class="p">(</span><span class="n">value</span><span class="na">&#39;length</span><span class="o">-</span><span class="mi">1</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>  
+<span class="c1">-- obviously valid only if your value stored in axi register is intended to be coded on 16 bits </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Assign from a smaller signal to larger one (resize)</p></li>
+</ul>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">-- let&#39;s assume we want to write a 16 bits wide value in the 32 bits wide axi registers </span>
+<span class="k">signal</span> <span class="n">axi_reg</span>  <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">31</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="k">signal</span> <span class="n">value</span>    <span class="o">:</span> <span class="kt">unsigned</span><span class="p">(</span><span class="mi">15</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">axi_reg</span>         <span class="o">&lt;=</span> <span class="n">resize</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">axi_reg</span><span class="na">&#39;length</span><span class="p">);</span> 
+<span class="c1">-- the same principle applies if the signals&#39; types are different, </span>
+<span class="c1">-- you just have to go through some casts to use resize and assign</span>
+</pre></div>
+</div>
+<p>The use of the <strong>(others =&gt; )</strong> syntax also is very useful so as you assign values to a whole signal without having to specify any size.</p>
+<div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="k">type</span> <span class="n">t_tab_slv</span>  <span class="k">is</span> <span class="k">array</span> <span class="p">(</span><span class="mi">0</span> <span class="k">to</span> <span class="mi">5</span><span class="p">)</span> <span class="k">of</span> <span class="kt">std_logic_vector</span><span class="p">(</span><span class="mi">7</span> <span class="k">downto</span> <span class="mi">0</span><span class="p">);</span>   <span class="c1">-- Table of slv</span>
+<span class="k">signal</span> <span class="n">tab_slv</span>  <span class="o">:</span> <span class="n">t_tab_slv</span> <span class="o">:=</span> <span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="p">(</span><span class="k">others</span><span class="o">=&gt;</span><span class="sc">&#39;0&#39;</span><span class="p">));</span>              <span class="c1">-- Init whole table to 0</span>
+<span class="n">tab_slv</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="o">&lt;=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">&#39;1&#39;</span><span class="p">);</span>  <span class="c1">-- All bits of first vector in table to 1 </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="misc.html" class="btn btn-neutral float-right" title="Miscellaneous" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="glossary.html" class="btn btn-neutral float-left" title="Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, R. Beaubois.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

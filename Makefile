@@ -21,10 +21,8 @@ github:
 	rm -rf "$(BUILDDIR)"
     # Generate Sphinx documentation
 	make html
-    # Remove previous html static content to allow copy
-	rm -rf "$(DOCS)"
     # Copy build in github pages source folder being /docs
-	mv "$(BUILDDIR)/html" "$(DOCS)"
+	cp -r "$(BUILDDIR)/html" "$(DOCS)"
     # Create .nojekyll file to setup github pages correctly
 	echo $ >> "$(DOCS)/.nojekyll"
 
