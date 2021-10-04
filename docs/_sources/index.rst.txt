@@ -2,7 +2,7 @@ Guidelines, good practices and tips
 ===================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    biblio
@@ -15,9 +15,8 @@ Guidelines, good practices and tips
    repo_handling
    support
 
-Utilities
-=========
 * `Inventory <https://github.com/orgs/Ceramic-Blue-Tim/projects/1>`_
+
 .. * :ref:`genindex`
 .. * :ref:`modindex`
 .. * :ref:`search`

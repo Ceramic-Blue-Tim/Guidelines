@@ -1,5 +1,52 @@
 # Good practices
 
+## C++
+
+### Comments
+
+#### Header
+
+Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
+A header usually includes the name of the authors, the creation and update date and versioning as well as comments.
+
+```C++
+/*
+*! @title      Example code
+*! @file       example.cpp
+*! @author     Bruce Wayne, Clark Kent
+*! @date       01 Jan 2021
+*! @version    0.1
+*! @copyright
+*! SPDX-FileCopyrightText: © 2018 Bruce Wayne <bwayne@gmail.com>
+*! SPDX-FileCopyrightText: © 2021 Clark Kent <ckent@gmail.com>
+*! SPDX-License-Identifier: MIT
+*! @brief
+*! Example code
+*! * nothing much to say
+*! 
+*! @details
+*! > **01 Jan 2018** : file creation (BW)
+*! > **01 Jan 2021** : fix module import (CK)
+*\
+```
+
+#### Functions
+
+Here is an example for function comments.
+
+```C++
+/***************************************************************************
+ * Compute Ohm's law
+ *
+ * u = r * i
+ * 
+ * @param r Resistance - ohm
+ * @param i Current - A
+ * @return Voltage - V
+****************************************************************************/
+int calcVoltage(float r, float i);
+```
+
 ## Documentation
 
 ### Simple publish Github Pages from documentation repository
@@ -38,10 +85,8 @@ github:
 	rm -rf "$(BUILDDIR)"
     # Generate Sphinx documentation
 	make html
-    # Remove previous html static content to allow copy
-	rm -rf "$(DOCS)"
     # Copy build in github pages source folder being /docs
-	mv "$(BUILDDIR)/html" "$(DOCS)"
+	cp -r "$(BUILDDIR)/html/." "$(DOCS)"
     # Create .nojekyll file to setup github pages correctly
 	echo $ >> "$(DOCS)/.nojekyll"
 ```
@@ -69,20 +114,23 @@ Adding a header at the beginning of all yours files. It will help you keeping tr
 A header usually includes the name of the authors, the creation and update date and versioning as well as comments.
 
 ```Matlab
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   Authors     : Romain BEAUBOIS
-%   Create Date : 06 Aug 2021
-%   Update Date : 09 Aug 2021
+% @title      Example script
+% @file       example.m
+% @author     Bruce Wayne, Clark Kent
+% @date       01 Jan 2021
+% @version    0.1
+% @copyright
+% SPDX-FileCopyrightText: © 2018 Bruce Wayne <bwayne@gmail.com>
+% SPDX-FileCopyrightText: © 2021 Clark Kent <ckent@gmail.com>
+% SPDX-License-Identifier: MIT
 %
-%   Description : A simple header to illustrate
-%
-%   Revision :
-%       > Revision 0.01 - File created
-%
-%   Additional Comments :
-%       > Not much more to say, it's juste an example
-%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% @brief
+% Example script
+% * nothing much to say
+% 
+% @details
+% > **01 Jan 2018** : file creation (BW)
+% > **01 Jan 2021** : add init from file (CK)
 ```
 
 #### Functions
@@ -128,11 +176,94 @@ Inline comments are mostly used for variables declaration or assignation so as t
 
 ## Python
 
-WIP
+### Comments
+
+#### Header
+
+As for matlab, adding a header will help you keeping track on your sources and defusing potential cases of plagiarism.
+As explained before, header usually includes the name of the authors, the creation and update date and versioning as well as comments.
+
+```Python
+# -*- coding: utf-8 -*-
+# @title      Example script
+# @file       example.py
+# @author     Bruce Wayne, Clark Kent
+# @date       01 Jan 2021
+# @version    0.1
+# @copyright
+# SPDX-FileCopyrightText: © 2018 Bruce Wayne <bwayne@gmail.com>
+# SPDX-FileCopyrightText: © 2021 Clark Kent <ckent@gmail.com>
+# SPDX-License-Identifier: MIT
+#
+# @brief
+# Example script
+# * nothing much to say
+# 
+# @details
+# > **01 Jan 2018** : file creation (BW)
+# > **01 Jan 2021** : fix module import (CK)
+```
+
+#### Variables
+
+Variables can be commented as below
+
+```Python
+#: UART communication speed
+BAUD_RATE = 115200
+
+CLOCK_SPEED = 115200 #: Main system clock speed - MHz
+```
+
+#### Functions
+
+Functions can be commented as below.
+
+```Python
+def sum(a, b):
+    """Sum a and b
+
+    :param int a: Number to sum
+    :param int b: Number to sum
+
+    :returns: the sum of a and b
+    :rtype: int
+    """
+    return a+b
+```
+
+#### Class
+
+Here is an example for a class.
+
+```Python
+class Bird:
+
+    """Describes a simple Bird
+
+    :param str name: Bird's name.
+    :param str color: Bird's color.
+    """
+
+    def __init__(self, name, color):
+        """Constructor"""
+        self.name   = name
+        self.color = color
+
+    def fly(self, z, duration):
+        """ 
+
+        .. WARNING::
+
+            Be careful don't fly to high or your wings might melt
+
+        :param double z: Flying altitude - meters
+        :param int duration: Flying duration - seconds
+        """
+        pass
+```
 
 ## VHDL
-
-### Indent
 
 ### Comments
 

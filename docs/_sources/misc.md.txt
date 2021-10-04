@@ -31,6 +31,11 @@ pip install qt5-tools
 ```
 
 For Anaconda users, Qt Designer is usually install by default and you can launch it from Anaconda Prompt.
+
 ```Bash
 designer
 ```
+
+A good tutorial to get started : [**Qt Designer tutorial**](https://realpython.com/qt-designer-python/)
+
+A good set of icons under Creative Commons license : [**Fugue icons by Yusuke Kamiyamane**](https://p.yusukekamiyamane.com/icons/search/fugue/)

@@ -26,21 +26,36 @@ Depending on your skills and experience you could use a full command approach wi
 Here is an example of organization for a git repository that is quite convenient to easily deal with FPGA targeting project that usually implies several languages. As long as it has been thought through and well-organised any organization is fine.
 
 ```Bash
-Repository
-├───c
-├───data
-├───doc
-├───fpga
-│   ├───c
-│   ├───hdl
-│   ├───tb
-│   ├───vivado_project
-│   ├───vitis_project
-│   ├───waves
-│   └───xdc
-├───matlab
-│   └───functions
-└───py
+Git-Repo
+├── README.md
+├── c
+├── data
+├── docs
+├── fpga
+│   ├── pl
+│   │   ├── hdl
+│   │   ├── py
+│   │   ├── tb
+│   │   ├── vitis_project
+│   │   ├── vivado_project
+│   │   │   ├── cmod
+│   │   │   └── genesys2
+│   │   ├── waves
+│   │   └── xdc
+│   └── zynq
+│       ├── cpp
+│       ├── hdl
+│       ├── py
+│       ├── tb
+│       ├── vitis_project
+│       ├── vivado_project
+│       │   ├── zcu102
+│       │   └── zybo
+│       ├── waves
+│       └── xdc
+├── licenses
+└── matlab
+    └── functions
 ```
 
 ## Create branches

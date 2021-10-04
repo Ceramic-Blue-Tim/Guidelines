@@ -90,7 +90,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="boards_resources.html">Boards resources</a></li>
@@ -178,36 +178,44 @@ sudo apt install libtinfo-dev
 sudo ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5
 </pre></div>
 </div>
+<hr class="docutils" />
 <ul class="simple">
 <li><p><strong>00002</strong> : Vivado won’t start on Fedora 33 due to missing libraries</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sudo dnf install ncurses-compat-libs
 </pre></div>
 </div>
+<hr class="docutils" />
 <ul class="simple">
-<li><p><strong>00003</strong> : Wrong setup RAM ZCU102
-Boards presets on ZCU102 do not necessarly match the RAM installed due end of line notification initial component. Details are found <a class="reference external" href="https://www.xilinx.com/support/answers/71961.html">here</a>.</p></li>
+<li><p><strong>00003</strong> : Wrong setup RAM ZCU102</p></li>
+</ul>
+<p>Boards presets on ZCU102 do not necessarly match the RAM installed due end of line notification initial component. Details are found <a class="reference external" href="https://www.xilinx.com/support/answers/71961.html">here</a>.</p>
+<hr class="docutils" />
+<ul class="simple">
 <li><p><strong>00004</strong> : Can’t load templates from custom platform on Vitis 2020.2</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In vivado tcl console</span>
 set_property platform.uses_pr <span class="m">0</span> <span class="o">[</span>current_project<span class="o">]</span>
 </pre></div>
 </div>
-<p>)</p>
+<hr class="docutils" />
 <ul class="simple">
-<li><p><strong>00005</strong> : Can’t detect board in hardware manager (linux)
-Because of required root access to install drivers, cable drivers on linux aren’t install by installer so as you need to install them on your own</p></li>
+<li><p><strong>00005</strong> : Can’t detect board in hardware manager (linux)</p></li>
 </ul>
+<p>Because of required root access to install drivers, cable drivers on linux aren’t install by installer so as you need to install them on your own</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="o">{</span>vivado_install_dir<span class="o">}</span>/data/xicom/cable_drivers/lin64/install_script/install_drivers/
 sudo ./install_drivers
 </pre></div>
 </div>
+<hr class="docutils" />
 <ul class="simple">
 <li><p><strong>00006</strong> : Can’t connect serial port, permission denied (linux)</p></li>
 </ul>
+<p>Usually, the user has restricted access rights on serial ports or USB. A quick workaround is to add the device port to the user group.</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sudo chown &lt;username&gt; &lt;serial port&gt;
 </pre></div>
 </div>
+<p>Another workaround is to elevate user’s privileges on devices ports but it requires more steps.</p>
 </div>
 
 

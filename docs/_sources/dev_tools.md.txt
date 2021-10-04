@@ -29,7 +29,17 @@ sudo ln -s /home/username/.local/bin/sphinx-build /bin/sphinx-build
 
 ### Doxygen
 
+As presented on their [website](https://www.doxygen.nl/index.html), Doxygen is the de facto standard tool for generating documentation from annotated C++ sources, but it also supports other popular programming languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba, Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL and to some extent D.
+
+The main drawback users found to Doxygen is its esthetic that is a little bit old fashioned. This introduces the next alternative.  
+
 ### Doxygen + Breathe + Sphinx
+
+Breathe allows to get documentation generated from Doxygen with the html render of Sphinx. It does require a little bit more of configuration.
+
+### TerosHDL Documenter
+
+This solution is only for VHDL/Verilog documentation and allows to generate various documentation of your design though block diagram, state machin viewer and [waveform description](https://wavedrom.com/tutorial.html).
 
 ### Links
 
@@ -40,6 +50,8 @@ sudo ln -s /home/username/.local/bin/sphinx-build /bin/sphinx-build
 [**Breathe**](https://pypi.org/project/breathe/)
 
 [**Breathe documentation**](https://breathe.readthedocs.io/en/latest/index.html)
+
+[**TerosHDL documenter**](https://terostechnology.github.io/terosHDLdoc/features/documenter.html)
 
 ## Matlab
 

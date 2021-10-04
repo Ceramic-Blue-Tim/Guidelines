@@ -86,7 +86,7 @@ github:
     # Generate Sphinx documentation
 	make html
     # Copy build in github pages source folder being /docs
-	cp -r "$(BUILDDIR)/html" "$(DOCS)"
+	cp -r "$(BUILDDIR)/html/." "$(DOCS)"
     # Create .nojekyll file to setup github pages correctly
 	echo $ >> "$(DOCS)/.nojekyll"
 ```

@@ -16,9 +16,9 @@
 
 * [ZCU102 xdc](https://www.xilinx.com/member/forms/download/design-license.html?cid=473474&filename=zcu102-xdc-rdf0405.zip)
 
-### AXI LITE
+### Axi Lite
 
-WIP
+* [Generic Axi Lite module wrapper](https://github.com/Ceramic-Blue-Tim/Resources/blob/main/hdl/zynq/generic_axilite_wrapper.vhd)
 
 ### USB3.0
 
@@ -28,7 +28,7 @@ WIP
 
 ### Documentation
 
-* [**User Guide**](https://www.xilinx.com/support/documentation/user_guides/ug585-Zynq-7000-TRM.pdf)
+* [User Guide](https://www.xilinx.com/support/documentation/user_guides/ug585-Zynq-7000-TRM.pdf)
 
 ### Constraint file
 

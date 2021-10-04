@@ -90,7 +90,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="boards_resources.html">Boards resources</a></li>
@@ -202,21 +202,36 @@ Bio : Intern at Gotham University
 <div class="section" id="organize-folder">
 <h2>Organize folder<a class="headerlink" href="#organize-folder" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example of organization for a git repository that is quite convenient to easily deal with FPGA targeting project that usually implies several languages. As long as it has been thought through and well-organised any organization is fine.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Repository
-├───c
-├───data
-├───doc
-├───fpga
-│   ├───c
-│   ├───hdl
-│   ├───tb
-│   ├───vivado_project
-│   ├───vitis_project
-│   ├───waves
-│   └───xdc
-├───matlab
-│   └───functions
-└───py
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Git-Repo
+├── README.md
+├── c
+├── data
+├── docs
+├── fpga
+│   ├── pl
+│   │   ├── hdl
+│   │   ├── py
+│   │   ├── tb
+│   │   ├── vitis_project
+│   │   ├── vivado_project
+│   │   │   ├── cmod
+│   │   │   └── genesys2
+│   │   ├── waves
+│   │   └── xdc
+│   └── zynq
+│       ├── cpp
+│       ├── hdl
+│       ├── py
+│       ├── tb
+│       ├── vitis_project
+│       ├── vivado_project
+│       │   ├── zcu102
+│       │   └── zybo
+│       ├── waves
+│       └── xdc
+├── licenses
+└── matlab
+    └── functions
 </pre></div>
 </div>
 </div>

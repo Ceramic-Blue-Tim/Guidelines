@@ -90,7 +90,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="boards_resources.html">Boards resources</a></li>
@@ -98,25 +98,41 @@
 <li class="toctree-l1"><a class="reference internal" href="dev_tools.html">Development tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Good practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#c">C++</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#header">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#simple-publish-github-pages-from-documentation-repository">Simple publish Github Pages from documentation repository</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#header">Header</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sections">Sections</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#inline">Inline</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class">Class</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#indent">Indent</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Comments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Comments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Header</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ports">Ports</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#signal-declaration">Signal declaration</a></li>
 </ul>
@@ -203,6 +219,53 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="good-practices">
 <h1>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="c">
+<h2>C++<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="header">
+<h4>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h4>
+<p>Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
+A header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">*! @title      Example code</span>
+<span class="cm">*! @file       example.cpp</span>
+<span class="cm">*! @author     Bruce Wayne, Clark Kent</span>
+<span class="cm">*! @date       01 Jan 2021</span>
+<span class="cm">*! @version    0.1</span>
+<span class="cm">*! @copyright</span>
+<span class="cm">*! SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span>
+<span class="cm">*! SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span>
+<span class="cm">*! SPDX-License-Identifier: MIT</span>
+<span class="cm">*! @brief</span>
+<span class="cm">*! Example code</span>
+<span class="cm">*! * nothing much to say</span>
+<span class="cm">*! </span>
+<span class="cm">*! @details</span>
+<span class="cm">*! &gt; **01 Jan 2018** : file creation (BW)</span>
+<span class="cm">*! &gt; **01 Jan 2021** : fix module import (CK)</span>
+<span class="cm">*\</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<p>Here is an example for function comments.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************</span>
+<span class="cm"> * Compute Ohm&#39;s law</span>
+<span class="cm"> *</span>
+<span class="cm"> * u = r * i</span>
+<span class="cm"> * </span>
+<span class="cm"> * @param r Resistance - ohm</span>
+<span class="cm"> * @param i Current - A</span>
+<span class="cm"> * @return Voltage - V</span>
+<span class="cm">****************************************************************************/</span>
+<span class="kt">int</span> <span class="nf">calcVoltage</span><span class="p">(</span><span class="kt">float</span> <span class="n">r</span><span class="p">,</span> <span class="kt">float</span> <span class="n">i</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="simple-publish-github-pages-from-documentation-repository">
@@ -236,10 +299,8 @@ obtain a structure easily publishable using github pages.</p>
 	rm -rf <span class="s2">&quot;</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">&quot;</span>
 <span class="c">    # Generate Sphinx documentation</span>
 	make html
-<span class="c">    # Remove previous html static content to allow copy</span>
-	rm -rf <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">&quot;</span>
 <span class="c">    # Copy build in github pages source folder being /docs</span>
-	mv <span class="s2">&quot;</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">/html&quot;</span> <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">&quot;</span>
+	cp -r <span class="s2">&quot;</span><span class="k">$(</span>BUILDDIR<span class="k">)</span><span class="s2">/html/.&quot;</span> <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">&quot;</span>
 <span class="c">    # Create .nojekyll file to setup github pages correctly</span>
 	<span class="nb">echo</span> $ &gt;&gt; <span class="s2">&quot;</span><span class="k">$(</span>DOCS<span class="k">)</span><span class="s2">/.nojekyll&quot;</span>
 </pre></div>
@@ -255,41 +316,44 @@ obtain a structure easily publishable using github pages.</p>
 </div>
 <div class="section" id="matlab">
 <h2>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="comments">
-<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Comments<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.</p>
-<div class="section" id="header">
-<h4>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4>Header<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
 A header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
-<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
-<span class="c">%   Authors     : Romain BEAUBOIS</span>
-<span class="c">%   Create Date : 06 Aug 2021</span>
-<span class="c">%   Update Date : 09 Aug 2021</span>
-<span class="c">%</span>
-<span class="c">%   Description : A simple header to illustrate</span>
-<span class="c">%</span>
-<span class="c">%   Revision :</span>
-<span class="c">%       &gt; Revision 0.01 - File created</span>
-<span class="c">%</span>
-<span class="c">%   Additional Comments :</span>
-<span class="c">%       &gt; Not much more to say, it&#39;s juste an example</span>
-<span class="c">%</span>
-<span class="c">% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% @title      Example script</span><span class="w"></span>
+<span class="c">% @file       example.m</span><span class="w"></span>
+<span class="c">% @author     Bruce Wayne, Clark Kent</span><span class="w"></span>
+<span class="c">% @date       01 Jan 2021</span><span class="w"></span>
+<span class="c">% @version    0.1</span><span class="w"></span>
+<span class="c">% @copyright</span><span class="w"></span>
+<span class="c">% SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span><span class="w"></span>
+<span class="c">% SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span><span class="w"></span>
+<span class="c">% SPDX-License-Identifier: MIT</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">% @brief</span><span class="w"></span>
+<span class="c">% Example script</span><span class="w"></span>
+<span class="c">% * nothing much to say</span><span class="w"></span>
+<span class="c">% </span><span class="w"></span>
+<span class="c">% @details</span><span class="w"></span>
+<span class="c">% &gt; **01 Jan 2018** : file creation (BW)</span><span class="w"></span>
+<span class="c">% &gt; **01 Jan 2021** : add init from file (CK)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4>Functions<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Insert comments below functions is a standard, the | and ** are syntax used by Sphinx for documentation layout.</p>
 <div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>u<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">ohmLaw</span><span class="p">(</span>r, i<span class="p">)</span><span class="w"></span>
-<span class="c">% | **Compute ohm&#39;s law**</span>
-<span class="c">% |</span>
-<span class="c">% | **u** : Voltage (V)</span>
-<span class="c">% | **r** : Resistance (ohm)</span>
-<span class="c">% | **i** : Current (A)</span>
-<span class="c">%</span>
-<span class="c">% | Compute simple ohm&#39;s law from fixed parameters in SI unit</span>
+<span class="c">% | **Compute ohm&#39;s law**</span><span class="w"></span>
+<span class="c">% |</span><span class="w"></span>
+<span class="c">% | **u** : Voltage (V)</span><span class="w"></span>
+<span class="c">% | **r** : Resistance (ohm)</span><span class="w"></span>
+<span class="c">% | **i** : Current (A)</span><span class="w"></span>
+<span class="c">%</span><span class="w"></span>
+<span class="c">% | Compute simple ohm&#39;s law from fixed parameters in SI unit</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -297,23 +361,23 @@ A header usually includes the name of the authors, the creation and update date 
 <h4>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h4>
 <p>Sections (comments blocks that start with %%) are usually followed by a consistent name.
 They can be divided in blocks separated by simple line comment with a simple tab.</p>
-<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Define Parameters ##########################################################################</span>
-    <span class="c">% Time</span>
-        <span class="c">...</span>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%% Define Parameters ##########################################################################</span><span class="w"></span>
+<span class="w">    </span><span class="c">% Time</span><span class="w"></span>
+<span class="w">        </span><span class="k">...</span><span class="w"></span>
 
-    <span class="c">% Geometry</span>
-        <span class="c">...</span>
+<span class="w">    </span><span class="c">% Geometry</span><span class="w"></span>
+<span class="w">        </span><span class="k">...</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="inline">
 <h4>Inline<a class="headerlink" href="#inline" title="Permalink to this headline">¶</a></h4>
 <p>Inline comments are mostly used for variables declaration or assignation so as they describe what the variable is representing, what operation is performed or what is the unit.</p>
-<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span>    <span class="n">dt</span>              <span class="p">=</span> <span class="mi">2</span>^<span class="o">-</span><span class="mi">5</span><span class="p">;</span>     <span class="c">% ms - Time step</span>
-    <span class="n">sim_time</span>        <span class="p">=</span> <span class="mf">30e3</span><span class="p">;</span>     <span class="c">% ms - Simulation time</span>
+<div class="highlight-Matlab notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">dt</span><span class="w">              </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>^<span class="o">-</span><span class="mi">5</span><span class="p">;</span><span class="w">     </span><span class="c">% ms - Time step</span><span class="w"></span>
+<span class="w">    </span><span class="n">sim_time</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="mf">30e3</span><span class="p">;</span><span class="w">     </span><span class="c">% ms - Simulation time</span><span class="w"></span>
 
-    <span class="n">neur_diam</span>       <span class="p">=</span> <span class="mi">15</span><span class="p">;</span>       <span class="c">% µm - Average diameter of a neuron</span>
-    <span class="n">dist_orgs</span>       <span class="p">=</span> <span class="mi">120</span><span class="p">;</span>      <span class="c">% µm - Distance between centers of organoids</span>
+<span class="w">    </span><span class="n">neur_diam</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w">       </span><span class="c">% µm - Average diameter of a neuron</span><span class="w"></span>
+<span class="w">    </span><span class="n">dist_orgs</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="mi">120</span><span class="p">;</span><span class="w">      </span><span class="c">% µm - Distance between centers of organoids</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -321,18 +385,98 @@ They can be divided in blocks separated by simple line comment with a simple tab
 </div>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
-<p>WIP</p>
+<div class="section" id="id4">
+<h3>Comments<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>Header<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>As for matlab, adding a header will help you keeping track on your sources and defusing potential cases of plagiarism.
+As explained before, header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># @title      Example script</span>
+<span class="c1"># @file       example.py</span>
+<span class="c1"># @author     Bruce Wayne, Clark Kent</span>
+<span class="c1"># @date       01 Jan 2021</span>
+<span class="c1"># @version    0.1</span>
+<span class="c1"># @copyright</span>
+<span class="c1"># SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span>
+<span class="c1"># SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span>
+<span class="c1"># SPDX-License-Identifier: MIT</span>
+<span class="c1">#</span>
+<span class="c1"># @brief</span>
+<span class="c1"># Example script</span>
+<span class="c1"># * nothing much to say</span>
+<span class="c1"># </span>
+<span class="c1"># @details</span>
+<span class="c1"># &gt; **01 Jan 2018** : file creation (BW)</span>
+<span class="c1"># &gt; **01 Jan 2021** : fix module import (CK)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variables">
+<h4>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h4>
+<p>Variables can be commented as below</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1">#: UART communication speed</span>
+<span class="n">BAUD_RATE</span> <span class="o">=</span> <span class="mi">115200</span>
+
+<span class="n">CLOCK_SPEED</span> <span class="o">=</span> <span class="mi">115200</span> <span class="c1">#: Main system clock speed - MHz</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>Functions<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>Functions can be commented as below.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sum a and b</span>
+
+<span class="sd">    :param int a: Number to sum</span>
+<span class="sd">    :param int b: Number to sum</span>
+
+<span class="sd">    :returns: the sum of a and b</span>
+<span class="sd">    :rtype: int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="class">
+<h4>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h4>
+<p>Here is an example for a class.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Bird</span><span class="p">:</span>
+
+    <span class="sd">&quot;&quot;&quot;Describes a simple Bird</span>
+
+<span class="sd">    :param str name: Bird&#39;s name.</span>
+<span class="sd">    :param str color: Bird&#39;s color.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span>   <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; </span>
+
+<span class="sd">        .. WARNING::</span>
+
+<span class="sd">            Be careful don&#39;t fly to high or your wings might melt</span>
+
+<span class="sd">        :param double z: Flying altitude - meters</span>
+<span class="sd">        :param int duration: Flying duration - seconds</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="vhdl">
 <h2>VHDL<a class="headerlink" href="#vhdl" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="indent">
-<h3>Indent<a class="headerlink" href="#indent" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id1">
-<h3>Comments<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Comments<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is highly recommanded both for your own mental health and for code sharing. The following examples describes docstring oriented commenting practices that can be interpreted either by Doxygen or TerosHDL (<a class="reference external" href="https://terostechnology.github.io/terosHDLdoc/features/documenter.html">TerosHDL documenter</a>).</p>
-<div class="section" id="id2">
-<h4>Header<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h4>Header<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>A documentation-friendly approach based on Doxygen docstrings and that works well with TerosHDL is as below.</p>
 <div class="highlight-vhdl notranslate"><div class="highlight"><pre><span></span><span class="c1">--! @title      Single port RAM</span>
 <span class="c1">--! @file       SPRAM.vhd</span>

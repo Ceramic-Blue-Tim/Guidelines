@@ -90,7 +90,7 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="boards_resources.html">Boards resources</a></li>
@@ -100,6 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#sphinx-extensions">Sphinx + extensions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#doxygen">Doxygen</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#doxygen-breathe-sphinx">Doxygen + Breathe + Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#teroshdl-documenter">TerosHDL Documenter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#links">Links</a></li>
 </ul>
 </li>
@@ -233,9 +234,16 @@ sudo ln -s /home/username/.local/bin/sphinx-build /bin/sphinx-build
 </div>
 <div class="section" id="doxygen">
 <h3>Doxygen<a class="headerlink" href="#doxygen" title="Permalink to this headline">¶</a></h3>
+<p>As presented on their <a class="reference external" href="https://www.doxygen.nl/index.html">website</a>, Doxygen is the de facto standard tool for generating documentation from annotated C++ sources, but it also supports other popular programming languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba, Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL and to some extent D.</p>
+<p>The main drawback users found to Doxygen is its esthetic that is a little bit old fashioned. This introduces the next alternative.</p>
 </div>
 <div class="section" id="doxygen-breathe-sphinx">
 <h3>Doxygen + Breathe + Sphinx<a class="headerlink" href="#doxygen-breathe-sphinx" title="Permalink to this headline">¶</a></h3>
+<p>Breathe allows to get documentation generated from Doxygen with the html render of Sphinx. It does require a little bit more of configuration.</p>
+</div>
+<div class="section" id="teroshdl-documenter">
+<h3>TerosHDL Documenter<a class="headerlink" href="#teroshdl-documenter" title="Permalink to this headline">¶</a></h3>
+<p>This solution is only for VHDL/Verilog documentation and allows to generate various documentation of your design though block diagram, state machin viewer and <a class="reference external" href="https://wavedrom.com/tutorial.html">waveform description</a>.</p>
 </div>
 <div class="section" id="links">
 <h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
@@ -243,6 +251,7 @@ sudo ln -s /home/username/.local/bin/sphinx-build /bin/sphinx-build
 <p><a class="reference external" href="https://www.doxygen.nl/index.html"><strong>Doxygen</strong></a></p>
 <p><a class="reference external" href="https://pypi.org/project/breathe/"><strong>Breathe</strong></a></p>
 <p><a class="reference external" href="https://breathe.readthedocs.io/en/latest/index.html"><strong>Breathe documentation</strong></a></p>
+<p><a class="reference external" href="https://terostechnology.github.io/terosHDLdoc/features/documenter.html"><strong>TerosHDL documenter</strong></a></p>
 </div>
 </div>
 <div class="section" id="matlab">
