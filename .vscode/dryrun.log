@@ -1,0 +1,4 @@
+make: Entering directory '/cygdrive/c/Users/rbeaubois-admin/Documents/Ceramic-Blue-Tim/Guidelines'
+sphinx-build -M help "source" "build"  
+make: Leaving directory '/cygdrive/c/Users/rbeaubois-admin/Documents/Ceramic-Blue-Tim/Guidelines'
+ 

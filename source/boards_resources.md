@@ -18,7 +18,7 @@
 
 ### Axi Lite
 
-* [Generic Axi Lite module wrapper](https://github.com/Ceramic-Blue-Tim/Resources/blob/main/hdl/zynq/generic_axilite_wrapper.vhd)
+* [Generic Axi Lite module wrapper](https://github.com/Ceramic-Blue-Tim/Resources/blob/main/zynq/hdl/generic_axilite_wrapper.vhd)
 
 ### USB3.0
 
