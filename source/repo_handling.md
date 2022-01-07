@@ -6,12 +6,12 @@
 
 ## Repository hosting
 
-As for the tutorials, numerous hosting platforms for git repository are availables GitLab, BitBucket or GitHub. The latter being the one currently used for many reasons amongs the convenient organization features.
+As for the tutorials, numerous hosting platforms for git repository are availables GitLab, BitBucket or GitHub. The latter being the one currently used for many reasons amongs its convenient organization features.
 
 I advise you to get a clear Name/Username for your GitHub profile to make it simple for organization management.
 
 ```Bash
-If your Bruce Wayne a good setting would be
+If your Bruce Wayne a good profile would be
 Name : Bruce Wayne
 Username : bwayne
 Bio : Intern at Gotham University
@@ -23,7 +23,7 @@ Depending on your skills and experience you could use a full command approach wi
 
 ## Organize folder
 
-Here is an example of organization for a git repository that is quite convenient to easily deal with FPGA targeting project that usually implies several languages. As long as it has been thought through and well-organised any organization is fine.
+Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages. Any organisation is fine as long as it has been thought through, well-documented and well-organised.
 
 ```Bash
 Git-Repo
@@ -53,18 +53,22 @@ Git-Repo
 │       │   └── zybo
 │       ├── waves
 │       └── xdc
-├── licenses
+├── LICENSE
 └── matlab
     └── functions
 ```
 
 ## Create branches
 
-Even if you are mostly working alone on repository, the use of branches is still recommended. A simple branch structure is a master branch where you stage all working changes so as it is stable and functionnal and a development branch where your stage your current work. You can either create a branch for each change you make or feature you make, then merge and delete when it's good to go. In that case you might name your branch with a recurring pattern like wip001-add-parameter-sweep. Another option is to keep a single development branch all along the project and merge at points where it is functionnal and stable.
+Even if you are mostly working alone on repository, the use of branches is still recommended. A simple branch structure is a master branch and a development branch. The master branch stages all working changes so as it is stable and functionnal. The development branch stages your current progress on the project. You can either create a branch for each change you make or feature you make, then merge and delete when it's good to go. In that case you might name your branch with a recurring pattern like wip001-add-parameter-sweep. Another option is to keep a single development branch all along the project and merge at points where it is functionnal and stable. I usually go with a branch called dev followed by my initials.
 
 ## Push daily
 
 Staging your changes online once a day at the end of the day is a good practice to have. It will first prevent data losses that may occur (whims of windows, earthquake, theft, bicycle accident, ... _it might seems quite paranoid but it does happen_). Your collaborators from different time zones as well as supervisors will be able to follow up your progress regularly facilitating meetings and advicing. Moreover, you have access to your up to date sources almost everywhere.
+
+## License your repository
+
+Github allows you to easily associate your repository with a license on creation. License states the intellectual property and provides a clear undestanding of how the user can arrange your work.
 
 ## Few more rules
 
