@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Dec 10 13:51:22 2021
+# Make data base, printed on Thu Jan 13 21:00:07 2022
 
 # Variables
 
@@ -23,22 +23,21 @@ USERPROFILE = C:\Users\rbeaubois-admin
 # environment
 LOCALAPPDATA = C:\Users\rbeaubois-admin\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-a4287e94-f25a-4eee-977d-50194aadff2f-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-01d7fd2f-253b-4a16-bcb0-11e6b9fc523d-sock
 # environment
-VSCODE_CWD = C:\Users\rbeaubois-admin\Documents\Ceramic-Blue-Tim\Guidelines
+VSCODE_CWD = C:\PhD\Projects\Guidelines
 # environment
 SYSTEMROOT = C:\WINDOWS
 # environment
 PROCESSOR_LEVEL = 6
 # environment
-PSMODULEPATH = %ProgramFiles%\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
 # default
 MAKE_COMMAND := make
- 
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_14012_MFSZPTWYZOVCHUGJ
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2496_HGSNIQWTYSDXOVAY
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -54,7 +53,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\rbeaubois-admin\AppData\Roaming\Code\CachedData\7db1a2b88f7557e0a43fec75b6ba7e50b3e9f77e
+VSCODE_CODE_CACHE_PATH = C:\Users\rbeaubois-admin\AppData\Roaming\Code\CachedData\899d46d82c4c95423fb7e10e68eba52050e30ba3
 # environment
 LANG = C
 # default
@@ -68,7 +67,7 @@ ONEDRIVE = C:\Users\rbeaubois-admin\OneDrive
 # makefile (from 'Makefile', line 8)
 SOURCEDIR = source
 # makefile
-CURDIR := /cygdrive/c/Users/rbeaubois-admin/Documents/Ceramic-Blue-Tim/Guidelines
+CURDIR := /cygdrive/c/PhD/Projects/Guidelines
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -82,7 +81,7 @@ MFLAGS = -pqrR
 # default
 .SHELLFLAGS := -c
 # environment
-!C: = c:\Users\rbeaubois-admin\Documents\Ceramic-Blue-Tim\Guidelines
+!C: = c:\PhD\Projects\Guidelines
 # environment
 NEURONHOME = c:\nrn
 # environment
@@ -98,19 +97,15 @@ DOCS = ./docs
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 14012
+VSCODE_PID = 2496
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-HTTPS_PROXY = http://proxy-1.ims.bordeaux:3128
 # automatic
 *F = $(notdir $*)
-# environment
-HTTP_PROXY = http://proxy-1.ims.bordeaux:3128
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"aaa2acbca57854c97ab654d4c626d208.fr","_translationsConfigFile":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\aaa2acbca57854c97ab654d4c626d208.fr\\tcf.json","_cacheRoot":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\aaa2acbca57854c97ab654d4c626d208.fr","_resolvedLanguagePackCoreLocation":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\aaa2acbca57854c97ab654d4c626d208.fr\\7db1a2b88f7557e0a43fec75b6ba7e50b3e9f77e","_corruptedFile":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\aaa2acbca57854c97ab654d4c626d208.fr\\corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"9fdd4736c50ab5d00bf618b3d10bedcc.fr","_translationsConfigFile":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\9fdd4736c50ab5d00bf618b3d10bedcc.fr\\tcf.json","_cacheRoot":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\9fdd4736c50ab5d00bf618b3d10bedcc.fr","_resolvedLanguagePackCoreLocation":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\9fdd4736c50ab5d00bf618b3d10bedcc.fr\\899d46d82c4c95423fb7e10e68eba52050e30ba3","_corruptedFile":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\9fdd4736c50ab5d00bf618b3d10bedcc.fr\\corrupted.info","_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-msys
 # environment
@@ -134,7 +129,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /cygdrive/c/Program Files/Python39/Scripts:/cygdrive/c/Program Files/Python39:/cygdrive/c/Program Files/AdoptOpenJDK/jre-8.0.282.8-hotspot/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/windows/System32/OpenSSH:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Program Files/MiKTeX/miktex/bin/x64:/cygdrive/c/Program Files/Polyspace/R2020b/runtime/win64:/cygdrive/c/Program Files/Polyspace/R2020b/bin:/cygdrive/c/Program Files/Polyspace/R2020b/polyspace/bin:/cygdrive/c/Program Files/Inkscape/bin:/cygdrive/c/Program Files (x86)/Ghdl/Bin:/cygdrive/c/Users/rbeaubois-admin/AppData/Roaming/Python/Python39/Scripts:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:C:/cygdrive/c/Strawberry/c/bin:/cygdrive/c/Strawberry/perl/site/bin:/cygdrive/c/Strawberry/perl/bin:/cygdrive/c/Program Files/Git LFS:/cygdrive/c/Users/rbeaubois-admin/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/nrn/bin:/usr/bin:/cygdrive/c/Users/rbeaubois-admin/AppData/Local/Programs/Microsoft VS Code/bin
+PATH = /cygdrive/c/Program Files/Python39/Scripts:/cygdrive/c/Program Files/Python39:/cygdrive/c/Program Files/AdoptOpenJDK/jre-8.0.282.8-hotspot/bin:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/windows/System32/OpenSSH:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Program Files/MiKTeX/miktex/bin/x64:/cygdrive/c/Program Files/Polyspace/R2020b/runtime/win64:/cygdrive/c/Program Files/Polyspace/R2020b/bin:/cygdrive/c/Program Files/Polyspace/R2020b/polyspace/bin:/cygdrive/c/Program Files/Inkscape/bin:/cygdrive/c/Program Files (x86)/Ghdl/Bin:/cygdrive/c/Users/rbeaubois-admin/AppData/Roaming/Python/Python39/Scripts:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:C:/cygdrive/c/Strawberry/c/bin:/cygdrive/c/Strawberry/perl/site/bin:/cygdrive/c/Strawberry/perl/bin:/cygdrive/c/Program Files/Git LFS:/cygdrive/c/Users/rbeaubois-admin/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files/Python39:/cygdrive/c/Program Files/Python39/Scripts:/cygdrive/c/nrn/bin:/usr/bin:/cygdrive/c/Users/rbeaubois-admin/AppData/Local/Programs/Microsoft VS Code/bin
 # environment
 ZES_ENABLE_SYSMAN = 1
 # environment
@@ -158,7 +153,7 @@ USERNAME = rbeaubois-admin
 # environment
 COMMONPROGRAMFILES = C:\Program Files\Common Files
 # environment
-GLOBAL_AGENT_ENVIRONMENT_VARIABLE_NAMESPACE = 
+SNN_SHH_MMN_PATH = C:\PhD\Projects\SNN-SHH-MMN
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -182,7 +177,7 @@ GIT_LFS_PATH = C:\Program Files\Git LFS
 # environment
 OS = Windows_NT
 # environment
-PLATFORMIO_PATH = C:\Users\rbeaubois-admin\.platformio\python3;C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files\AdoptOpenJDK\jre-8.0.282.8-hotspot\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MiKTeX\miktex\bin\x64\;C:\Program Files\Polyspace\R2020b\runtime\win64;C:\Program Files\Polyspace\R2020b\bin;C:\Program Files\Polyspace\R2020b\polyspace\bin;C:\Program Files\Inkscape\bin;C:\Program Files (x86)\Ghdl\Bin;C:\Users\rbeaubois-admin\AppData\Roaming\Python\Python39\Scripts\;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\Git LFS;C:\Users\rbeaubois-admin\AppData\Local\Microsoft\WindowsApps;c:\nrn\bin;c:\nrn\mingw\usr\bin;C:\Users\rbeaubois-admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files\AdoptOpenJDK\jre-8.0.282.8-hotspot\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MiKTeX\miktex\bin\x64\;C:\Program Files\Polyspace\R2020b\runtime\win64;C:\Program Files\Polyspace\R2020b\bin;C:\Program Files\Polyspace\R2020b\polyspace\bin;C:\Program Files\Inkscape\bin;C:\Program Files (x86)\Ghdl\Bin;C:\Users\rbeaubois-admin\AppData\Roaming\Python\Python39\Scripts\;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\Git LFS;C:\Users\rbeaubois-admin\AppData\Local\Microsoft\WindowsApps;c:\nrn\bin;c:\nrn\mingw\usr\bin;C:\Users\rbeaubois-admin\AppData\Local\Programs\Microsoft VS Code\bin
+PLATFORMIO_PATH = C:\Users\rbeaubois-admin\.platformio\python3;C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files\AdoptOpenJDK\jre-8.0.282.8-hotspot\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MiKTeX\miktex\bin\x64\;C:\Program Files\Polyspace\R2020b\runtime\win64;C:\Program Files\Polyspace\R2020b\bin;C:\Program Files\Polyspace\R2020b\polyspace\bin;C:\Program Files\Inkscape\bin;C:\Program Files (x86)\Ghdl\Bin;C:\Users\rbeaubois-admin\AppData\Roaming\Python\Python39\Scripts\;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\Git LFS;C:\Users\rbeaubois-admin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Python39\;C:\Program Files\Python39\Scripts\;c:\nrn\bin;c:\nrn\mingw\usr\bin;C:\Users\rbeaubois-admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files\AdoptOpenJDK\jre-8.0.282.8-hotspot\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\MiKTeX\miktex\bin\x64\;C:\Program Files\Polyspace\R2020b\runtime\win64;C:\Program Files\Polyspace\R2020b\bin;C:\Program Files\Polyspace\R2020b\polyspace\bin;C:\Program Files\Inkscape\bin;C:\Program Files (x86)\Ghdl\Bin;C:\Users\rbeaubois-admin\AppData\Roaming\Python\Python39\Scripts\;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Program Files\Git LFS;C:\Users\rbeaubois-admin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Python39\;C:\Program Files\Python39\Scripts\;c:\nrn\bin;c:\nrn\mingw\usr\bin;C:\Users\rbeaubois-admin\AppData\Local\Programs\Microsoft VS Code\bin
 # makefile
 .DEFAULT_GOAL := help
 # default
@@ -220,7 +215,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = /cygdrive/c/Users/RBEAUB~2/AppData/Local/Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\a6cd235d42a3cc6e6d971683dcee983a-1.63.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\a6cd235d42a3cc6e6d971683dcee983a-1.63.2-main-sock
 # environment
 TERM = xterm-256color
 # default
@@ -244,7 +239,7 @@ BUILDDIR = build
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=15/150=10%
+# Load=114/1024=11%, Rehash=0, Collisions=15/148=10%
 
 # Pattern-specific Variable Values
 
@@ -343,6 +338,6 @@ github:
 # strcache performance: lookups = 30 / hit rate = 40%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=0/30=0%
-# Finished Make data base on Fri Dec 10 13:51:22 2021
+# Finished Make data base on Thu Jan 13 21:00:07 2022
 
  

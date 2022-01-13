@@ -1,5 +1,7 @@
 # Boards resources
 
+[Almost complete guide of vhdl design with vivado](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2018_3/ug901-vivado-synthesis.pdf)
+
 ## ZCU102
 
 ### Documentaion
