@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jan 13 21:00:07 2022
+# Make data base, printed on Thu Feb 24 17:39:18 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ USERPROFILE = C:\Users\rbeaubois-admin
 # environment
 LOCALAPPDATA = C:\Users\rbeaubois-admin\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-01d7fd2f-253b-4a16-bcb0-11e6b9fc523d-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-139b1f26-d82c-4b17-bbe8-d19382a14c42-sock
 # environment
 VSCODE_CWD = C:\PhD\Projects\Guidelines
 # environment
@@ -37,7 +37,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_2496_HGSNIQWTYSDXOVAY
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16776_YIKLYANUVRQELJEV
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -53,7 +53,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\rbeaubois-admin\AppData\Roaming\Code\CachedData\899d46d82c4c95423fb7e10e68eba52050e30ba3
+VSCODE_CODE_CACHE_PATH = C:\Users\rbeaubois-admin\AppData\Roaming\Code\CachedData\f80445acd5a3dadef24aa209168452a3d97cc326
 # environment
 LANG = C
 # default
@@ -71,7 +71,7 @@ CURDIR := /cygdrive/c/PhD/Projects/Guidelines
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -97,7 +97,7 @@ DOCS = ./docs
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2496
+VSCODE_PID = 16776
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -105,7 +105,7 @@ VSCODE_PID = 2496
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"9fdd4736c50ab5d00bf618b3d10bedcc.fr","_translationsConfigFile":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\9fdd4736c50ab5d00bf618b3d10bedcc.fr\\tcf.json","_cacheRoot":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\9fdd4736c50ab5d00bf618b3d10bedcc.fr","_resolvedLanguagePackCoreLocation":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\9fdd4736c50ab5d00bf618b3d10bedcc.fr\\899d46d82c4c95423fb7e10e68eba52050e30ba3","_corruptedFile":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\9fdd4736c50ab5d00bf618b3d10bedcc.fr\\corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"8b52e95f1f720b04e73e055c4640de39.fr","_translationsConfigFile":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\8b52e95f1f720b04e73e055c4640de39.fr\\tcf.json","_cacheRoot":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\8b52e95f1f720b04e73e055c4640de39.fr","_resolvedLanguagePackCoreLocation":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\8b52e95f1f720b04e73e055c4640de39.fr\\f80445acd5a3dadef24aa209168452a3d97cc326","_corruptedFile":"C:\\Users\\rbeaubois-admin\\AppData\\Roaming\\Code\\clp\\8b52e95f1f720b04e73e055c4640de39.fr\\corrupted.info","_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-msys
 # environment
@@ -152,8 +152,6 @@ VSCODE_LOG_NATIVE = false
 USERNAME = rbeaubois-admin
 # environment
 COMMONPROGRAMFILES = C:\Program Files\Common Files
-# environment
-SNN_SHH_MMN_PATH = C:\PhD\Projects\SNN-SHH-MMN
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -205,7 +203,7 @@ PROCESSOR_ARCHITECTURE = AMD64
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
-PLATFORMIO_IDE = 2.4.0
+PLATFORMIO_IDE = 2.4.2
 # environment
 HOME = /home/rbeaubois-admin
 # environment
@@ -215,7 +213,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = /cygdrive/c/Users/RBEAUB~2/AppData/Local/Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\a6cd235d42a3cc6e6d971683dcee983a-1.63.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\a6cd235d42a3cc6e6d971683dcee983a-1.64.2-main-sock
 # environment
 TERM = xterm-256color
 # default
@@ -239,7 +237,7 @@ BUILDDIR = build
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
 # variable set hash-table stats:
-# Load=114/1024=11%, Rehash=0, Collisions=15/148=10%
+# Load=113/1024=11%, Rehash=0, Collisions=15/147=10%
 
 # Pattern-specific Variable Values
 
@@ -338,6 +336,6 @@ github:
 # strcache performance: lookups = 30 / hit rate = 40%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=0/30=0%
-# Finished Make data base on Thu Jan 13 21:00:07 2022
+# Finished Make data base on Thu Feb 24 17:39:18 2022
 
  

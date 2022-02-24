@@ -2,7 +2,11 @@
 
 **AXI** (Advanced eXtensible Interface) : parallel high-performance communication interface mainly designed for on chip communication (i.e. between ARM processor and FPGA on Zynq).
 
+**BD** (Buffer Descriptor) : buffer descriptor are used in virutal queue process like AXI DMA.
+
 **CPU** (Central Processing Unit) : can be simply called processor, it is a chip that performs tasks through a list of instructions usually to control other components.
+
+**DMA** (Direct Memory Access) : direct memory acess between memory and AXI-4 stream target peripherals.
 
 **DSP** (Digital Signal Processor) : processor specialised in numeric data computing, it is optimised for pipelined or parallel calculations of large data set (multiplications, divisions, ...).  
 

@@ -5,14 +5,13 @@ Guidelines, good practices and tips
    :maxdepth: 1
    :caption: Contents:
 
-   biblio
-   boards_resources
-   bugs_report
-   dev_tools
-   glossary
    good_practices
+   dev_tools
+   resources
+   glossary
+   bugs_report
+   biblio
    misc
-   repo_handling
    support
 
 * `Inventory <https://github.com/orgs/Ceramic-Blue-Tim/projects/1>`_

@@ -9,6 +9,7 @@ Useful softwares:
 * [**Inkscape**](https://inkscape.org/fr/) (vectorial graphic design) : free, light and simple but limited features.
 * [**Illustrator**](https://www.adobe.com/fr/products/illustrator/free-trial-download.html) (vectorial graphic design) : user-friendly, plenty of features, powerful but expensive even with student pricing.
 * [**Visio**](https://www.microsoft.com/fr-fr/microsoft-365/visio/flowchart-software) (diagram design with vectorial output) : diagram oriented, user-friendly but not free.
+* [**Draw.io**](https://app.diagrams.net/) (diagram design with vectorial output) : diagram oriented, user-friendly, free, web and desktop clients availables.
 * [**KLatexFormula**](https://klatexformula.sourceforge.io/) (latex math formula to vector files) : free but needs latex compiler
 
 ## Password managing
@@ -23,7 +24,7 @@ Since it is cross-platform and works on a light database file, you could think o
 
 ## Interfaces using Qt
 
-A convenient way to create GUI is the use of Qt Designer along with Python. Qt Designer provides a graphical interface to developp the GUI that can later be translated to Python.
+A fast and convenient way to create GUI is the use of Qt Designer along with Python. Qt Designer provides a graphical interface to developp the GUI that can later be translated to Python. Qt is originally native C++ so for application that require higher performances or very specific interactions, it is better to use Qt Creator (C++ coding of Qt library). The designed ui (*.ui) describing widgets and layout can be interpreted by both Python and C++.
 
 ```Bash
 pip install PyQt5

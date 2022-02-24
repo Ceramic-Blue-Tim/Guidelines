@@ -41,8 +41,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Miscellaneous" href="misc.html" />
-    <link rel="prev" title="Glossary" href="glossary.html" /> 
+    <link rel="next" title="Development tools" href="dev_tools.html" />
+    <link rel="prev" title="Guidelines, good practices and tips" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,22 +92,29 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="boards_resources.html">Boards resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs_report.html">Bugs report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev_tools.html">Development tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Good practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#git-repository-handling">Git repository handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-git">Introduction to Git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repository-hosting">Repository hosting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#organize-folder">Organize folder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-branches">Create branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#push-daily">Push daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#license-your-repository">License your repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#few-more-rules">Few more rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-publish-github-pages-from-documentation-repository">Simple publish Github Pages from documentation repository</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#c">C++</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#header">Header</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#simple-publish-github-pages-from-documentation-repository">Simple publish Github Pages from documentation repository</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#matlab">Matlab</a><ul>
@@ -147,8 +154,12 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dev_tools.html">Development tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs_report.html">Bugs report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
 <li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="repo_handling.html">Repository handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
 </ul>
 
@@ -219,55 +230,95 @@
             
   <div class="tex2jax_ignore mathjax_ignore section" id="good-practices">
 <h1>Good practices<a class="headerlink" href="#good-practices" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="c">
-<h2>C++<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="comments">
-<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="header">
-<h4>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h4>
-<p>Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
-A header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
-<span class="cm">*! @title      Example code</span>
-<span class="cm">*! @file       example.cpp</span>
-<span class="cm">*! @author     Bruce Wayne, Clark Kent</span>
-<span class="cm">*! @date       01 Jan 2021</span>
-<span class="cm">*! @version    0.1</span>
-<span class="cm">*! @copyright</span>
-<span class="cm">*! SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span>
-<span class="cm">*! SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span>
-<span class="cm">*! SPDX-License-Identifier: MIT</span>
-<span class="cm">*! @brief</span>
-<span class="cm">*! Example code</span>
-<span class="cm">*! * nothing much to say</span>
-<span class="cm">*! </span>
-<span class="cm">*! @details</span>
-<span class="cm">*! &gt; **01 Jan 2018** : file creation (BW)</span>
-<span class="cm">*! &gt; **01 Jan 2021** : fix module import (CK)</span>
-<span class="cm">*\</span>
+<hr class="docutils" />
+<div class="section" id="git-repository-handling">
+<h2>Git repository handling<a class="headerlink" href="#git-repository-handling" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="introduction-to-git">
+<h3>Introduction to Git<a class="headerlink" href="#introduction-to-git" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://git-scm.com">Git</a> is a free and open source distributed version control system designed to handle projects sources with speed and efficiency. The first step is to get through the basic theory of git. While a good mastery of git requires several hours of study and practices, basic use of the elementary notions <strong>commit</strong>, <strong>push</strong>, <strong>pull</strong> and <strong>branches</strong> can be mastered in a reasonable amount of time. Plenty of tutorials are availables on that matter.</p>
+</div>
+<div class="section" id="repository-hosting">
+<h3>Repository hosting<a class="headerlink" href="#repository-hosting" title="Permalink to this headline">¶</a></h3>
+<p>As for the tutorials, numerous hosting platforms for git repository are availables GitLab, BitBucket or GitHub. The latter being the one currently used for many reasons amongs its convenient organization features.</p>
+<p>I advise you to get a clear Name/Username for your GitHub profile to make it simple for organization management.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>If your Bruce Wayne a good profile would be
+Name : Bruce Wayne
+Username : bwayne
+Bio : Intern at Gotham University
 </pre></div>
 </div>
 </div>
-<div class="section" id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
-<p>Here is an example for function comments.</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************</span>
-<span class="cm"> * Compute Ohm&#39;s law</span>
-<span class="cm"> *</span>
-<span class="cm"> * u = r * i</span>
-<span class="cm"> * </span>
-<span class="cm"> * @param r Resistance - ohm</span>
-<span class="cm"> * @param i Current - A</span>
-<span class="cm"> * @return Voltage - V</span>
-<span class="cm">****************************************************************************/</span>
-<span class="kt">int</span> <span class="nf">calcVoltage</span><span class="p">(</span><span class="kt">float</span> <span class="n">r</span><span class="p">,</span> <span class="kt">float</span> <span class="n">i</span><span class="p">);</span>
+<div class="section" id="environment">
+<h3>Environment<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h3>
+<p>Depending on your skills and experience you could use a full command approach with bash or rely on a graphic interface such as GitHub Desktop or Sourcetree. Sourcetree being the one currently used for its user-friendly approach and its incorporated bash.</p>
+</div>
+<div class="section" id="organize-folder">
+<h3>Organize folder<a class="headerlink" href="#organize-folder" title="Permalink to this headline">¶</a></h3>
+<p>Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages. Any organisation is fine as long as it has been thought through, well-documented and well-organised.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Git-Repo
+├── README.md
+├── c
+├── data
+├── docs
+├── fpga
+│   ├── pl
+│   │   ├── hdl
+│   │   ├── py
+│   │   ├── tb
+│   │   ├── vitis_project
+│   │   ├── vivado_project
+│   │   │   ├── cmod
+│   │   │   └── genesys2
+│   │   ├── waves
+│   │   └── xdc
+│   └── zynq
+│       ├── cpp
+│       ├── hdl
+│       ├── py
+│       ├── tb
+│       ├── vitis_project
+│       ├── vivado_project
+│       │   ├── zcu102
+│       │   └── zybo
+│       ├── waves
+│       └── xdc
+├── LICENSE
+└── matlab
+    └── functions
 </pre></div>
 </div>
 </div>
+<div class="section" id="create-branches">
+<h3>Create branches<a class="headerlink" href="#create-branches" title="Permalink to this headline">¶</a></h3>
+<p>Even if you are mostly working alone on repository, the use of branches is still recommended. A simple branch structure is a master branch and a development branch. The master branch stages all working changes so as it is stable and functionnal. The development branch stages your current progress on the project. You can either create a branch for each change you make or feature you make, then merge and delete when it’s good to go. In that case you might name your branch with a recurring pattern like wip001-add-parameter-sweep. Another option is to keep a single development branch all along the project and merge at points where it is functionnal and stable. I usually go with a branch called dev followed by my initials.</p>
+</div>
+<div class="section" id="push-daily">
+<h3>Push daily<a class="headerlink" href="#push-daily" title="Permalink to this headline">¶</a></h3>
+<p>Staging your changes online once a day at the end of the day is a good practice to have. It will first prevent data losses that may occur (whims of windows, earthquake, theft, bicycle accident, … <em>it might seems quite paranoid but it does happen</em>). Your collaborators from different time zones as well as supervisors will be able to follow up your progress regularly facilitating meetings and advicing. Moreover, you have access to your up to date sources almost everywhere.</p>
+</div>
+<div class="section" id="license-your-repository">
+<h3>License your repository<a class="headerlink" href="#license-your-repository" title="Permalink to this headline">¶</a></h3>
+<p>Github allows you to easily associate your repository with a license on creation. License states the intellectual property and provides a clear undestanding of how the user can arrange your work.</p>
+</div>
+<div class="section" id="few-more-rules">
+<h3>Few more rules<a class="headerlink" href="#few-more-rules" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>/!\ : Don’t stage large files, GitHub repositories have a 100 Mo limit (unless you use git lfs)</p></li>
+<li><p>/!\ : Always pull before pushing anything</p></li>
+<li><p>/!\ : Use only relative path or environment variables</p></li>
+<li><p>/!\ : Commit messages in present (fix this, add that, …)</p></li>
+</ul>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/"><strong>GitHub</strong></a></p>
+<p><a class="reference external" href="https://www.sourcetreeapp.com/"><strong>Sourcetree</strong></a></p>
 </div>
 </div>
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
 <div class="section" id="simple-publish-github-pages-from-documentation-repository">
 <h3>Simple publish Github Pages from documentation repository<a class="headerlink" href="#simple-publish-github-pages-from-documentation-repository" title="Permalink to this headline">¶</a></h3>
 <p>Since Github only allows to serve static html from either /root or /docs of a given branch and
@@ -314,8 +365,57 @@ obtain a structure easily publishable using github pages.</p>
 <p><em>Better solutions use a different branch staging only static html content updated with Github Actions or git hooks. For the time being this solution is easier to set up and suits our needs.</em></p>
 </div>
 </div>
+<div class="section" id="c">
+<h2>C++<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="header">
+<h4>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h4>
+<p>Adding a header at the beginning of all yours files. It will help you keeping track on your sources and defusing potential cases of plagiarism.
+A header usually includes the name of the authors, the creation and update date and versioning as well as comments.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">*! @title      Example code</span>
+<span class="cm">*! @file       example.cpp</span>
+<span class="cm">*! @author     Bruce Wayne, Clark Kent</span>
+<span class="cm">*! @date       01 Jan 2021</span>
+<span class="cm">*! @version    0.1</span>
+<span class="cm">*! @copyright</span>
+<span class="cm">*! SPDX-FileCopyrightText: © 2018 Bruce Wayne &lt;bwayne@gmail.com&gt;</span>
+<span class="cm">*! SPDX-FileCopyrightText: © 2021 Clark Kent &lt;ckent@gmail.com&gt;</span>
+<span class="cm">*! SPDX-License-Identifier: MIT</span>
+<span class="cm">*! @brief</span>
+<span class="cm">*! Example code</span>
+<span class="cm">*! * nothing much to say</span>
+<span class="cm">*! </span>
+<span class="cm">*! @details</span>
+<span class="cm">*! &gt; **01 Jan 2018** : file creation (BW)</span>
+<span class="cm">*! &gt; **01 Jan 2021** : fix module import (CK)</span>
+<span class="cm">*\</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<p>Here is an example for function comments.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/***************************************************************************</span>
+<span class="cm"> * Compute Ohm&#39;s law</span>
+<span class="cm"> *</span>
+<span class="cm"> * u = r * i</span>
+<span class="cm"> * </span>
+<span class="cm"> * @param r Resistance - ohm</span>
+<span class="cm"> * @param i Current - A</span>
+<span class="cm"> * @return Voltage - V</span>
+<span class="cm">****************************************************************************/</span>
+<span class="kt">int</span> <span class="nf">calcVoltage</span><span class="p">(</span><span class="kt">float</span> <span class="n">r</span><span class="p">,</span> <span class="kt">float</span> <span class="n">i</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="matlab">
 <h2>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
 <div class="section" id="id1">
 <h3>Comments<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Comments also are essential. There are plenty of way to handle it since Matlab is widely use by people from non-programming background. Here are some rules I usually apply for my scripts.</p>
@@ -385,6 +485,7 @@ They can be divided in blocks separated by simple line comment with a simple tab
 </div>
 <div class="section" id="python">
 <h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
 <div class="section" id="id4">
 <h3>Comments<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id5">
@@ -472,6 +573,7 @@ As explained before, header usually includes the name of the authors, the creati
 </div>
 <div class="section" id="vhdl">
 <h2>VHDL<a class="headerlink" href="#vhdl" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
 <div class="section" id="id7">
 <h3>Comments<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>VHDL is known to be a verbose language, meaning that it requires a lot of detailed syntax. Therefore, wisely and efficiently commenting is highly recommanded both for your own mental health and for code sharing. The following examples describes docstring oriented commenting practices that can be interpreted either by Doxygen or TerosHDL (<a class="reference external" href="https://terostechnology.github.io/terosHDLdoc/features/documenter.html">TerosHDL documenter</a>).</p>
@@ -660,8 +762,8 @@ lines are getting sparsed. Here is a quick example. The “!” after the commen
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="misc.html" class="btn btn-neutral float-right" title="Miscellaneous" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="glossary.html" class="btn btn-neutral float-left" title="Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dev_tools.html" class="btn btn-neutral float-right" title="Development tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Guidelines, good practices and tips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
