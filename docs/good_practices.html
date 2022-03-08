@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#create-branches">Create branches</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#push-daily">Push daily</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#license-your-repository">License your repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#staging-large-files">Staging large files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#few-more-rules">Few more rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#links">Links</a></li>
 </ul>
@@ -148,6 +149,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#constants">Constants</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#make-packages">Make packages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#smart-signals-assignation-using-length">Smart signals assignation using ‘length</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tcl-scripts-for-vivado-projects">Tcl scripts for Vivado projects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#export-vivado-project-in-tcl-scripts">Export Vivado project in tcl scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-vivado-project-from-tcl-scripts">Import Vivado project from tcl scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compatible-versions">Compatible versions</a></li>
 </ul>
 </li>
 </ul>
@@ -255,7 +262,7 @@ Bio : Intern at Gotham University
 </div>
 <div class="section" id="organize-folder">
 <h3>Organize folder<a class="headerlink" href="#organize-folder" title="Permalink to this headline">¶</a></h3>
-<p>Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages. Any organisation is fine as long as it has been thought through, well-documented and well-organised.</p>
+<p>Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages. Any organisation is fine as long as it has been thought through, well-documented and well-organised. A good practice consists in placing .gitignore in projects folder to keep the tree structure of the repo.</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Git-Repo
 ├── README.md
 ├── c
@@ -301,10 +308,14 @@ Bio : Intern at Gotham University
 <h3>License your repository<a class="headerlink" href="#license-your-repository" title="Permalink to this headline">¶</a></h3>
 <p>Github allows you to easily associate your repository with a license on creation. License states the intellectual property and provides a clear undestanding of how the user can arrange your work.</p>
 </div>
+<div class="section" id="staging-large-files">
+<h3>Staging large files<a class="headerlink" href="#staging-large-files" title="Permalink to this headline">¶</a></h3>
+<p>Avoid staging large files since GitHub repositories have a 100 MB limit. Vivado/vitis projects have to be local but they can be exported as tcl scripts (prodecure detailed <a class="reference external" href="#tcl-scripts-for_vivado_projects">here</a>). If staging large files is really required you should consider using <strong>git lfs</strong>.</p>
+</div>
 <div class="section" id="few-more-rules">
 <h3>Few more rules<a class="headerlink" href="#few-more-rules" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>/!\ : Don’t stage large files, GitHub repositories have a 100 Mo limit (unless you use git lfs)</p></li>
+<li><p>/!\ : Don’t stage large files, GitHub repositories have a 100 MB limit (unless you use git lfs)</p></li>
 <li><p>/!\ : Always pull before pushing anything</p></li>
 <li><p>/!\ : Use only relative path or environment variables</p></li>
 <li><p>/!\ : Commit messages in present (fix this, add that, …)</p></li>
@@ -751,6 +762,73 @@ lines are getting sparsed. Here is a quick example. The “!” after the commen
 <span class="n">tab_slv</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="o">&lt;=</span> <span class="p">(</span><span class="k">others</span> <span class="o">=&gt;</span> <span class="sc">&#39;1&#39;</span><span class="p">);</span>  <span class="c1">-- All bits of first vector in table to 1 </span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="tcl-scripts-for-vivado-projects">
+<h3>Tcl scripts for Vivado projects<a class="headerlink" href="#tcl-scripts-for-vivado-projects" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="export-vivado-project-in-tcl-scripts">
+<h4>Export Vivado project in tcl scripts<a class="headerlink" href="#export-vivado-project-in-tcl-scripts" title="Permalink to this headline">¶</a></h4>
+<p>First, export vivado project:</p>
+<ul class="simple">
+<li><p>Export project as tcl : <strong>File &gt; Project &gt; Write Tcl</strong></p></li>
+<li><p>Untick all boxes</p></li>
+<li><p>Set output file path to : <strong>&lt;git-repo&gt;/fpga/&lt;version&gt;/vivado_project/</strong></p></li>
+<li><p>Press <strong>OK</strong></p></li>
+</ul>
+<p>Then, export your block design:</p>
+<ul class="simple">
+<li><p>Export block design as tcl : <strong>File &gt; Export &gt; Export Block Design</strong></p></li>
+<li><p>Set output file path to : <strong>&lt;git-repo&gt;/fpga/&lt;version&gt;/vivado_project/</strong></p></li>
+</ul>
+<p><em>Be careful to have a block design name different from the project name. A common practice is to start your block design name by bd_.</em></p>
+</div>
+<div class="section" id="import-vivado-project-from-tcl-scripts">
+<h4>Import Vivado project from tcl scripts<a class="headerlink" href="#import-vivado-project-from-tcl-scripts" title="Permalink to this headline">¶</a></h4>
+<p>First create the project vivado</p>
+<ul class="simple">
+<li><p>Launch Vivado</p></li>
+<li><p>Set current path in tcl console to your vivado project path</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in Tcl console</span>
+<span class="nb">cd</span> &lt;git-repo&gt;/fpga/&lt;version&gt;/vivado_project/
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run vivado project tcl script :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in Tcl console</span>
+<span class="nb">source</span> &lt;your_vivado_project&gt;.tcl
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Run block tcl script :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in Tcl console</span>
+<span class="nb">source</span> &lt;bd_your_vivado_project&gt;.tcl
+</pre></div>
+</div>
+</div>
+<div class="section" id="compatible-versions">
+<h4>Compatible versions<a class="headerlink" href="#compatible-versions" title="Permalink to this headline">¶</a></h4>
+<p>The procedure has been tested under the following environments:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>OS</p></th>
+<th class="text-align:center head"><p>Vivado Version</p></th>
+<th class="text-align:center head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Linux</p></td>
+<td class="text-align:center"><p>2021.1</p></td>
+<td class="text-align:center"><p>✔</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Windows</p></td>
+<td class="text-align:center"><p>2021.2</p></td>
+<td class="text-align:center"><p>✔</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

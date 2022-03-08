@@ -29,7 +29,7 @@ Depending on your skills and experience you could use a full command approach wi
 
 ### Organize folder
 
-Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages. Any organisation is fine as long as it has been thought through, well-documented and well-organised.
+Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages. Any organisation is fine as long as it has been thought through, well-documented and well-organised. A good practice consists in placing .gitignore in projects folder to keep the tree structure of the repo.
 
 ```Bash
 Git-Repo
@@ -76,9 +76,13 @@ Staging your changes online once a day at the end of the day is a good practice 
 
 Github allows you to easily associate your repository with a license on creation. License states the intellectual property and provides a clear undestanding of how the user can arrange your work.
 
+### Staging large files
+
+Avoid staging large files since GitHub repositories have a 100 MB limit. Vivado/vitis projects have to be local but they can be exported as tcl scripts (prodecure detailed [here](#tcl-scripts-for_vivado_projects)). If staging large files is really required you should consider using **git lfs**.
+
 ### Few more rules
 
-* /!\ : Don't stage large files, GitHub repositories have a 100 Mo limit (unless you use git lfs)
+* /!\ : Don't stage large files, GitHub repositories have a 100 MB limit (unless you use git lfs)
 * /!\ : Always pull before pushing anything
 * /!\ : Use only relative path or environment variables
 * /!\ : Commit messages in present (fix this, add that, ...)
@@ -551,3 +555,54 @@ type t_tab_slv  is array (0 to 5) of std_logic_vector(7 downto 0);   -- Table of
 signal tab_slv  : t_tab_slv := (others=>(others=>'0'));              -- Init whole table to 0
 tab_slv(0)      <= (others => '1');  -- All bits of first vector in table to 1 
 ```
+
+### Tcl scripts for Vivado projects
+
+#### Export Vivado project in tcl scripts
+
+First, export vivado project:
+
+* Export project as tcl : **File > Project > Write Tcl**
+* Untick all boxes
+* Set output file path to : **<git-repo\>/fpga/<version\>/vivado_project/**
+* Press **OK**
+
+Then, export your block design:
+
+* Export block design as tcl : **File > Export > Export Block Design**
+* Set output file path to : **<git-repo\>/fpga/<version\>/vivado_project/**
+
+*Be careful to have a block design name different from the project name. A common practice is to start your block design name by bd_.*
+
+#### Import Vivado project from tcl scripts
+
+First create the project vivado
+* Launch Vivado
+* Set current path in tcl console to your vivado project path
+
+```Bash
+# in Tcl console
+cd <git-repo>/fpga/<version>/vivado_project/
+```
+
+* Run vivado project tcl script :
+
+```Bash
+# in Tcl console
+source <your_vivado_project>.tcl
+```
+
+* Run block tcl script :
+
+```Bash
+# in Tcl console
+source <bd_your_vivado_project>.tcl
+```
+
+#### Compatible versions
+
+The procedure has been tested under the following environments:
+| OS           | Vivado Version   | Status              |
+|:-------------|:----------------:|:-------------------:|
+| Linux        | 2021.1           | &#10004;            |
+| Windows      | 2021.2           | &#10004;            |
