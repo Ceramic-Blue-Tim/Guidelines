@@ -585,7 +585,7 @@ First create the project vivado
 cd <git-repo>/fpga/<version>/vivado_project/
 ```
 
-* Run vivado project tcl script :
+* Run vivado project tcl script:
 
 ```Bash
 # in Tcl console
@@ -598,6 +598,9 @@ source <your_vivado_project>.tcl
 # in Tcl console
 source <bd_your_vivado_project>.tcl
 ```
+
+* Create HDL wrapper: **Right click on block design in sources > Create HDL Wrapper**
+* Set wrapper as top: **Right click on wrapper in sources > Set as top**
 
 #### Compatible versions
 

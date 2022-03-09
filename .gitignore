@@ -1,1 +1,5 @@
+# Build repository for sphinx documentation
 build/
+
+# Cache
+.vscode/
