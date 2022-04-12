@@ -215,6 +215,15 @@ sudo ./install_drivers
 </pre></div>
 </div>
 <p>Another workaround is to elevate user’s privileges on devices ports but it requires more steps.</p>
+<ul class="simple">
+<li><p><strong>00007</strong> : Vitis HLS fail to export module</p></li>
+</ul>
+<p>If the error is something like :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ERROR: <span class="s1">&#39;2204121055&#39;</span> is an invalid argument. Please specify an integer value. 
+<span class="k">while</span> executing <span class="s2">&quot;rdi::set_property core_revision 2204121055 {component component_1}&quot;</span> invoked from within <span class="s2">&quot;set_property core_revision </span><span class="nv">$Revision</span><span class="s2"> </span><span class="nv">$core</span><span class="s2"> (file &quot;</span>run_ippack.tcl<span class="s2">&quot; line 819)</span>
+</pre></div>
+</div>
+<p>Then the patch is <a class="reference external" href="https://support.xilinx.com/s/article/76960?language=en_US">here</a></p>
 </div>
 
 

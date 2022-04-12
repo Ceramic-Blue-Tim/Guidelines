@@ -53,3 +53,14 @@ sudo chown <username> <serial port>
 ```
 
 Another workaround is to elevate user's privileges on devices ports but it requires more steps.
+
+* **00007** : Vitis HLS fail to export module
+
+If the error is something like :
+
+```Bash
+ERROR: '2204121055' is an invalid argument. Please specify an integer value. 
+while executing "rdi::set_property core_revision 2204121055 {component component_1}" invoked from within "set_property core_revision $Revision $core (file "run_ippack.tcl" line 819)
+```
+
+Then the patch is [here](https://support.xilinx.com/s/article/76960?language=en_US)
