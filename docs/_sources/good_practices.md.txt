@@ -64,6 +64,47 @@ Git-Repo
     └── functions
 ```
 
+Another organisation that is more suitable for zynq targets and the use of hls is as below :
+Git-Repo
+├── README.md
+├── docs
+├── fpga
+│   ├── pl
+│   │   ├── config
+│   │   ├── data
+│   │   │   ├── generator
+│   │   │   └── sim
+│   │   └── vivado
+│   │       ├── ip
+│   │       ├── projects
+│   │       ├── src
+│   │       │   ├── hdl
+│   │       │   ├── tb
+│   │       │   └── xdc
+│   │       └── tcl
+│   └── zynq
+│       ├── config
+│       ├── data
+│       │   ├── generator
+│       │   └── sim
+│       ├── hls
+│       │   ├── projects
+│       │   └── src
+│       ├── vitis
+│       │   ├── projects
+│       │   └── src
+│       └── vivado
+│           ├── ip
+│           ├── projects
+│           ├── src
+│           │   ├── hdl
+│           │   ├── tb
+│           │   └── xdc
+│           └── tcl
+├── LICENSE
+└── matlab
+    └── functions
+
 ### Create branches
 
 Even if you are mostly working alone on repository, the use of branches is still recommended. A simple branch structure is a master branch and a development branch. The master branch stages all working changes so as it is stable and functionnal. The development branch stages your current progress on the project. You can either create a branch for each change you make or feature you make, then merge and delete when it's good to go. In that case you might name your branch with a recurring pattern like wip001-add-parameter-sweep. Another option is to keep a single development branch all along the project and merge at points where it is functionnal and stable. I usually go with a branch called dev followed by my initials.
