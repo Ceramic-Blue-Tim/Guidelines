@@ -262,7 +262,7 @@ Bio : Intern at Gotham University
 </div>
 <div class="section" id="organize-folder">
 <h3>Organize folder<a class="headerlink" href="#organize-folder" title="Permalink to this headline">¶</a></h3>
-<p>Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages. Any organisation is fine as long as it has been thought through, well-documented and well-organised. A good practice consists in placing .gitignore in projects folder to keep the tree structure of the repo.</p>
+<p>Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages (because of zynq and hls). Any organisation is fine as long as it has been thought through, well-documented and well-organised. A good practice consists in placing .gitignore in projects folder to keep the tree structure of the repo.</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>Git-Repo
 ├── README.md
 ├── c
@@ -270,38 +270,8 @@ Bio : Intern at Gotham University
 ├── docs
 ├── fpga
 │   ├── pl
-│   │   ├── hdl
-│   │   ├── py
-│   │   ├── tb
-│   │   ├── vitis_project
-│   │   ├── vivado_project
-│   │   │   ├── cmod
-│   │   │   └── genesys2
-│   │   ├── waves
-│   │   └── xdc
-│   └── zynq
-│       ├── cpp
-│       ├── hdl
-│       ├── py
-│       ├── tb
-│       ├── vitis_project
-│       ├── vivado_project
-│       │   ├── zcu102
-│       │   └── zybo
-│       ├── waves
-│       └── xdc
-├── LICENSE
-└── matlab
-    └── functions
-</pre></div>
-</div>
-<p>Another organisation that is more suitable for zynq targets and the use of hls is as below :
-Git-Repo
-├── README.md
-├── docs
-├── fpga
-│   ├── pl
 │   │   ├── config
+│   │   ├── interface
 │   │   ├── data
 │   │   │   ├── generator
 │   │   │   └── sim
@@ -315,6 +285,7 @@ Git-Repo
 │   │       └── tcl
 │   └── zynq
 │       ├── config
+│       ├── interface
 │       ├── data
 │       │   ├── generator
 │       │   └── sim
@@ -334,7 +305,9 @@ Git-Repo
 │           └── tcl
 ├── LICENSE
 └── matlab
-└── functions</p>
+    └── functions
+</pre></div>
+</div>
 </div>
 <div class="section" id="create-branches">
 <h3>Create branches<a class="headerlink" href="#create-branches" title="Permalink to this headline">¶</a></h3>

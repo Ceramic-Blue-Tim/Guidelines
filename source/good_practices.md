@@ -29,7 +29,7 @@ Depending on your skills and experience you could use a full command approach wi
 
 ### Organize folder
 
-Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages. Any organisation is fine as long as it has been thought through, well-documented and well-organised. A good practice consists in placing .gitignore in projects folder to keep the tree structure of the repo.
+Here is the organization I typically use for a git repositories that targets FPGA implementation and usually implies several languages (because of zynq and hls). Any organisation is fine as long as it has been thought through, well-documented and well-organised. A good practice consists in placing .gitignore in projects folder to keep the tree structure of the repo.
 
 ```Bash
 Git-Repo
@@ -39,38 +39,8 @@ Git-Repo
 ├── docs
 ├── fpga
 │   ├── pl
-│   │   ├── hdl
-│   │   ├── py
-│   │   ├── tb
-│   │   ├── vitis_project
-│   │   ├── vivado_project
-│   │   │   ├── cmod
-│   │   │   └── genesys2
-│   │   ├── waves
-│   │   └── xdc
-│   └── zynq
-│       ├── cpp
-│       ├── hdl
-│       ├── py
-│       ├── tb
-│       ├── vitis_project
-│       ├── vivado_project
-│       │   ├── zcu102
-│       │   └── zybo
-│       ├── waves
-│       └── xdc
-├── LICENSE
-└── matlab
-    └── functions
-```
-
-Another organisation that is more suitable for zynq targets and the use of hls is as below :
-Git-Repo
-├── README.md
-├── docs
-├── fpga
-│   ├── pl
 │   │   ├── config
+│   │   ├── interface
 │   │   ├── data
 │   │   │   ├── generator
 │   │   │   └── sim
@@ -84,6 +54,7 @@ Git-Repo
 │   │       └── tcl
 │   └── zynq
 │       ├── config
+│       ├── interface
 │       ├── data
 │       │   ├── generator
 │       │   └── sim
@@ -104,6 +75,7 @@ Git-Repo
 ├── LICENSE
 └── matlab
     └── functions
+```
 
 ### Create branches
 
