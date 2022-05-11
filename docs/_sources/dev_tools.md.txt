@@ -151,6 +151,4 @@ While it is a very complete IDE with many built-in features, its editor remains 
 
 [**VSCode**](https://code.visualstudio.com/) + [**TerosHDL**](https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl) - [**Incremental selection**](https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection)
 
-[**Vivado ML Standard 2021.2**](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2021-2.html) (currently transitioning)
-
-[**Vivado Design Suite & Vitis 2020.2**](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html)
+[**Vivado ML Standard 2021.2**](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2021-2.html)
