@@ -192,7 +192,7 @@ A header usually includes the name of the authors, the creation and update date 
 *! @details
 *! > **01 Jan 2018** : file creation (BW)
 *! > **01 Jan 2021** : fix module import (CK)
-*\
+*/
 ```
 
 #### Functions
