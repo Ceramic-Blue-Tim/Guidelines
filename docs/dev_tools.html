@@ -118,6 +118,11 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#anaconda">Anaconda</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vscode-plugins-pycharm-pip-miniconda">(VSCode + plugins)/(PyCharm) + pip + miniconda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Useful commands</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Links</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#vhdl">VHDL</a><ul>
@@ -127,7 +132,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#other-alternatives">Other alternatives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#improve-the-environment">Improve the environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Links</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Links</a></li>
 </ul>
 </li>
 </ul>
@@ -306,6 +311,35 @@ sudo ln -s /home/username/.local/bin/sphinx-build /bin/sphinx-build
 <p><a class="reference external" href="https://pip.pypa.io/en/stable/cli/pip_install/"><strong>Pip documentation</strong></a></p>
 <p><a class="reference external" href="https://www.anaconda.com/"><strong>Anaconda</strong></a></p>
 </div>
+<div class="section" id="vscode-plugins-pycharm-pip-miniconda">
+<h3>(VSCode + plugins)/(PyCharm) + pip + miniconda<a class="headerlink" href="#vscode-plugins-pycharm-pip-miniconda" title="Permalink to this headline">¶</a></h3>
+<p>This environment requires few more steps to setup but it is to me one of the most convenient one. Python is installed though Miniconda that will really simplify the handling of virtual environments. Each virtual environment can be use either pip or conda to install packages so as a wide range of packages are covered. The sources can be edited either with VSCode and plugins or with PyCharm for a dedicated Python IDE with plenty of useful features.</p>
+<div class="section" id="id4">
+<h4>Useful commands<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><strong>VSCode</strong> : <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">Shift</span></code> + <code class="docutils literal notranslate"><span class="pre">P</span></code> &gt; Python: Select interpreter &gt; (base)(venv1)(venv2)</p></li>
+<li><p><strong>Miniconda</strong> :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new environment</span>
+conda create -n venv_name <span class="nv">python</span><span class="o">=</span>python_ver
+<span class="c1"># Delete environement</span>
+conda env remove -n venv
+<span class="c1"># Activate a virtual environment</span>
+conda activate venv
+<span class="c1"># Deactivate a virtual environment</span>
+conda deactivate
+<span class="c1"># Check that the pip used corresponds corredponds to the current venv</span>
+which pip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Links<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://code.visualstudio.com/"><strong>VSCode</strong></a> + <a class="reference external" href="https://www.python.org/"><strong>Python</strong></a> - <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"><strong>Python Linter VSCode</strong></a> - <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance"><strong>Python Extension VSCode</strong></a></p>
+<p><a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html"><strong>Miniconda</strong></a></p>
+<p><a class="reference external" href="https://www.jetbrains.com/pycharm/"><strong>PyCharm</strong></a></p>
+</div>
 </div>
 <div class="section" id="vhdl">
 <h2>VHDL<a class="headerlink" href="#vhdl" title="Permalink to this headline">¶</a></h2>
@@ -358,8 +392,8 @@ While it is a very complete IDE with many built-in features, its editor remains 
 <li><p>Another useful tool is the incremental selection that turns out to be very convenient for instanciation and pipeline signals numbering.</p></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h3>Links<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>Links<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://code.visualstudio.com/"><strong>VSCode</strong></a> + <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=teros-technology.teroshdl"><strong>TerosHDL</strong></a> - <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection"><strong>Incremental selection</strong></a></p>
 <p><a class="reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2021-2.html"><strong>Vivado ML Standard 2021.2</strong></a></p>
 </div>
