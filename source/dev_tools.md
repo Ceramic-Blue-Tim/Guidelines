@@ -107,6 +107,35 @@ The alternative is the use of anaconda that a very complete platform that will a
 
 [**Anaconda**](https://www.anaconda.com/)
 
+### (VSCode + plugins)/(PyCharm) + pip + miniconda
+
+This environment requires few more steps to setup but it is to me one of the most convenient one. Python is installed though Miniconda that will really simplify the handling of virtual environments. Each virtual environment can be use either pip or conda to install packages so as a wide range of packages are covered. The sources can be edited either with VSCode and plugins or with PyCharm for a dedicated Python IDE with plenty of useful features.
+
+#### Useful commands
+
+* **VSCode** : `Ctrl` + `Shift` + `P` > Python: Select interpreter > (base)(venv1)(venv2)
+* **Miniconda** :
+```Bash
+# Create a new environment
+conda create -n venv_name python=python_ver
+# Delete environement
+conda env remove -n venv
+# Activate a virtual environment
+conda activate venv
+# Deactivate a virtual environment
+conda deactivate
+# Check that the pip used corresponds corredponds to the current venv
+which pip
+```
+
+### Links
+
+[**VSCode**](https://code.visualstudio.com/) + [**Python**](https://www.python.org/) - [**Python Linter VSCode**](https://marketplace.visualstudio.com/items?itemName=ms-python.python) - [**Python Extension VSCode**](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+
+[**Miniconda**](https://docs.conda.io/en/latest/miniconda.html)
+
+[**PyCharm**](https://www.jetbrains.com/pycharm/)
+
 ## VHDL
 
 ### VSCode + TerosHDL : alternative to Vivado editor
